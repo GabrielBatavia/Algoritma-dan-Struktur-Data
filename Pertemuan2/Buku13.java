@@ -22,10 +22,4 @@ public class Buku13 {
         harga = hrg;
     }
 
-    public static void main(String[] args) {
-        Buku13 myBook = new Buku13();
-        
-        myBook.tampilInformasi();
-        
-    }
 }
