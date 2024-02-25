@@ -41,6 +41,8 @@ public class Buku13 {
 Dari Compline tersebut akan erorr<br>
 ![image]([./laporan/imagepercobaan1_praktikum2.png](https://github.com/GabrielBatavia/Algoritma-dan-Struktur-Data/blob/main/Pertemuan2/Laporan/imagepercobaan1_praktikum2.png?raw=true))
 
+![alt text](https://github.com/GabrielBatavia/Algoritma-dan-Struktur-Data/edit/main/Pertemuan2/Laporan/imagepercobaan1_praktikum2.png?raw=true)
+
 ### 2.1.3 Pertanyaan
 1. Sebutkan dua karakteristik class atau object!
 2. Perhatikan class Buku pada Praktikum 1 tersebut, ada berapa atribut yang dimiliki oleh class 
