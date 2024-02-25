@@ -35,6 +35,8 @@ public class Buku13 {
 
 }
 ```
+<br>
+
 ### 2.1.2 Verifikasi Hasil Percobaan
 Dari Compline tersebut akan erorr<br>
 ![image](./laporan/imagepercobaan1_praktikum2.png)
@@ -80,6 +82,7 @@ void terjual(int jml) { <br>
 5. Mengapa Method restock() Memiliki Satu Parameter Berupa Bilangan int?<br>
 Method restock(int jml) memiliki satu parameter berupa bilangan int karena perlu mengetahui jumlah buku yang akan ditambahkan ke dalam stock. Parameter ini menyediakan nilai spesifik yang diperlukan untuk menambah jumlah stock yang ada. Parameter bertipe int karena jumlah stock adalah nilai numerik yang tidak memiliki pecahan.
 
+<br>
 
 ### 2.2.1 Percobaan 2: Deklarasi Class, Atribut dan Method
 
@@ -103,8 +106,10 @@ public class BukuMain13 {
 
 }
 ```
-### 2.2.2 Verifikasi Hasil Percobaan
+<br>
 
+### 2.2.2 Verifikasi Hasil Percobaan
+![image](./laporan/2.2.2.JPEG)
 
 ### 2.1.3 Pertanyaan
 1. Pada class BukuMain, tunjukkan baris kode program yang digunakan untuk proses instansiasi! 
@@ -125,8 +130,12 @@ Pada pemanggilan pertama, method tampilInformasi() menampilkan informasi berdasa
 Kemudian, method terjual(5) dipanggil, yang mengurangi nilai stock sebanyak 5 unit, dan method gantiharga(60000) mengubah harga menjadi 60000.<br>
 Pada pemanggilan kedua, method tampilInformasi() menampilkan informasi yang sudah diperbarui, mencerminkan perubahan pada stock dan harga. Ini menjelaskan perbedaan antara output pertama dan kedua.
 
+<br>
 
 ### 2.3.1 Verifikasi Hasil Percobaan
+![image](./laporan/2.3.1.JPEG)
+
+<br>
 
 ### 2.3.2 Pertanyaan
 1. Pada class Buku di Percobaan 3, tunjukkan baris kode program yang digunakan untuk 
