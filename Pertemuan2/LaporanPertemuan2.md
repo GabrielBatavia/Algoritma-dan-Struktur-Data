@@ -37,7 +37,7 @@ public class Buku13 {
 ```
 ### 2.1.2 Verifikasi Hasil Percobaan
 Dari Compline tersebut akan erorr<br>
-![image](./imagepercobaan1_praktikum2.png)
+![image](./laporan/imagepercobaan1_praktikum2.png)
 
 ### 2.1.3 Pertanyaan
 1. Sebutkan dua karakteristik class atau object!
