@@ -1,10 +1,10 @@
 #LAPORAN PRAKTIKUM 2
 ##Algoritma dan Struktur Data
 
-Nama : Gabriel Batavia Xaverius
-NIM : 2341720184
-Kelas : TI-1B
-Absen : 13
+Nama : Gabriel Batavia Xaverius<br>
+NIM : 2341720184<br>
+Kelas : TI-1B<br>
+Absen : 13<br>
 
 ### 2.1.1 Percobaan 1: Deklarasi Class, Atribut dan Method
 
