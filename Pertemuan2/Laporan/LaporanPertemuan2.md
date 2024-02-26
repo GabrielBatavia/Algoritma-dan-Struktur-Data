@@ -1,5 +1,7 @@
-#LAPORAN PRAKTIKUM 2
+#LAPORAN PRAKTIKUM 2<br>
 ##Algoritma dan Struktur Data
+
+![Uploading image.png…]()
 
 Nama : Gabriel Batavia Xaverius<br>
 NIM : 2341720184<br>
