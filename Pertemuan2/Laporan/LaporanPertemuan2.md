@@ -1,5 +1,8 @@
-#LAPORAN PRAKTIKUM 2
+#LAPORAN PRAKTIKUM 2<br>
 ##Algoritma dan Struktur Data
+
+![polinema](https://github.com/GabrielBatavia/Algoritma-dan-Struktur-Data/assets/143175487/3dc4b767-0f81-4250-99f0-340ed2dfcd2b)
+
 
 Nama : Gabriel Batavia Xaverius<br>
 NIM : 2341720184<br>
@@ -39,7 +42,8 @@ public class Buku13 {
 
 ### 2.1.2 Verifikasi Hasil Percobaan
 Dari Compline tersebut akan erorr<br>
-![image](./laporan/imagepercobaan1_praktikum2.png)
+![imagepercobaan1_praktikum2](https://github.com/GabrielBatavia/Algoritma-dan-Struktur-Data/assets/143175487/e00ca8e2-8b8b-41c3-8470-7a5215723736)
+
 
 ### 2.1.3 Pertanyaan
 1. Sebutkan dua karakteristik class atau object!
@@ -109,7 +113,8 @@ public class BukuMain13 {
 <br>
 
 ### 2.2.2 Verifikasi Hasil Percobaan
-![image](./laporan/2.2.2.JPEG)
+![2 2 2](https://github.com/GabrielBatavia/Algoritma-dan-Struktur-Data/assets/143175487/906e9990-6f32-4a3e-8936-1221185485f1)
+
 
 ### 2.1.3 Pertanyaan
 1. Pada class BukuMain, tunjukkan baris kode program yang digunakan untuk proses instansiasi! 
@@ -133,7 +138,8 @@ Pada pemanggilan kedua, method tampilInformasi() menampilkan informasi yang suda
 <br>
 
 ### 2.3.1 Verifikasi Hasil Percobaan
-![image](./laporan/2.3.1.JPEG)
+![2 3 1](https://github.com/GabrielBatavia/Algoritma-dan-Struktur-Data/assets/143175487/413d2543-4d5d-46b8-8f51-70ab088e703d)
+
 
 <br>
 
