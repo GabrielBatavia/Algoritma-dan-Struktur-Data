@@ -1,7 +1,8 @@
 #LAPORAN PRAKTIKUM 2<br>
 ##Algoritma dan Struktur Data
 
-![Uploading image.png…]()
+![polinema](https://github.com/GabrielBatavia/Algoritma-dan-Struktur-Data/assets/143175487/3dc4b767-0f81-4250-99f0-340ed2dfcd2b)
+
 
 Nama : Gabriel Batavia Xaverius<br>
 NIM : 2341720184<br>
