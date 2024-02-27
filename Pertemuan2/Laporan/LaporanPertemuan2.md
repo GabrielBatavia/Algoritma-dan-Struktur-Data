@@ -1,13 +1,13 @@
 #LAPORAN PRAKTIKUM 2<br>
 ##Algoritma dan Struktur Data
 
-![polinema](https://github.com/GabrielBatavia/Algoritma-dan-Struktur-Data/assets/143175487/3dc4b767-0f81-4250-99f0-340ed2dfcd2b)
+<p align="center"> ![polinema](https://github.com/GabrielBatavia/Algoritma-dan-Struktur-Data/assets/143175487/3dc4b767-0f81-4250-99f0-340ed2dfcd2b) </p>
 
 
-Nama : Gabriel Batavia Xaverius<br>
-NIM : 2341720184<br>
-Kelas : TI-1B<br>
-Absen : 13<br>
+<p align="center"> Nama : Gabriel Batavia Xaverius </p>
+<p align="center"> NIM : 2341720184  </p>
+<p align="center">Kelas : TI-1B  </p>
+<p align="center">Absen : 13  </p>
 
 ### 2.1.1 Percobaan 1: Deklarasi Class, Atribut dan Method
 
