@@ -181,26 +181,7 @@ Dalam contoh ini, setiap elemen array bisa diinstansiasi dan diakses menggunakan
 
 3. Error pada Kode Persegi[] pgArray = new Persegi[100];: Kode ini error karena objek Persegi pada indeks ke-5 belum diinstansiasi. Mengakses pgArray[5].sisi sebelum instansiasi menyebabkan NullPointerException.<br>
 
-4. Modifikasi untuk input Length Array menggunakan : <br>
-
-```java
-
-1. Array of Object pada Array 2 Dimensi: Ya, bisa. Array of object dapat diorganisir dalam struktur 2 dimensi, memungkinkan pengelompokan objek dalam format yang mirip tabel.
-
-2. Contoh Array of Object 2 Dimensi:
-
-java
-Copy code
-class PersegiPanjang {
-    int panjang, lebar;
-}
-
-PersegiPanjang[][] ppArray = new PersegiPanjang[2][3]; // Deklarasi array 2D
-Dalam contoh ini, setiap elemen array bisa diinstansiasi dan diakses menggunakan dua indeks, i dan j.
-
-3. Error pada Kode Persegi[] pgArray = new Persegi[100];: Kode ini error karena objek Persegi pada indeks ke-5 belum diinstansiasi. Mengakses pgArray[5].sisi sebelum instansiasi menyebabkan NullPointerException.
-
-4. Modifikasi untuk Input Length Array:
+4. Modifikasi untuk Input Length Array:<br>
 
 ```java
 
@@ -239,8 +220,14 @@ public class persegiPanjang13 {
 
 ```
 
+Output : <br>
+![alt text](image-3.png)
 
-###3.4
+5. Duplikasi instansiasi objek pada indeks array yang sama tidak dianjurkan karena akan menggantikan referensi objek sebelumnya, yang dapat menyebabkan hilangnya akses ke objek tersebut dan potensi pemborosan memori.<br>
+
+<br>
+
+### 3.4.1 : Percobaan 3
 
 ```java
 
@@ -279,6 +266,144 @@ public class Balok13 {
 
 ```
 
+<br>
+
+### 3.4.2 : Verifikasi 
+
 Output :
 
 ![alt text](image-2.png)
+
+<br>
+
+### 3.4.3 : Pertanyaan
+
+1. Dapatkah konstruktor berjumlah lebih dalam satu kelas? Jelaskan dengan contoh! <br>
+
+2. Jika diketahui terdapat class Segitiga seperti berikut ini: <br>
+```java
+public class Segita {
+    public int alas;
+    public int tinggi;
+}
+```
+Tambahkan konstruktor pada class Segitiga tersebut yang berisi parameter int a, int t 
+yang masing-masing digunakan untuk mengisikan atribut alas dan tinggi. <br>
+
+3. Tambahkan method hitungLuas() dan hitungKeliling() pada class Segitiga 
+tersebut. Asumsi segitiga adalah segitiga siku-siku. (Hint: Anda dapat menggunakan bantuan 
+library Math pada Java untuk mengkalkulasi sisi miring)<br>
+
+4. Pada fungsi main, buat array Segitiga sgArray yang berisi 4 elemen, isikan masing-masing 
+atributnya sebagai berikut: <br>
+
+sgArray ke-0    alas: 10, tinggi: 4  <br>
+sgArray ke-1    alas: 20, tinggi: 10 <br>
+sgArray ke-2    alas: 15, tinggi: 6 <br>
+sgArray ke-3    alas: 25, tinggi: 10 <br>
+
+5. Kemudian menggunakan looping, cetak luas dan keliling dengan cara memanggil method 
+hitungLuas() dan hitungKeliling().<br>
+
+Jawaban : <br>
+
+1. Ya, sebuah kelas dapat memiliki lebih dari satu konstruktor, yang dikenal sebagai konstruktor overloading. Ini memungkinkan instansiasi objek dengan cara yang berbeda.<br>
+
+Contoh : <br>
+
+```java
+public class Kotak {
+    public int panjang, lebar;
+
+    // Konstruktor tanpa parameter
+    public Kotak() {
+        panjang = 0;
+        lebar = 0;
+    }
+
+    // Konstruktor dengan parameter
+    public Kotak(int p, int l) {
+        panjang = p;
+        lebar = l;
+    }
+}
+
+```
+
+2. Kita bisa menambahkan Konstruktor pada Class Segitiga dengan cara berikut :<br>
+```java
+public class Segitiga {
+    public int alas;
+    public int tinggi;
+
+    public Segitiga(int a, int t) {
+        alas = a;
+        tinggi = t;
+    }
+}
+
+```
+
+3. Sekarang kita menambahkan Method pada Class segitiga seperti sebagai berikut :<br>
+
+```java
+
+public class Segitiga {
+    public int alas;
+    public int tinggi;
+
+    // Konstruktor
+    public Segitiga(int a, int t) {
+        alas = a;
+        tinggi = t;
+    }
+
+    public double hitungLuas() {
+        return (alas * tinggi) / 2.0;
+    }
+
+    public double hitungKeliling() {
+        double sisiMiring = Math.sqrt((alas * alas) + (tinggi * tinggi));
+        return alas + tinggi + sisiMiring;
+    }
+}
+
+
+```
+
+4. berikut cara kita menambahkan nya :<br>
+```java
+
+public static void main(String[] args) {
+    Segitiga[] sgArray = new Segitiga[4];
+    sgArray[0] = new Segitiga(10, 4);
+    sgArray[1] = new Segitiga(20, 10);
+    sgArray[2] = new Segitiga(15, 6);
+    sgArray[3] = new Segitiga(25, 10);
+}
+
+```
+
+5. Menambahkan looping seperti berikut :<br>
+
+```java
+
+public static void main(String[] args) {
+    Segitiga[] sgArray = new Segitiga[4];
+    // ... (inisialisasi sgArray seperti pada poin 4)
+
+    for (int i = 0; i < sgArray.length; i++) {
+        System.out.println("Segitiga ke-" + i);
+        System.out.println("Luas: " + sgArray[i].hitungLuas());
+        System.out.println("Keliling: " + sgArray[i].hitungKeliling());
+        System.out.println();
+    }
+}
+
+```
+
+<br>
+<br>
+
+# 3.5 Latihan Praktikum 
+
