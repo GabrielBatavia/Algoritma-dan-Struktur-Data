@@ -243,7 +243,11 @@ public class array13 {
  ```
 <br>
 
- Hasil Program :
+### 2.3.2 Verifikasi Hasil
+
+ Hasil Program :<br>
+
+![alt text](image-6.png)
 
 
  <br>
@@ -342,6 +346,8 @@ public class fungsi13 {
 ```
 
 <br>
+
+### 2.4.1 Fungsi
 
 Hasil Program :
 
