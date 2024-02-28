@@ -111,7 +111,7 @@ Pertanyaan
 Buatlah program yang dapat menampilkan deretan bilangan dari angka 1 sampai n kecuali angka 6 dan 10, angka ganjil dicetak dengan asterik “*”, angka genap dicetak sesuai bilangan aslinya, dengan n = 2 digit terakhir NIM anda.
 Bila n<10 maka tambahkan 10 (n+=10) <br>
 
-Jawab:
+Jawab: <br>
 
 ```java
 
@@ -141,8 +141,15 @@ public class Perulangan13 {
 
 <br>
 
-Hasil Program :
+### 2.2.2 Verifikasi Hasil
 
+Hasil Program :<br>
+
+![alt text](image-5.png)
+
+<br>
+
+![alt text](image-4.png)
 
 <br>
 
