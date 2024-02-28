@@ -1,4 +1,4 @@
-<p align="center">LAPORAN PRAKTIKUM 2</p>
+<p align="center">LAPORAN PRAKTIKUM 1</p>
 <p align="center">Algoritma dan Struktur Data</p>
 
 <p align="center"> <img src="./img/polinema.png"> </p>
@@ -96,11 +96,11 @@ public class hitungNilai13 {
 
 Hasil Program :
 
-![alt text](image-1.png)
+<img src="./img/image-1.png">
 
 <br>
 
-![alt text](image-2.png)
+<img src="./img/image-2.png">
 
 <br>
 
@@ -144,12 +144,11 @@ public class Perulangan13 {
 
 Hasil Program :<br>
 
-![alt text](image-5.png)
+<img src="./img/image-5.png">
 
 <br>
 
-![alt text](image-4.png)
-
+<img src="./img/image-4.png">
 <br>
 
 
@@ -157,7 +156,7 @@ Hasil Program :<br>
 
 Buatlah program untuk menghitung IP Semester dari matakuliah yang Anda tempuh 
 semester lalu. Formula untuk menghitung IP semester sebagai berikut :  
-![alt text](image.png)
+<img src="./img/image.png">
  Nilai setara didapatkan dari tabel konversi berikut ini :  
 
  Jawab :
@@ -246,7 +245,7 @@ public class array13 {
 
  Hasil Program :<br>
 
-![alt text](image-6.png)
+<img src="./img/image-6.png">
 
 
  <br>
@@ -350,7 +349,7 @@ public class fungsi13 {
 
 Hasil Program :<br>
 
-![alt text](image-7.png)
+<img src="./img/image-7.png">
 
 <br>
 
@@ -430,7 +429,7 @@ public class tugas1 {
 
 Output : <br>
 
-![alt text](image-9.png)
+<img src="./img/image-9.png">
 
 <br>
 
@@ -438,7 +437,7 @@ Output : <br>
 
 Buat program untuk menghitung rumus kecepatan, jarak, dan waktu Berikut adalah persamaan untuk menghitung rumus tersebut:
 
-![alt text](image-8.png)
+<img src="./img/image-8.png">
 
 Keterangan:
 
@@ -544,4 +543,4 @@ public class tugas2 {
 
 Output :<br>
 
-![alt text](image-10.png)
+<img src="./img/image-10.png">
