@@ -93,7 +93,15 @@ public class hitungNilai13 {
 
 <br>
 
+### 2.1.2 Verifikasi Hasil Program
+
 Hasil Program :
+
+![alt text](image-1.png)
+
+<br>
+
+![alt text](image-2.png)
 
 <br>
 
@@ -101,7 +109,7 @@ Hasil Program :
 
 Pertanyaan
 Buatlah program yang dapat menampilkan deretan bilangan dari angka 1 sampai n kecuali angka 6 dan 10, angka ganjil dicetak dengan asterik “*”, angka genap dicetak sesuai bilangan aslinya, dengan n = 2 digit terakhir NIM anda.
-Bila n<10 maka tambahkan 10 (n+=10)
+Bila n<10 maka tambahkan 10 (n+=10) <br>
 
 Jawab:
 
