@@ -1,14 +1,13 @@
-#LAPORAN PRAKTIKUM 1<br>
-##Algoritma dan Struktur Data
+<p align="center">LAPORAN PRAKTIKUM 2</p>
+<p align="center">Algoritma dan Struktur Data</p>
 
-![polinema](https://github.com/GabrielBatavia/Algoritma-dan-Struktur-Data/assets/143175487/3dc4b767-0f81-4250-99f0-340ed2dfcd2b)
+<p align="center"> <img src="./img/polinema.png"> </p>
 
 
-Nama : Gabriel Batavia Xaverius<br>
-NIM : 2341720184<br>
-Kelas : TI-1B<br>
-Absen : 13<br>
-
+<p align="center"> Nama : Gabriel Batavia Xaverius </p>
+<p align="center"> NIM : 2341720184  </p>
+<p align="center">Kelas : TI-1B  </p>
+<p align="center">Absen : 13  </p>
 
 ### 2.1.1 Pemilihan
 
@@ -356,7 +355,7 @@ Hasil Program :<br>
 <br>
 
 
- ### 3.1 Tugas
+### 3.1 Tugas
 
 Susun program untuk membuat dua buah array berikut isinya sebagai berikut. Array pertama adalah array satu dimensi char KODE[10], berisi kode plat mobil. Array kedua, array dua dimensi char KOTA[10][12] berisi nama kota yang berpasangan dengan kode plat mobil.<br>
 
@@ -427,3 +426,122 @@ public class tugas1 {
 
 ```
 
+<br>
+
+Output : <br>
+
+![alt text](image-9.png)
+
+<br>
+
+ ### 3.2 Tugas
+
+Buat program untuk menghitung rumus kecepatan, jarak, dan waktu Berikut adalah persamaan untuk menghitung rumus tersebut:
+
+![alt text](image-8.png)
+
+Keterangan:
+
+Program yang dibuat memiliki fungsi sebagai berikut:
+
+a. Menu Untuk memilih rumus yang akan dihitung (kecepatan/jarak/waktu)
+
+b. Menghitung hasil perhitungan Kecepatan
+
+c. Menghitung hasil perhitungan Jarak
+
+d. Menghitung hasil perhitungan Waktu
+
+Panggil fungsi-fungsi tersebut pada fungsi main!
+
+Jawab:<br>
+
+```java
+
+import java.util.Scanner;
+
+public class tugas2 {
+    private static final Scanner input = new Scanner(System.in);
+    private static float kecepatan, jarak, waktu;
+    private static int pilihanUlang;
+
+    public static void main(String[] args) {
+        tampilkanMenuPerhitungan();
+    }
+
+    private static void tampilkanMenuPerhitungan() {
+        do {
+            System.out.println("\nApa yang ingin Anda hitung?");
+            System.out.println("   1. Kecepatan");
+            System.out.println("   2. Jarak");
+            System.out.println("   3. Waktu");
+            System.out.print("Masukkan pilihan: ");
+
+            int pilihanMenu = input.nextInt();
+    
+            switch (pilihanMenu) {
+                case 1:
+                    hitungKecepatan();
+                    break;
+                case 2:
+                    hitungJarak();
+                    break;
+                case 3:
+                    hitungWaktu();
+                    break;
+                default:
+                    tampilkanPesanInputTidakValid();
+                    break;
+            }
+
+            System.out.println("\nApakah Anda ingin menghitung lagi?");
+            System.out.println("   1. YA");
+            System.out.println("   2. TIDAK");
+            System.out.print("Masukkan pilihan: ");
+            pilihanUlang = input.nextInt();
+        } while (pilihanUlang == 1);
+    }
+
+    private static void hitungKecepatan() {
+        System.out.print("Masukkan jarak (dalam km): ");
+        jarak = input.nextFloat();
+        System.out.print("Masukkan waktu (dalam jam): ");
+        waktu = input.nextFloat();
+
+        kecepatan = jarak / waktu;
+        System.out.printf("Kecepatan yang dihitung adalah: %.2f km/jam%n", kecepatan);
+    }
+
+    private static void hitungJarak() {
+        System.out.print("Masukkan kecepatan (dalam km/jam): ");
+        kecepatan = input.nextFloat();
+        System.out.print("Masukkan waktu (dalam jam): ");
+        waktu = input.nextFloat();
+
+        jarak = kecepatan * waktu;
+        System.out.printf("Jarak yang ditempuh adalah: %.2f km%n", jarak);
+    }
+
+    private static void hitungWaktu() {
+        System.out.print("Masukkan jarak (dalam km): ");
+        jarak = input.nextFloat();
+        System.out.print("Masukkan kecepatan (dalam km/jam): ");
+        kecepatan = input.nextFloat();
+
+        waktu = jarak / kecepatan;
+        System.out.printf("Waktu yang dibutuhkan adalah: %.2f jam%n", waktu);
+    }
+
+    private static void tampilkanPesanInputTidakValid() {
+        System.out.println("Input tidak valid!");
+    }
+}
+
+
+```
+
+<Br>
+
+Output :<br>
+
+![alt text](image-10.png)
