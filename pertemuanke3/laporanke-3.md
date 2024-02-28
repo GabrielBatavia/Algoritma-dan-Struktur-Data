@@ -185,9 +185,9 @@ Dalam contoh ini, setiap elemen array bisa diinstansiasi dan diakses menggunakan
 
 ```java
 
-Array of Object pada Array 2 Dimensi: Ya, bisa. Array of object dapat diorganisir dalam struktur 2 dimensi, memungkinkan pengelompokan objek dalam format yang mirip tabel.
+1. Array of Object pada Array 2 Dimensi: Ya, bisa. Array of object dapat diorganisir dalam struktur 2 dimensi, memungkinkan pengelompokan objek dalam format yang mirip tabel.
 
-Contoh Array of Object 2 Dimensi:
+2. Contoh Array of Object 2 Dimensi:
 
 java
 Copy code
@@ -198,16 +198,45 @@ class PersegiPanjang {
 PersegiPanjang[][] ppArray = new PersegiPanjang[2][3]; // Deklarasi array 2D
 Dalam contoh ini, setiap elemen array bisa diinstansiasi dan diakses menggunakan dua indeks, i dan j.
 
-Error pada Kode Persegi[] pgArray = new Persegi[100];: Kode ini error karena objek Persegi pada indeks ke-5 belum diinstansiasi. Mengakses pgArray[5].sisi sebelum instansiasi menyebabkan NullPointerException.
+3. Error pada Kode Persegi[] pgArray = new Persegi[100];: Kode ini error karena objek Persegi pada indeks ke-5 belum diinstansiasi. Mengakses pgArray[5].sisi sebelum instansiasi menyebabkan NullPointerException.
 
-Modifikasi untuk Input Length Array:
+4. Modifikasi untuk Input Length Array:
 
-java
-Copy code
-Scanner sc = new Scanner(System.in);
-System.out.print("Masukkan jumlah: ");
-int jumlah = sc.nextInt();
-persegiPanjang13[] ppArray = new persegiPanjang13[jumlah];
+```java
+
+package pertemuanke3.praktikum;
+import java.util.Scanner;
+
+public class persegiPanjang13 {
+    public int panjang;
+    public int lebar;
+
+    public static void main(String[] args) {
+        Scanner sc13 = new Scanner(System.in);
+        System.out.print("Masukkan jumlah persegi panjang: ");
+        int jumlah = sc13.nextInt();
+
+        persegiPanjang13[] ppArray = new persegiPanjang13[jumlah];
+
+        for(int i = 0; i < jumlah; i++) {
+            ppArray[i] = new persegiPanjang13();
+            System.out.println("Persegi panjang ke-" + i);
+            System.out.print("Masukkan panjang: ");
+            ppArray[i].panjang = sc13.nextInt();
+            System.out.print("Masukkan lebar: ");
+            ppArray[i].lebar = sc13.nextInt();
+        }
+
+        System.out.println("Hasil persegi panjang:");
+        for (int i = 0; i < jumlah; i++) {
+            System.out.println("Persegi Panjang ke-" + i + ", Panjang: " + ppArray[i].panjang + ", lebar: " + ppArray[i].lebar);
+        }
+
+        sc13.close();
+    }
+}
+
+
 ```
 
 
