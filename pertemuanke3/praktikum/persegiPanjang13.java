@@ -1,5 +1,4 @@
 package pertemuanke3.praktikum;
-
 import java.util.Scanner;
 
 public class persegiPanjang13 {
@@ -7,27 +6,26 @@ public class persegiPanjang13 {
     public int lebar;
 
     public static void main(String[] args) {
-        
-        persegiPanjang13[] ppArray = new persegiPanjang13[3];
-
         Scanner sc13 = new Scanner(System.in);
+        System.out.print("Masukkan jumlah persegi panjang: ");
+        int jumlah = sc13.nextInt();
 
-        for(int i = 0; i < 3; i++) {
-    
+        persegiPanjang13[] ppArray = new persegiPanjang13[jumlah];
+
+        for(int i = 0; i < jumlah; i++) {
             ppArray[i] = new persegiPanjang13();
             System.out.println("Persegi panjang ke-" + i);
-            System.out.println("Masukkan panjang: ");
+            System.out.print("Masukkan panjang: ");
             ppArray[i].panjang = sc13.nextInt();
-            System.out.println("Masukkan lebar: ");
+            System.out.print("Masukkan lebar: ");
             ppArray[i].lebar = sc13.nextInt();
-    
         }
 
-
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Persegi Panjang ke-" + i);
-            System.out.println("Panjang: " + ppArray[i].panjang + ", lebar: " + ppArray[i].lebar);
+        System.out.println("Hasil persegi panjang:");
+        for (int i = 0; i < jumlah; i++) {
+            System.out.println("Persegi Panjang ke-" + i + ", Panjang: " + ppArray[i].panjang + ", lebar: " + ppArray[i].lebar);
         }
 
+        sc13.close();
     }
 }

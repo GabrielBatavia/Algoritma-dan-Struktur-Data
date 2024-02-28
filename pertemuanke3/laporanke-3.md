@@ -11,7 +11,7 @@
 
 <br>
 
-### 3.2.1 : Membuat Array dari Object, Mengisi dan Menampilkan 
+### 3.2.1 : Percobaan 1
 
 ```java
 
@@ -80,14 +80,20 @@ ppArray[1].lebar = 40;
 
 Jawaban :
 
-1. 
+1. Dalam pembuatan array of object, kita tidak harus selalu memiliki atribut dan method seacra bersamaan didalam class. Karena Array of object menggunakan class sebagai struktur yang menampung informasi sedangkan metode dan atribut hanyalah perilaku yang bisa disimpan class. <b3>
 
+2. Konstruktor dalam Class PersegiPanjang: Meskipun tidak ada konstruktor yang eksplisit didefinisikan dalam class PersegiPanjang13, Java menyediakan konstruktor default yang memungkinkan pembuatan objek baru dengan new PersegiPanjang13(). <br>
 
+3. Deklarasi Array of Object: Kode PersegiPanjang[] ppArray = new PersegiPanjang[3]; mendefinisikan array yang dapat menampung tiga objek PersegiPanjang, mengalokasikan ruang untuk referensi objek tanpa menginisialisasi objek tersebut. <br>
+
+4. Inisialisasi dan Pengisian Array of Object: Kode ppArray[1] = new PersegiPanjang(); ppArray[1].panjang = 80; ppArray[1].lebar = 40; menginisialisasi objek PersegiPanjang pada indeks 1 array, dan mengatur nilai atribut panjang dan lebar. <br>
+
+5. Pemisahan Class main dan Class PersegiPanjang: Pemisahan ini dilakukan untuk modularitas dan pengorganisasian kode yang lebih baik. Class PersegiPanjang mendefinisikan struktur data, sementara class dengan main method bertanggung jawab untuk eksekusi aplikasi dan manipulasi objek, memudahkan pengembangan dan pemeliharaan. <br>
 
 <br>
 
 
-### 3.3.1
+### 3.3.1 : Percobaan 2
 
 ```java
 
@@ -127,12 +133,83 @@ public class persegiPanjang13 {
 
 
 ```
+<br>
 
-Output :
+### 3.3.2 : : Verifikasi Hasil Percobaan 
+
+
+Output : <br>
 
 ![alt text](image-1.png)
 
 <br>
+
+
+### 3.3.3 : Pertanyaan
+
+1. Apakah array of object dapat diimplementasikan pada array 2 Dimensi?<br>
+2. Jika jawaban soal no satu iya, berikan contohnya! Jika tidak, jelaskan!<br>
+3. Jika diketahui terdapat class Persegi yang memiliki atribut sisi bertipe integer, maka kode 
+dibawah ini akan memunculkan error saat dijalankan. Mengapa? <br>
+
+```java
+Persegi[] pgArray = new Persegi[100];
+pgArray[5].sisi = 20;
+
+```
+
+4. Modifikasi kode program pada praktikum 3.3 agar length array menjadi inputan dengan Scanner! <br>
+5. Apakah boleh Jika terjadi duplikasi instansiasi array of objek, misalkan saja instansiasi dilakukan 
+pada ppArray[i] sekaligus ppArray[0]?Jelaskan ! <br>
+
+
+Jawaban : <br>
+
+1.  Ya, bisa. Array of object dapat diorganisir dalam struktur 2 dimensi, memungkinkan pengelompokan objek dalam format yang mirip tabel.<br>
+
+2. Contoh Array of Object 2 Dimensi:<br>
+
+```java
+class PersegiPanjang {
+    int panjang, lebar;
+}
+
+PersegiPanjang[][] ppArray = new PersegiPanjang[2][3]; // Deklarasi array 2D
+
+```
+Dalam contoh ini, setiap elemen array bisa diinstansiasi dan diakses menggunakan dua indeks, i dan j.<br>
+
+3. Error pada Kode Persegi[] pgArray = new Persegi[100];: Kode ini error karena objek Persegi pada indeks ke-5 belum diinstansiasi. Mengakses pgArray[5].sisi sebelum instansiasi menyebabkan NullPointerException.<br>
+
+4. Modifikasi untuk input Length Array menggunakan : <br>
+
+```java
+
+Array of Object pada Array 2 Dimensi: Ya, bisa. Array of object dapat diorganisir dalam struktur 2 dimensi, memungkinkan pengelompokan objek dalam format yang mirip tabel.
+
+Contoh Array of Object 2 Dimensi:
+
+java
+Copy code
+class PersegiPanjang {
+    int panjang, lebar;
+}
+
+PersegiPanjang[][] ppArray = new PersegiPanjang[2][3]; // Deklarasi array 2D
+Dalam contoh ini, setiap elemen array bisa diinstansiasi dan diakses menggunakan dua indeks, i dan j.
+
+Error pada Kode Persegi[] pgArray = new Persegi[100];: Kode ini error karena objek Persegi pada indeks ke-5 belum diinstansiasi. Mengakses pgArray[5].sisi sebelum instansiasi menyebabkan NullPointerException.
+
+Modifikasi untuk Input Length Array:
+
+java
+Copy code
+Scanner sc = new Scanner(System.in);
+System.out.print("Masukkan jumlah: ");
+int jumlah = sc.nextInt();
+persegiPanjang13[] ppArray = new persegiPanjang13[jumlah];
+```
+
 
 ###3.4
 
