@@ -1,19 +1,26 @@
 public class latihan1_limasSegiEmpatSamaSisi {
-    private double salas;
-    private double tinggi;
+    private final int panjangSisiAlas;
+    private final int tinggi;
 
-    public latihan1_limasSegiEmpatSamaSisi(double salas, double height) {
-        this.salas = salas;
+    public latihan1_limasSegiEmpatSamaSisi(int panjangSisiAlas, int tinggi) {
+        this.panjangSisiAlas = panjangSisiAlas;
         this.tinggi = tinggi;
     }
 
-    public double getSurfaceArea() {
-        double luasAlas = salas * salas;
-        double smiring = Math.sqrt((salas / 2) * (salas / 2) + (tinggi * tinggi));
-        return luasAlas + (salas * smiring) * 2;
+    public double hitungVolume() {
+        return (1.0 / 3.0) * luasAlas() * tinggi;
     }
 
-    public double cariVolume() {
-        return (salas * salas * tinggi) / 3;
+    public double hitungLuasPermukaan() {
+        return luasAlas() + hitungLuasSisiTegak();
+    }
+
+    private int luasAlas() {
+        return panjangSisiAlas * panjangSisiAlas;
+    }
+
+    private double hitungLuasSisiTegak() {
+        double panjangSisiMiring = Math.sqrt(Math.pow(0.5 * panjangSisiAlas, 2) + Math.pow(tinggi, 2));
+        return 4 * panjangSisiAlas * panjangSisiMiring / 2;
     }
 }
