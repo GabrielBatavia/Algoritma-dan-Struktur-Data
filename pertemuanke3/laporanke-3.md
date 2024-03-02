@@ -54,7 +54,7 @@ public class persegiPanjang13 {
 
 Output :<br>
 
-![alt text](image.png)
+<img src="./img/image.png">
 
 <br>
 
@@ -140,7 +140,7 @@ public class persegiPanjang13 {
 
 Output : <br>
 
-![alt text](image-1.png)
+<img src="./img/image-1.png">
 
 <br>
 
@@ -221,7 +221,7 @@ public class persegiPanjang13 {
 ```
 
 Output : <br>
-![alt text](image-3.png)
+<img src="./img/image-3.png">
 
 5. Duplikasi instansiasi objek pada indeks array yang sama tidak dianjurkan karena akan menggantikan referensi objek sebelumnya, yang dapat menyebabkan hilangnya akses ke objek tersebut dan potensi pemborosan memori.<br>
 
@@ -272,7 +272,7 @@ public class Balok13 {
 
 Output :
 
-![alt text](image-2.png)
+<img src="./img/image-2.png">
 
 <br>
 
@@ -592,10 +592,19 @@ public class latihan1_main {
 
 ```
 
-Output :
+Output :<br>
 
+<img src="./img/image-4.png">
 
+<br>
 
+<img src="./img/image-5.png">
+
+<br>
+
+<img src="./img/image-6.png">
+
+<br>
 
 
 ### 3.5.2 Latihan 2 Praktikum
@@ -656,8 +665,9 @@ class Mahasiswa {
 
 Output :
 
+<img src="./img/image-7.png">
 
-
+<br>
 
 
 ### 3.5.3 
@@ -746,5 +756,6 @@ class Mahasiswa {
 
 Output : 
 
+<img src="./img/image-8.png">
 
 
