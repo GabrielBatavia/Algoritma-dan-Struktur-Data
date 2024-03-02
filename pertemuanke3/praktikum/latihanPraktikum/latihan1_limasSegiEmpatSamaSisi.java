@@ -13,7 +13,7 @@ public class latihan1_limasSegiEmpatSamaSisi {
         return luasAlas + (alas * smiring) * 2;
     }
 
-    public double getVolume() {
+    public double cariVolume() {
         return (alas * alas * tinggi) / 3;
     }
 }
