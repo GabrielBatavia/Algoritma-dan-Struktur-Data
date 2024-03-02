@@ -5,11 +5,11 @@ public class latihan1_main {
         Scanner sc13 = new Scanner(System.in);
 
         // Input for Cone
-        System.out.println("Enter the radius and slant height for the Cone: ");
-        double coneRadius = sc13.nextDouble();
-        double coneSlantHeight = sc13.nextDouble();
-        Cone cone = new Cone(coneRadius, coneSlantHeight);
-        System.out.println("Cone Surface Area: " + cone.getSurfaceArea() + ", Volume: " + cone.getVolume());
+        System.out.println("Masukkan jari-jari dan sisi miring untuk Kerucut: ");
+        double rKerucut = sc13.nextDouble();
+        double smiringKerucut = sc13.nextDouble();
+        latihan1_kerucut kerucut = new latihan1_kerucut(rKerucut, smiringKerucut);
+        System.out.println("Luas Permukaan Kerucut: " + cone.getSurfaceArea() + ", Volume: " + cone.getVolume());
 
         // Input for Square Pyramid
         System.out.println("Enter the base side length and height for the Square Pyramid: ");
