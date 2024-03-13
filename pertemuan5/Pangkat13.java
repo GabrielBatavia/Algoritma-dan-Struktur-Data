@@ -35,9 +35,9 @@ public class Pangkat13 {
         for(int i=0; i < elemen; i++) {
             png[i] = new Pangkat13();
             System.out.println("Masukkan nilai yang hendak dipangkatkan: ");
-            int nilai = sc13.nextInt();
+            png[i].nilai = sc13.nextInt();
             System.out.println("Masukkan nilai pemangkat: ");
-            int pengkat = sc13.nextInt();
+            png[i].pangkat = sc13.nextInt();
         }
 
         System.out.println("Hasil Pangkat - Brute Force");
