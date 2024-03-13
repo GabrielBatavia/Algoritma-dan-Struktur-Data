@@ -1,1 +1,2 @@
-nilai
+
+            System.out.println("Hasil dari "

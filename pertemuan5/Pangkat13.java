@@ -5,7 +5,7 @@ public class Pangkat13 {
     public int nilai, pangkat;
 
     int pangkatBF(int a, int n) {
-        int hasil = 0;
+        int hasil = 1;
         for (int i = 0; i < n; i++) {
             hasil *= a;
         }
@@ -21,7 +21,7 @@ public class Pangkat13 {
             } else {
                 return (pangkatDC(a,n/2)*pangkatDC(a,n/2));
             }
-        } 
+        }
     }
 
     public static void main(String[] args) {
@@ -45,7 +45,7 @@ public class Pangkat13 {
             System.out.println("Hasil dari "
                 + png[i].nilai+ " pangkat "
                 + png[i].pangkat+ " adalah "
-                + png[i].pangkatDC(png[i].nilai, png[i].pangkat)
+                + png[i].pangkatBF(png[i].nilai, png[i].pangkat)
             );
         }
         System.out.println("Hasil Pangkat - Devide And Conquer");
