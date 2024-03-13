@@ -7,7 +7,7 @@ public class Faktorial13 {
     int faktorialBF(int n){
         int fakto = 1;
         for (int i = 1; i <= n; i++) {
-            fakto = fakto * 1;
+            fakto = fakto * i;
         }
         return fakto;
     }
@@ -31,8 +31,8 @@ public class Faktorial13 {
         Faktorial13[] fk13 = new Faktorial13[10];
         for (int i = 0; i < iJml; i++) {
             fk13[i] = new Faktorial13();
-            System.out.println("Masukkan nilai dara ke-" + (i+1)+ ":");
-            int iNilai = sc13.nextInt();
+            System.out.println("Masukkan nilai data ke-" + (i+1)+ ":");
+            fk13[i].nilai = sc13.nextInt();
         }
 
         System.out.println("Hasil - Brute Force");
@@ -41,7 +41,7 @@ public class Faktorial13 {
         }
         System.out.println("Hasil - Divide and Conquer");
         for (int i = 0; i < iJml; i++) {
-            System.out.println("Hasil perhitunagn faktorial menggunakan Divide and Conquer adlaah" + fk13[i].faktorialDC(fk13[i].nilai));
+            System.out.println("Hasil perhitungan faktorial menggunakan Divide and Conquer adalah " + fk13[i].faktorialDC(fk13[i].nilai));
         }
 
     }
