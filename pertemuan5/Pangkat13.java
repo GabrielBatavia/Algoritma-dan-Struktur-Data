@@ -10,5 +10,17 @@ public class Pangkat13 {
         return hasil;
     }
 
+    int pangkatDC(int a, int n) {
+        if(n==1) {
+            return 1;
+        } else {
+            if(n % 2 == 1) {
+                return (pangkatDC(a,n/2)*pangkatDC(a,n/2)*a);
+            } else {
+                return (pangkatDC(a,n/2)*pangkatDC(a,n/2));
+            }
+        } 
+    }
+
 
 }
