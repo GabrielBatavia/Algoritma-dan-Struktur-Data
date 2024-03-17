@@ -1,4 +1,3 @@
-
 public class Faktorial13 {
 
     public int nilai;

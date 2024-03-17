@@ -1,3 +1,4 @@
+
 public class Pangkat13 {
     
     public int nilai, pangkat;
