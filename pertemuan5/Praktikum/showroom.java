@@ -19,7 +19,16 @@ public class showroom {
             maxIndex = i;
         }
     }
-    System.out.println("Mobil tercepat adalah : " + carArray[maxIndex].merk + " " + carArray[maxIndex].tipe);
+    System.out.println("Mobil tercepat adalah : " + carArray13[maxIndex].merk + " " + carArray13[maxIndex].tipe);
+
+     // Menghitung rata-rata kecepatan
+     int totalPower = 0;
+     for (car13 car : carArray) {
+         totalPower += car.top_power;
+     }
+     double averagePower = (double) totalPower / carArray13.length;
+     System.out.println("Rata-rata kecepatan : " + averagePower);
+ 
 
     
 }
