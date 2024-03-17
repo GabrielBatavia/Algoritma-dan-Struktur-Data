@@ -64,3 +64,8 @@ public class Faktorial13 {
 ![alt text](image.png)
 
 <br>
+
+
+###4.4.2 Hasil
+
+![alt text](image.png)
