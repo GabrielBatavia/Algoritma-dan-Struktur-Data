@@ -11,4 +11,15 @@ public class showroom {
     carArray13[6] = new Car13("Toyota", "86/GT86", 2014, 4180, 609);
     carArray13[7] = new Car13("Toyota", "Golf GTI", 2014, 4180, 631);
 
+
+    // Menemukan mobil dengan top acc
+    int maxIndex = 0;
+    for (int i = 1; i < carArray.length; i++) {
+        if (carArray13[i].top_acceleration > carArray13[maxIndex].top_acceleration) {
+            maxIndex = i;
+        }
+    }
+    System.out.println("Mobil tercepat adalah : " + carArray[maxIndex].merk + " " + carArray[maxIndex].tipe);
+
+    
 }
