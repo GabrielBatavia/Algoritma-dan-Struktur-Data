@@ -3,16 +3,19 @@ import java.util.Scanner;
 public class showroom_car_main {
     public static void main(String[] args) {
         showroom showroomMobil = new showroom();
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc13 = new Scanner(System.in);
 
+        System.out.println("================================================================");
         System.out.println("Selamat datang di program showroom mobil.");
+        System.out.println("================================================================");
         System.out.println("Pilih operasi yang ingin Anda lakukan:");
         System.out.println("1. Temukan mobil tercepat");
         System.out.println("2. Temukan mobil terlambat");
         System.out.println("3. Hitung rata-rata kecepatan mobil");
+        System.out.println("================================================================");
 
         System.out.print("Masukkan pilihan Anda (1/2/3): ");
-        int pilihan = scanner.nextInt();
+        int pilihan = sc13.nextInt();
 
         switch (pilihan) {
             case 1:
