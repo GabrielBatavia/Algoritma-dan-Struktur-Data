@@ -1,7 +1,7 @@
 
 
 
-###4.2.1 Program
+### 4.2.1 Program
 
 ```java
 
@@ -63,13 +63,51 @@ public class Faktorial13 {
 
 <br>
 
-###4.2.2 Hasil
+### 4.2.2 Hasil
 
 ![alt text](image.png)
 
 <br>
 
-###4.3.1 Program
+### 4.2.3 Pertanyaan
+
+1. Pada base line Algoritma Divide Conquer untuk melakukan pencarian nilai faktorial, jelaskan 
+perbedaan bagian kode pada penggunaan if dan else! <br>
+2. Apakah memungkinkan perulangan pada method faktorialBF() dirubah selain menggunakan 
+for?Buktikan! <br>
+3. Jelaskan perbedaan antara fakto *= i; dan int fakto = n * faktorialDC(n-1); !
+
+<br>
+
+#### Jawab :
+
+1. Pada metode faktorialDC(int n), penggunaan if dan else digunakan untuk menentukan kondisi dasar (base case) dan kasus rekursif. Kondisi if(n==1) adalah base case yang menentukan bahwa jika nilai n adalah 1, maka faktorial dari n adalah 1. Ini merupakan kondisi penghentian rekursi dan menghindari rekursi tak terbatas. Bagian else mengandung logika rekursif, di mana int fakto = n * faktorialDC(n-1); merupakan langkah rekursif yang menghitung faktorial dari n dengan mengalikan n dengan faktorial dari n-1. Ini mencerminkan sifat faktorial, di mana faktorial dari n (n!) adalah hasil kali n dengan faktorial dari n-1 ((n-1)!).<br>
+
+2. Ya, memungkinkan. Perulangan pada method faktorialBF() dapat menggunakan struktur perulangan lain seperti while atau do-while. Berikut adalah contoh penggunaan while untuk menghitung faktorial:<br>
+```java
+int faktorialBF(int n) {
+    int fakto = 1;
+    int i = 1;
+    while(i <= n) {
+        fakto = fakto * i;
+        i++;
+    }
+    return fakto;
+}
+
+```
+
+3. Perbedaan antara fakto *= i; dan int fakto = n * faktorialDC(n-1);:<br>
+
+fakto *= i; adalah operasi penugasan yang digunakan dalam metode iteratif (faktorialBF()), yang secara efektif sama dengan fakto = fakto * i;. Ini berarti nilai fakto dikalikan dengan i dan hasilnya disimpan kembali ke dalam fakto. Operasi ini mengakumulasikan hasil perkalian dari 1 hingga n untuk menghitung faktorial secara bertahap.<br>
+
+int fakto = n * faktorialDC(n-1); digunakan dalam pendekatan rekursif (faktorialDC()). Ini menciptakan sebuah ekspresi rekursif dimana faktorial dari n dihitung dengan mengalikan n dengan hasil rekursif dari faktorialDC(n-1). Ini merefleksikan definisi matematika dari faktorial yang menyatakan bahwa faktorial dari n (n!) adalah n dikalikan dengan faktorial dari n-1 ((n-1)!).<br>
+
+
+
+
+
+### 4.3.1 Program
 
 ```java
 
