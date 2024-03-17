@@ -1,34 +1,74 @@
 public class showroom {
-    
-    car13[] carArray13 = new car13[7]; 
 
-    carArray13[0] = new Car13("BMW", "M2 Coupe", 2016, 6816, 728);
-    carArray13[1] = new Car13("Ford", "Fiesta ST", 2014, 3921, 575);
-    carArray13[2] = new Car13("Nissan", "370Z", 2009, 4360, 657);
-    carArray13[3] = new Car13("Subaru", "BRZ", 2014, 4058, 609);
-    carArray13[4] = new Car13("Subaru", "Impreza WRX STI", 2013, 6255, 703);
-    carArray13[5] = new Car13("Toyota", "AE86 Trueno", 1986, 3700, 553);
-    carArray13[6] = new Car13("Toyota", "86/GT86", 2014, 4180, 609);
-    carArray13[7] = new Car13("Toyota", "Golf GTI", 2014, 4180, 631);
+    car13[] carArray13 = new car13[8];
 
+    public showroom() {
+        carArray13[0] = new car13("BMW", "M2 Coupe", 2016, 6816, 728);
+        carArray13[1] = new car13("Ford", "Fiesta ST", 2014, 3921, 575);
+        carArray13[2] = new car13("Nissan", "370Z", 2009, 4360, 657);
+        carArray13[3] = new car13("Subaru", "BRZ", 2014, 4058, 609);
+        carArray13[4] = new car13("Subaru", "Impreza WRX STI", 2013, 6255, 703);
+        carArray13[5] = new car13("Toyota", "AE86 Trueno", 1986, 3700, 553);
+        carArray13[6] = new car13("Toyota", "86/GT86", 2014, 4180, 609);
+        carArray13[7] = new car13("Toyota", "Golf GTI", 2014, 4180, 631);
 
-    // Menemukan mobil dengan top acc
-    int maxIndex = 0;
-    for (int i = 1; i < carArray.length; i++) {
-        if (carArray13[i].top_acceleration > carArray13[maxIndex].top_acceleration) {
-            maxIndex = i;
+        temukanMobilTercepat();
+        hitungRataRataKecepatan();
+        car13 mobilTercepatDC = temukanMobilTercepatDC(0, carArray13.length - 1);
+        System.out.println("Mobil tercepat dengan DC adalah: " + mobilTercepatDC.merk + " " + mobilTercepatDC.tipe);
+        temukanMobilTerlambat();
+        car13 mobilTerlambatDC = temukanMobilTerlambatDC(0, carArray13.length - 1);
+        System.out.println("Mobil terlambat dengan DC adalah: " + mobilTerlambatDC.merk + " " + mobilTerlambatDC.tipe);
+    }
+
+    public void temukanMobilTercepat() {
+        int indeksMaks = 0;
+        for (int i = 1; i < carArray13.length; i++) {
+            if (carArray13[i].top_acceleration > carArray13[indeksMaks].top_acceleration) {
+                indeksMaks = i;
+            }
+        }
+        System.out.println("Mobil tercepat adalah: " + carArray13[indeksMaks].merk + " " + carArray13[indeksMaks].tipe);
+    }
+
+    public car13 temukanMobilTercepatDC(int awal, int akhir) {
+        if (awal == akhir) {
+            return carArray13[awal];
+        } else {
+            int tengah = (awal + akhir) / 2;
+            car13 kiri = temukanMobilTercepatDC(awal, tengah);
+            car13 kanan = temukanMobilTercepatDC(tengah + 1, akhir);
+            return kiri.top_acceleration > kanan.top_acceleration ? kiri : kanan;
         }
     }
-    System.out.println("Mobil tercepat adalah : " + carArray13[maxIndex].merk + " " + carArray13[maxIndex].tipe);
 
-     // Menghitung rata-rata kecepatan
-     int totalPower = 0;
-     for (car13 car : carArray) {
-         totalPower += car.top_power;
-     }
-     double averagePower = (double) totalPower / carArray13.length;
-     System.out.println("Rata-rata kecepatan : " + averagePower);
- 
+    public void temukanMobilTerlambat() {
+        int indeksMin = 0;
+        for (int i = 1; i < carArray13.length; i++) {
+            if (carArray13[i].top_acceleration < carArray13[indeksMin].top_acceleration) {
+                indeksMin = i;
+            }
+        }
+        System.out.println("Mobil terlambat adalah: " + carArray13[indeksMin].merk + " " + carArray13[indeksMin].tipe);
+    }
 
-    
+    public car13 temukanMobilTerlambatDC(int awal, int akhir) {
+        if (awal == akhir) {
+            return carArray13[awal];
+        } else {
+            int tengah = (awal + akhir) / 2;
+            car13 kiri = temukanMobilTerlambatDC(awal, tengah);
+            car13 kanan = temukanMobilTerlambatDC(tengah + 1, akhir);
+            return kiri.top_acceleration < kanan.top_acceleration ? kiri : kanan;
+        }
+    }
+
+    public void hitungRataRataKecepatan() {
+        int totalKecepatan = 0;
+        for (car13 mobil : carArray13) {
+            totalKecepatan += mobil.top_power;
+        }
+        double rataRataKecepatan = (double) totalKecepatan / carArray13.length;
+        System.out.println("Rata-rata kecepatan: " + rataRataKecepatan);
+    }
 }
