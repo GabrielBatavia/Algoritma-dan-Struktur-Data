@@ -6,7 +6,7 @@ public class car13 {
         this.merk = merk;
         this.tipe = tipe;
         this.tahun = tahun;
-        int top_acc = top_acceleration;
-        int top_pw = top_power;
+        this.top_acceleration = top_acceleration;
+        this.top_power = top_power;
     }
 }
