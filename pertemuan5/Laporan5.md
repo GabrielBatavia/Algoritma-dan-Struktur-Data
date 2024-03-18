@@ -325,9 +325,20 @@ public class Sum13_main {
 
 ```
 
-
 <br>
 
 ### 4.4.2 Hasil
 
 ![alt text](image.png)
+
+<br>
+
+
+### 4.4.3 Pertanyaan
+
+1. Mengapa terdapat formulasi return value berikut?Jelaskan!<br>
+2. Kenapa dibutuhkan variable mid pada method TotalDC()? <br>
+3. Program perhitungan keuntungan suatu perusahaan ini hanya untuk satu perusahaan saja. 
+Bagaimana cara menghitung sekaligus keuntungan beberapa bulan untuk beberapa 
+perusahaan.(Setiap perusahaan bisa saja memiliki jumlah bulan berbeda-beda)? Buktikan 
+dengan program!<br>
