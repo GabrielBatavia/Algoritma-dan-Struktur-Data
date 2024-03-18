@@ -350,5 +350,77 @@ Jawaban : <br>
 1. 
 Formulasi return value dalam metode totalDC digunakan untuk memecah masalah menjadi sub-masalah yang lebih kecil hingga mencapai kasus dasar, memungkinkan perhitungan total keuntungan secara efisien melalui pendekatan Divide and Conquer. Ini meminimalisir jumlah operasi dengan membagi array dan menghitung total keuntungan secara rekursif dari sub-array.<br>
 
-2. 
+2. Variable mid diperlukan sebagai titik tengah untuk membagi array keuntungan menjadi dua bagian. Ini adalah inti dari pendekatan Divide and Conquer, dimana masalah dibagi menjadi dua sub-problem yang hampir sama besar. mid digunakan untuk menentukan batas akhir sub-array pertama dan batas awal sub-array kedua yang akan diolah. Dengan membagi array menjadi dua secara rekursif, proses perhitungan menjadi lebih cepat dan efisien dibandingkan dengan melakukan iterasi secara linear menggunakan brute force.<br>
 
+3. 
+
+```java
+
+import java.util.Scanner;
+
+public class Sum13 {
+    int elemen;
+    double[][] keuntungan;
+    int jumlahPerusahaan;
+
+    Sum13(int elemen, int jumlahPerusahaan) {
+        this.elemen = elemen;
+        this.jumlahPerusahaan = jumlahPerusahaan;
+        this.keuntungan = new double[jumlahPerusahaan][elemen];
+    }
+
+    double totalBF(double[] arr){
+        double total = 0;
+        for(int i=0; i < arr.length; i++) {
+            total = total + arr[i];
+        }
+        return total;
+    }
+
+    double totalDC(double[] arr, int l, int r) {
+        if(l==r){
+            return arr[l];
+        } else if(l < r) {
+            int mid = (l+r)/2;
+            double lsum = totalDC(arr, l, mid);
+            double rsum = totalDC(arr, mid+1, r);
+            return lsum + rsum;
+        }
+        return 0;
+    }
+}
+
+public class Sum13_main {
+    
+    public static void main(String[] args) {
+        
+        Scanner sc13 = new Scanner(System.in);
+        System.out.print("Masukkan jumlah perusahaan: ");
+        int jumlahPerusahaan = sc13.nextInt();
+        
+        System.out.print("Masukkan jumlah bulan: ");
+        int elm = sc13.nextInt();
+
+        Sum13 sm = new Sum13(elm, jumlahPerusahaan);
+
+        for (int j = 0; j < sm.jumlahPerusahaan; j++) {
+            System.out.println("Perusahaan ke-" + (j + 1));
+            for (int i = 0; i < sm.elemen; i++) {
+                System.out.print("Masukkan keuntungan bulan ke-" + (i + 1) + ": ");
+                sm.keuntungan[j][i] = sc13.nextDouble();
+            }
+        }
+
+        for (int j = 0; j < sm.jumlahPerusahaan; j++) {
+            System.out.println("============================================");
+            System.out.println("Perusahaan ke-" + (j + 1));
+            System.out.println("Algoritma Brute Force");
+            System.out.println("Total keuntungan perusahaan selama " + sm.elemen + " bulan adalah = " + sm.totalBF(sm.keuntungan[j]));
+            System.out.println("Algoritma Divide Conquer");
+            System.out.println("Total keuntungan perusahaan selama " + sm.elemen + " bulan adalah = " + String.format("%.2f", sm.totalDC(sm.keuntungan[j], 0, sm.elemen-1)));
+        }
+    }
+}
+
+
+```
