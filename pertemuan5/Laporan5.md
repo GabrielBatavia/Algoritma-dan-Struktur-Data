@@ -251,6 +251,82 @@ switch(pilihan) {
 
 <br>
 
+### 4.4.1 Program
+
+```java
+
+public class Sum13 {
+    int elemen;
+    double keuntungan[], total;
+
+    Sum13(int elemen) {
+        this.elemen = elemen;
+        this.keuntungan = new double[elemen];
+        this.total = 0;
+    }
+
+    double totalBF(double arr[]){
+        for(int i=0; i < elemen; i++) {
+            total = total + arr[i];
+        }
+        return total;
+    }
+
+    double totalDC(double arr[], int l, int r) {
+        if(l==r){
+            return arr[l];
+        } else if(l < r) {
+            int mid = (l+r)/2;
+            double lsum = totalDC(arr, l, mid);
+            double rsum = totalDC(arr, mid+1, r);
+            return lsum + rsum;
+        }
+        return 0;
+    }
+
+
+}
+
+```
+
+
+```java
+
+import java.util.Scanner;
+
+public class Sum13_main {
+    
+    public static void main(String[] args) {
+        
+        Scanner sc13 = new Scanner(System.in);
+        System.out.println("=========================================");
+        System.out.println("Program Menghitung Keuntungan Total (Satuan Juta, Misal 5.9)");
+        System.out.print("Masukkan jumlah bulan : ");
+        int elm = sc13.nextInt();
+
+        Sum13 sm = new Sum13(elm);
+        System.out.println("============================================");
+        for (int i = 0; i < sm.elemen; i++) {
+            System.out.print("Masukkan untuk bulan ke - "+(i+1)+" = ");
+            sm.keuntungan[i] = sc13.nextDouble();
+        }
+
+        System.out.println("============================================");
+        System.out.println("Algoritma Brute Force");
+        System.out.println("Total keuntungan perusahaan selama " + sm.elemen + " bulan adalah = " + sm.totalBF(sm.keuntungan));
+        System.out.println("============================================");
+        System.out.println("Algoritma Divide Conquer");
+        System.out.println("Total keuntungan perusahaan selama " + sm.elemen + " bulan adalah = " + String.format("%.2f", sm.totalDC(sm.keuntungan, 0, sm.elemen-1)));
+        
+
+    }
+    
+}
+
+```
+
+
+<br>
 
 ### 4.4.2 Hasil
 
