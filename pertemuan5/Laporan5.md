@@ -204,10 +204,54 @@ konstruktor.
 4. Tambahkan menu agar salah satu method yang terpilih saja yang akan dijalankan menggunakan 
 switch-case!
 
+<br>
+
+Jawaban :
+
+1. PangkatBF() menghitung pangkat dengan mengalikan bilangan secara berulang. <br>
+PangkatDC() menggunakan pendekatan divide and conquer, membagi masalah menjadi sub-masalah yang lebih kecil untuk mengurangi jumlah operasi.<br>
+
+2. Tahap combine ada dalam pangkatDC() ketika hasil sub-masalah dikombinasikan dengan perkalian.<br>
+
+Contoh tahap combine dalam pangkatDC() adalah sebagai berikut:<br>
+
+Ketika n genap: return (pangkatDC(a,n/2)*pangkatDC(a,n/2));<br>
+Ketika n ganjil: return (pangkatDC(a,n/2)*pangkatDC(a,n/2)*a);<br>
+
+3. Tambahkan konstruktor di Pangkat13 untuk menginisialisasi nilai dan pangkat, dan buat objek dengan konstruktor tersebut di Pangkat13_main.
+
+```java
+
+public Pangkat13(int nilai, int pangkat) {
+    this.nilai = nilai;
+    this.pangkat = pangkat;
+}
+
+```
+
+
+4. 
+
+```java
+
+System.out.println("1. Brute Force\n2. Divide and Conquer\nPilihan: ");
+int pilihan = sc13.nextInt();
+switch(pilihan) {
+    case 1:
+        // pangkatBF
+        break;
+    case 2:
+        // pangkatDC
+        break;
+}
+
+
+```
+
 
 <br>
 
 
-###4.4.2 Hasil
+### 4.4.2 Hasil
 
 ![alt text](image.png)
