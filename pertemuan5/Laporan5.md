@@ -191,6 +191,22 @@ public class Pangkat13_main {
 
 <br>
 
+### 4.3.2 Hasil
+
+<br>
+
+### 4.3.3 Program
+
+1. Jelaskan mengenai perbedaan 2 method yang dibuat yaitu PangkatBF() dan PangkatDC()! 
+2. Apakah tahap combine sudah termasuk dalam kode tersebut?Tunjukkan! 
+3. Modifikasi kode program tersebut, anggap proses pengisian atribut dilakukan dengan 
+konstruktor. 
+4. Tambahkan menu agar salah satu method yang terpilih saja yang akan dijalankan menggunakan 
+switch-case!
+
+
+<br>
+
 
 ###4.4.2 Hasil
 
