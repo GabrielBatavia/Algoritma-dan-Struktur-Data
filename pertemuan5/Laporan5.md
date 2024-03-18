@@ -103,8 +103,7 @@ fakto *= i; adalah operasi penugasan yang digunakan dalam metode iteratif (fakto
 
 int fakto = n * faktorialDC(n-1); digunakan dalam pendekatan rekursif (faktorialDC()). Ini menciptakan sebuah ekspresi rekursif dimana faktorial dari n dihitung dengan mengalikan n dengan hasil rekursif dari faktorialDC(n-1). Ini merefleksikan definisi matematika dari faktorial yang menyatakan bahwa faktorial dari n (n!) adalah n dikalikan dengan faktorial dari n-1 ((n-1)!).<br>
 
-
-
+<br>
 
 
 ### 4.3.1 Program
@@ -193,16 +192,17 @@ public class Pangkat13_main {
 
 ### 4.3.2 Hasil
 
+
 <br>
 
 ### 4.3.3 Program
 
-1. Jelaskan mengenai perbedaan 2 method yang dibuat yaitu PangkatBF() dan PangkatDC()! 
-2. Apakah tahap combine sudah termasuk dalam kode tersebut?Tunjukkan! 
+1. Jelaskan mengenai perbedaan 2 method yang dibuat yaitu PangkatBF() dan PangkatDC()! <br>
+2. Apakah tahap combine sudah termasuk dalam kode tersebut?Tunjukkan! <br>
 3. Modifikasi kode program tersebut, anggap proses pengisian atribut dilakukan dengan 
-konstruktor. 
+konstruktor. <br>
 4. Tambahkan menu agar salah satu method yang terpilih saja yang akan dijalankan menggunakan 
-switch-case!
+switch-case! <br>
 
 <br>
 
@@ -342,3 +342,13 @@ public class Sum13_main {
 Bagaimana cara menghitung sekaligus keuntungan beberapa bulan untuk beberapa 
 perusahaan.(Setiap perusahaan bisa saja memiliki jumlah bulan berbeda-beda)? Buktikan 
 dengan program!<br>
+
+<br>
+
+Jawaban : <br>
+
+1. 
+Formulasi return value dalam metode totalDC digunakan untuk memecah masalah menjadi sub-masalah yang lebih kecil hingga mencapai kasus dasar, memungkinkan perhitungan total keuntungan secara efisien melalui pendekatan Divide and Conquer. Ini meminimalisir jumlah operasi dengan membagi array dan menghitung total keuntungan secara rekursif dari sub-array.<br>
+
+2. 
+
