@@ -27,7 +27,7 @@ public class showroom_car_main {
                 System.out.println("Mobil terlambat dengan DC adalah: " + mobilTerlambatDC.merk + " " + mobilTerlambatDC.tipe);
                 break;
             case 3:
-                shMobil.hitungRataRataTopPower();
+                shMobil.hitungRataRataTopPowerBF();
                 break;
             default:
                 System.out.println("Pilihan tidak valid. Silakan pilih antara 1, 2, atau 3.");
