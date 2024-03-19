@@ -12,7 +12,7 @@ public class showroom {
         carArray13[6] = new car13("Toyota", "86/GT86", 2014, 4180, 609);
         carArray13[7] = new car13("Toyota", "Golf GTI", 2014, 4180, 631);
 
-        hitungRataRataKecepatan();
+        hitungRataRataTopPower();
         car13 mobilTercepatDC = temukanMobilTercepatDC(0, carArray13.length - 1);
         System.out.println("Mobil tercepat dengan DC adalah: " + mobilTercepatDC.merk + " " + mobilTercepatDC.tipe);
 
@@ -43,7 +43,7 @@ public class showroom {
         }
     }
 
-    public void hitungRataRataKecepatan() {
+    public void hitungRataRataTopPower() {
         int totalKecepatan = 0;
         for (car13 mobil : carArray13) {
             totalKecepatan += mobil.top_power;
