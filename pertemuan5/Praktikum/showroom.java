@@ -59,6 +59,6 @@ public class showroom {
             totalKecepatan += mobil.top_power;
         }
         double rataRataKecepatan = (double) totalKecepatan / carArray13.length;
-        System.out.println("Rata-rata kecepatan: " + rataRataKecepatan);
+        System.out.println("Rata-rata kecepatan Dengan BF: " + rataRataKecepatan);
     }
 }

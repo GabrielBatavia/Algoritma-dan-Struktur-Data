@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class showroom_car_main {
     public static void main(String[] args) {
-        showroom showroomMobil = new showroom();
+        showroom shMobil = new showroom();
         Scanner sc13 = new Scanner(System.in);
 
         System.out.println("================================================================");
@@ -19,15 +19,15 @@ public class showroom_car_main {
 
         switch (pilihan) {
             case 1:
-                car13 mobilTercepatDC = showroomMobil.temukanMobilTercepatDC(0, showroomMobil.carArray13.length - 1);
+                car13 mobilTercepatDC = shMobil.temukanMobilTercepatDC(0, shMobil.carArray13.length - 1);
                 System.out.println("Mobil tercepat dengan DC adalah: " + mobilTercepatDC.merk + " " + mobilTercepatDC.tipe);
                 break;
             case 2:
-                car13 mobilTerlambatDC = showroomMobil.temukanMobilTerlambatDC(0, showroomMobil.carArray13.length - 1);
+                car13 mobilTerlambatDC = shMobil.temukanMobilTerlambatDC(0, shMobil.carArray13.length - 1);
                 System.out.println("Mobil terlambat dengan DC adalah: " + mobilTerlambatDC.merk + " " + mobilTerlambatDC.tipe);
                 break;
             case 3:
-                showroomMobil.hitungRataRataTopPower();
+                shMobil.hitungRataRataTopPower();
                 break;
             default:
                 System.out.println("Pilihan tidak valid. Silakan pilih antara 1, 2, atau 3.");
