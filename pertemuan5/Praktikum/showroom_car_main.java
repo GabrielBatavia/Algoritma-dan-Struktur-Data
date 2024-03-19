@@ -19,7 +19,8 @@ public class showroom_car_main {
 
         switch (pilihan) {
             case 1:
-                showroomMobil.temukanMobilTercepat();
+                showroomMobil.temukanMobilTercepatBF();
+                showroomMobil.temukanMobilTercepatDC(pilihan, pilihan)();
                 break;
             case 2:
                 showroomMobil.temukanMobilTerlambat();

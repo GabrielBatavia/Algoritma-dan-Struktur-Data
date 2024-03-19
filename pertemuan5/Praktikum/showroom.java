@@ -12,24 +12,14 @@ public class showroom {
         carArray13[6] = new car13("Toyota", "86/GT86", 2014, 4180, 609);
         carArray13[7] = new car13("Toyota", "Golf GTI", 2014, 4180, 631);
 
-        temukanMobilTercepat();
         hitungRataRataKecepatan();
         car13 mobilTercepatDC = temukanMobilTercepatDC(0, carArray13.length - 1);
         System.out.println("Mobil tercepat dengan DC adalah: " + mobilTercepatDC.merk + " " + mobilTercepatDC.tipe);
-        temukanMobilTerlambat();
+
         car13 mobilTerlambatDC = temukanMobilTerlambatDC(0, carArray13.length - 1);
         System.out.println("Mobil terlambat dengan DC adalah: " + mobilTerlambatDC.merk + " " + mobilTerlambatDC.tipe);
     }
 
-    public void temukanMobilTercepat() {
-        int indeksMaks = 0;
-        for (int i = 1; i < carArray13.length; i++) {
-            if (carArray13[i].top_acceleration > carArray13[indeksMaks].top_acceleration) {
-                indeksMaks = i;
-            }
-        }
-        System.out.println("Mobil tercepat adalah: " + carArray13[indeksMaks].merk + " " + carArray13[indeksMaks].tipe);
-    }
 
     public car13 temukanMobilTercepatDC(int awal, int akhir) {
         if (awal == akhir) {
@@ -40,16 +30,6 @@ public class showroom {
             car13 kanan = temukanMobilTercepatDC(tengah + 1, akhir);
             return kiri.top_acceleration > kanan.top_acceleration ? kiri : kanan;
         }
-    }
-
-    public void temukanMobilTerlambat() {
-        int indeksMin = 0;
-        for (int i = 1; i < carArray13.length; i++) {
-            if (carArray13[i].top_acceleration < carArray13[indeksMin].top_acceleration) {
-                indeksMin = i;
-            }
-        }
-        System.out.println("Mobil terlambat adalah: " + carArray13[indeksMin].merk + " " + carArray13[indeksMin].tipe);
     }
 
     public car13 temukanMobilTerlambatDC(int awal, int akhir) {
