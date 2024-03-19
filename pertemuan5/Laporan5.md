@@ -65,7 +65,7 @@ public class Faktorial13 {
 
 ### 4.2.2 Hasil
 
-![alt text](image.png)
+<img src="./img/image.png">
 
 <br>
 
@@ -191,6 +191,9 @@ public class Pangkat13_main {
 <br>
 
 ### 4.3.2 Hasil
+
+
+<img src="./img/image-1.png">
 
 
 <br>
@@ -329,7 +332,7 @@ public class Sum13_main {
 
 ### 4.4.2 Hasil
 
-![alt text](image.png)
+<img src="./img/image3.png">
 
 <br>
 

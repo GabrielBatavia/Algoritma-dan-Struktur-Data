@@ -1,37 +1,40 @@
+
+
 import java.util.Scanner;
 
-public class showroom_car_main {
-    public static void main(String[] args) {
-        showroom shMobil = new showroom();
+public class Pangkat13_main {
+        public static void main(String[] args) {
+        
         Scanner sc13 = new Scanner(System.in);
+        System.out.println("==================================================");
+        System.out.println("Masukkan jumlah elemen yang dihitung: ");
+        int elemen = sc13.nextInt();
 
-        System.out.println("================================================================");
-        System.out.println("Selamat datang di program showroom mobil.");
-        System.out.println("================================================================");
-        System.out.println("Pilih operasi yang ingin Anda lakukan:");
-        System.out.println("1. Temukan mobil tercepat dengan DC");
-        System.out.println("2. Temukan mobil terlambat dengan DC");
-        System.out.println("3. Hitung rata-rata kecepatan mobil");
-        System.out.println("================================================================");
+        Pangkat13[] png = new Pangkat13[elemen];
+        for(int i=0; i < elemen; i++) {
+            png[i] = new Pangkat13();
+            System.out.println("Masukkan nilai yang hendak dipangkatkan: ");
+            png[i].nilai = sc13.nextInt();
+            System.out.println("Masukkan nilai pemangkat: ");
+            png[i].pangkat = sc13.nextInt();
+        }
 
-        System.out.print("Masukkan pilihan Anda (1/2/3): ");
-        int pilihan = sc13.nextInt();
-
-        switch (pilihan) {
-            case 1:
-                car13 mobilTercepatDC = shMobil.temukanMobilTercepatDC(0, shMobil.carArray13.length - 1);
-                System.out.println("Mobil tercepat dengan DC adalah: " + mobilTercepatDC.merk + " " + mobilTercepatDC.tipe);
-                break;
-            case 2:
-                car13 mobilTerlambatDC = shMobil.temukanMobilTerlambatDC(0, shMobil.carArray13.length - 1);
-                System.out.println("Mobil terlambat dengan DC adalah: " + mobilTerlambatDC.merk + " " + mobilTerlambatDC.tipe);
-                break;
-            case 3:
-                shMobil.hitungRataRataTopPowerBF();
-                break;
-            default:
-                System.out.println("Pilihan tidak valid. Silakan pilih antara 1, 2, atau 3.");
-                break;
+        System.out.println("Hasil Pangkat - Brute Force");
+        for(int i=0; i < elemen; i++) {
+            System.out.println("Hasil dari "
+                + png[i].nilai+ " pangkat "
+                + png[i].pangkat+ " adalah "
+                + png[i].pangkatBF(png[i].nilai, png[i].pangkat)
+            );
+        }
+        System.out.println("Hasil Pangkat - Devide And Conquer");
+        for(int i=0; i < elemen; i++) {
+            System.out.println("Hasil dari "
+                + png[i].nilai+ " pangkat "
+                + png[i].pangkat+ " adalah "
+                + png[i].pangkatDC(png[i].nilai, png[i].pangkat)
+            );
         }
     }
+
 }
