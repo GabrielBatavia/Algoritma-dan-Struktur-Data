@@ -568,3 +568,11 @@ public class showroom_car_main {
 ### 4.5.2 Hasil
 
 <img src="./img/latihan_1.png">
+
+<br>
+
+<img src="./img/latihan_2.png">
+
+<br>
+
+<img src="./img/latihan_3.png">
