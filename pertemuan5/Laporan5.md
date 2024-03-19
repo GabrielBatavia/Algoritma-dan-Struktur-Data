@@ -570,3 +570,7 @@ public class showroom_car_main {
 ```
 
 <br>
+
+### 4.5.2 Hasil
+
+<img src="./img/latihan_1.png">
