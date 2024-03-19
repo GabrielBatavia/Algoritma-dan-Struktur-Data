@@ -28,10 +28,15 @@ public class showroom {
             int tengah = (awal + akhir) / 2;
             car13 kiri = temukanMobilTercepatDC(awal, tengah);
             car13 kanan = temukanMobilTercepatDC(tengah + 1, akhir);
-            return kiri.top_acceleration > kanan.top_acceleration ? kiri : kanan;
+            
+            if (kiri.top_acceleration > kanan.top_acceleration) {
+                return kiri;
+            } else {
+                return kanan;
+            }
         }
     }
-
+    
     public car13 temukanMobilTerlambatDC(int awal, int akhir) {
         if (awal == akhir) {
             return carArray13[awal];
@@ -39,7 +44,12 @@ public class showroom {
             int tengah = (awal + akhir) / 2;
             car13 kiri = temukanMobilTerlambatDC(awal, tengah);
             car13 kanan = temukanMobilTerlambatDC(tengah + 1, akhir);
-            return kiri.top_acceleration < kanan.top_acceleration ? kiri : kanan;
+            
+            if (kiri.top_acceleration < kanan.top_acceleration) {
+                return kiri;
+            } else {
+                return kanan;
+            }
         }
     }
 
