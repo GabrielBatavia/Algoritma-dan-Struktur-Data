@@ -105,3 +105,24 @@ public class Mahasiswa_main {
 <br>
 
 ### 5.2.2 Hasil
+
+<img src="./img/image.png">
+
+<br>
+
+<img src="./img/image_2.png">
+
+<br>
+
+### 5.2.3 Pertanyaan
+
+
+
+
+
+
+
+
+<br>
+
+### 5.2.2 Program
