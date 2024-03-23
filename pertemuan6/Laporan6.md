@@ -116,12 +116,90 @@ public class Mahasiswa_main {
 
 ### 5.2.3 Pertanyaan
 
+<br>
 
+1. Terdapat di method apakah proses bubble sort?<br>
 
+Jawab :
 
+Proses bubble sort terdapat di method bubbleSort() pada kelas DaftarMahasiswaBerprestasi13.<br>
 
+```java
 
+    void bubbleSort() {
+    for (int i = 0; i < listMhs.length - 1; i++) {
+        for (int j = 1; j < listMhs.length - i; j++) {
+            if (listMhs[j].ipk > listMhs[j - 1].ipk) {
+                Mahasiswa tmp = listMhs[j];
+                listMhs[j] = listMhs[j - 1];
+                listMhs[j - 1] = tmp;
+            }
+        }
+    }
+}
 
+```
+
+<br>
+
+2. Di dalam method bubbleSort(), terdapat baris program seperti di bawah ini:<br>
+
+```java
+if (listMhs[j].ipk > listMhs[j - 1].ipk) {
+    Mahasiswa tmp = listMhs[j];
+    listMhs[j] = listMhs[j - 1];
+    listMhs[j - 1] = tmp;
+}
+```
+
+<br>
+
+Untuk apakah proses tersebut?<br>
+
+Jawab :
+
+Proses tersebut digunakan untuk membandingkan nilai IPK dua objek Mahasiswa13 yang bersebelahan dalam array listMhs. Jika nilai IPK objek pada indeks j lebih besar dari nilai IPK objek pada indeks j-1, maka kedua objek tersebut ditukar posisinya. Ini bertujuan untuk mengurutkan daftar mahasiswa secara descending (menurun) berdasarkan nilai IPK mereka melalui metode sorting bubble sort.
+
+<br>
+
+3. Perhatikan perulangan di dalam bubbleSort() di bawah ini!<br>
+
+```java
+for (int i = 0; i < listMhs.length - 1; i++>) {
+    for (int j = 1; j < listMhs.length - i; j++>) {
+
+    }
+}
+```
+- Apakah perbedaan antara kegunaan perulangan i dan perulangan j?
+
+Jawab : 
+
+Perulangan i digunakan untuk mengontrol berapa kali proses sorting harus diulang melalui seluruh array, sedangkan perulangan j digunakan untuk melakukan perbandingan dan pertukaran (jika diperlukan) antar elemen yang bersebelahan dalam array selama satu iterasi sorting.
+
+<br>
+
+- Mengapa syarat dari perulangan i adalah i < listMhs.length - 1?
+
+Jawab :
+
+Hal utama yang harus dilakukan pada proses perulangan i adalah untuk mengulang-ulang proses swapping hingga menjadi terurut. Karena bubble sort hanya membandingkan kedua nilai, jadi bisa saja datanya masih tidak terurut. Maka dari itu proses swapping di bubble sort harus diulang sebanyak elemen yang dimiliki. Panjang dari elemen array dikurangi 1 karena iterasi yang terakhir sudah pasti datanya terurut. Jadi tidak perlu dilakukan iterasi lagi.
+
+<br>
+
+- Mengapa syarat dari perulangan j adalah j < listMhs.length - i; j++?
+
+Jawab :
+
+Karena pada setiap proses setelah swapping di bubble sort, data yang paling kanan dari sebuah array sudah pasti terurut. Jadi tidak perlu dilakukan proses swapping.
+
+<br>
+
+- Jika banyak data di dalam listMhs adalah 50, maka berapakali perulangan i akan berlangsung? Dan ada berapa tahap bubble sort yang ditempuh?
+
+Jawab :
+
+Iterasi pada i akan dilakukan sebanyak 49 kali dari hasil listMhs.length - 1. Sedangkan untuk jumlah tahapnya akan sesuai dengan tahapan iterasi pada j selama iterasi i berlangsung. Hasilnya adalah 1225 yang didapat dari hasil 49 + 48 + 47 + 46 + 45 + ... + 1 = 1225.
 
 <br>
 
