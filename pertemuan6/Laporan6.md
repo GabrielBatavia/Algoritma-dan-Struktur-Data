@@ -266,6 +266,40 @@ Method tersebut digunakan untuk menentukan indeks pada array of object listMhs d
 <br>
 
 
+### 5.4.1 Program
+
+```java
+
+    void insertionSort() {
+        for (int i = 1; i < listMhs.length; i++) {
+            Mahasiswa13 tmp = listMhs[i];
+            int j = i;
+            while (j > 0 && listMhs[j-1].ipk > tmp.ipk) {
+                listMhs[j] = listMhs[j-1];
+                j--;
+            }
+            listMhs[j] = tmp;
+        }
+    }
+
+```
+<br>
+
+```java
+
+        System.out.println("Data Mahasiswa setelah sorting asc berdasarkan ipk");
+        list.selectionSort();
+        list.tampil();
+
+```
+<br>
+
+### 5.4.2 Hasil
+
+
+
+<br>
+
 
 
 
