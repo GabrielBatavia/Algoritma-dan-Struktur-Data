@@ -203,7 +203,7 @@ Iterasi pada i akan dilakukan sebanyak 49 kali dari hasil listMhs.length - 1. Se
 
 <br>
 
-### 5.2.2 Program
+### 5.3.1 Program
 
 ```java
 
@@ -233,3 +233,39 @@ Iterasi pada i akan dilakukan sebanyak 49 kali dari hasil listMhs.length - 1. Se
         list.tampil();
 
 ```
+
+
+### 5.3.2 Hasil
+
+<img src="./img/image_3.png">
+
+<br>
+
+
+### 5.3.3 Pertanyaan
+
+1. Di dalam method selection sort, terdapat baris program seperti di bawah ini:
+
+```java
+
+    int idxMin = i;
+    for (int j = i +1; j < listMhs.length; j++>) {
+        if (listMhs[j].ipk < listMhs[idxMin].ipk>) {
+            idxMin = j;
+        }
+    }
+
+```
+
+Untuk apakah proses tersebut, jelaskan!<br>
+
+Jawab :
+
+Method tersebut digunakan untuk menentukan indeks pada array of object listMhs dengan nilai IPK terendah. Sehingga, program akan menentukan nilai awal dengan IPK terendah berada pada indeks ke 0 (sehingga nilai idxMin = 0). Setelah itu, dicek apakah nilai dari array of object pada indeks ke-j lebih kecil dari nilai listMhs dengan indeks sebelumnya. Jika iya, maka nilai indeks akan diupdate (ini akan mengubah nilai idxMin). Proses ini berlangsung selama nilai i tidak lebih dari panjang array of object listMhs.
+
+<br>
+
+
+
+
+
