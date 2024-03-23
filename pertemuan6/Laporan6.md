@@ -204,3 +204,32 @@ Iterasi pada i akan dilakukan sebanyak 49 kali dari hasil listMhs.length - 1. Se
 <br>
 
 ### 5.2.2 Program
+
+```java
+
+    void selectionSort(){
+        for(int i=0; i<listMhs.length-1; i++){
+            int idxMin = i;
+            for(int j=i+1; j<listMhs.length; j++){
+                if(listMhs[j].ipk < listMhs[idxMin].ipk){
+                    idxMin = j;
+                }
+            }
+            //swap
+            Mahasiswa13 tmp = listMhs[idxMin];
+            listMhs[idxMin] = listMhs[i];
+            listMhs[i] = tmp;
+        }
+    }
+
+```
+
+<br>
+
+```java
+
+        System.out.println("Data Mahasiswa setelah sorting asc berdasarkan ipk");
+        list.selectionSort();
+        list.tampil();
+
+```
