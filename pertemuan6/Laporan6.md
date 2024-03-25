@@ -1,4 +1,17 @@
-### 5.2.1 Program
+<p align="center">LAPORAN PRAKTIKUM 5</p>
+<p align="center">Algoritma dan Struktur Data</p>
+
+<p align="center"> <img src="./img/polinema.png"> </p>
+
+
+<p align="center"> Nama : Gabriel Batavia Xaverius </p>
+<p align="center"> NIM : 2341720184  </p>
+<p align="center">Kelas : TI-1B  </p>
+<p align="center">Absen : 13  </p>
+
+<br>
+
+### 5.2.1 Program Mengurutkan Data Mahasiswa Menggunakan Bubble Sort
 
 ```java
 
@@ -203,7 +216,8 @@ Iterasi pada i akan dilakukan sebanyak 49 kali dari hasil listMhs.length - 1. Se
 
 <br>
 
-### 5.3.1 Program
+### 5.3.1 Program Mengurutkan Data Mahasiswa Menggunakan Selection Sort
+
 
 ```java
 
@@ -270,7 +284,7 @@ Method tersebut digunakan untuk menentukan indeks pada array of object listMhs d
 <br>
 
 
-### 5.4.1 Program
+### 5.4.1 Program Mengurutkan Data Mahasiswa Menggunakan Insertion Sort
 
 ```java
 
@@ -334,6 +348,8 @@ void insertionSort() {
 
 ### 5.5 Latihan
 
+Membuat class Hotel13 :
+
 ```java
 
 public class Hotel13 {
@@ -357,6 +373,10 @@ public class Hotel13 {
 }
 
 ```
+
+<br>
+
+Membuat class HotelService :
 
 ```java
 
@@ -419,6 +439,10 @@ public class HotelService {
 }
 
 ```
+
+<br>
+
+Membuat class MainHotel13 :
 
 ```java
 
