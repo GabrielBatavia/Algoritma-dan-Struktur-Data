@@ -13,7 +13,7 @@ public class Hotel13 {
     }
 
     // hotel detail
-    public void displayInfo() {
+    public void tampilkanInfo() {
         System.out.println(nama + ", " + kota + " - Harga: " + harga + ", Rating: " + bintang + " bintang");
     }
 }

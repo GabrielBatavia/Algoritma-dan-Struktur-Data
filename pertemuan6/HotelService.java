@@ -17,7 +17,7 @@ public class HotelService {
     }
 
     // Pengurutan berdasarkan harga dengan bubble sort
-    public void urutkanBubble() {
+    public void bubbleSort() {
         for (int i = 0; i < semuaHotel.length - 1; i++) {
             for (int j = 0; j < semuaHotel.length - i - 1; j++) {
                 if (semuaHotel[j] != null && semuaHotel[j + 1] != null && semuaHotel[j].harga > semuaHotel[j + 1].harga) {
@@ -31,7 +31,7 @@ public class HotelService {
     }
 
     // Pengurutan berdasarkan bintang dengan selection sort
-    public void urutkanSelection() {
+    public void selectionSort() {
         for (int i = 0; i < semuaHotel.length; i++) {
             int indeksTerbesar = i;
             for (int j = i + 1; j < semuaHotel.length; j++) {
