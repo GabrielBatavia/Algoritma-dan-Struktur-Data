@@ -8,7 +8,8 @@ public class MainHotel13 {
         // Menambahkan beberapa hotel
         layananHotel.tambahHotel(new Hotel13("Hotel A", "Jakarta", 500000, (byte) 4));
         layananHotel.tambahHotel(new Hotel13("Hotel B", "Bandung", 750000, (byte) 5));
-        // ... tambahkan lebih banyak hotel sesuai kebutuhan
+        layananHotel.tambahHotel(new Hotel13("Hotel C", "Malang", 350000, (byte) 3));
+        layananHotel.tambahHotel(new Hotel13("Hotel D", "Sidoarjo", 250000, (byte) 4));
 
         // Sambutan kepada pengguna
         System.out.println("Selamat datang di layanan pemesanan hotel!");
