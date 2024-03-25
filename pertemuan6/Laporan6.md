@@ -237,6 +237,10 @@ Iterasi pada i akan dilakukan sebanyak 49 kali dari hasil listMhs.length - 1. Se
 
 ### 5.3.2 Hasil
 
+<img src="./img/image.png">
+
+<br>
+
 <img src="./img/image_3.png">
 
 <br>
@@ -296,10 +300,36 @@ Method tersebut digunakan untuk menentukan indeks pada array of object listMhs d
 
 ### 5.4.2 Hasil
 
-
+<img src="./img/image.png">
 
 <br>
 
+<img src="./img/image_4.png">
+
+<br>
+
+
+### 5.4.3 Pertanyaan
+
+1. Ubahlah fungsi pada InsertionSort sehingga fungsi ini dapat melaksanakan proses sorting 
+dengan cara descending.<br>
+
+jawab :
+
+```java
+void insertionSort() {
+    for (int i = 1; i < listMhs.length; i++) {
+        Mahasiswa13 tmp = listMhs[i];
+        int j = i;
+        // Ubah perbandingan dari tmp.ipk > listMhs[j-1].ipk menjadi tmp.ipk < listMhs[j-1].ipk
+        while (j > 0 && listMhs[j-1].ipk < tmp.ipk) {
+            listMhs[j] = listMhs[j-1];
+            j--;
+        }
+        listMhs[j] = tmp;
+    }
+}
+```
 
 
 
