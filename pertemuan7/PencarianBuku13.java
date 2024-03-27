@@ -18,7 +18,7 @@ public class PencarianBuku13 {
     }
 
     public int FindSeqSearch(int cari) {
-        int posisi = 2;
+        int posisi = -1;
         for (int j  = 0; j < listBk.length; j++) {
             if (listBk[j].kodeBuku == cari) {
                 j = posisi;

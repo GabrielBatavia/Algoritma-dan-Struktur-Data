@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-//import javax.sound.sampled.SourceDataLine;
+import javax.sound.sampled.SourceDataLine;
 
 public class BukuMain13 {
     
@@ -17,15 +17,15 @@ public class BukuMain13 {
         System.out.println("Masukkan data Buku secara Urut dari kodeBuku terkecil : ");
         
         for (int i = 0; i < jumBuku; i++) {
-            System.out.println("Kode Buku \t: ");
+            System.out.print("Kode Buku \t: ");
             int kodeBuku = s.nextInt();
-            System.out.println("Judul Buku \t: ");
+            System.out.print("Judul Buku \t: ");
             String judulBuku = s1.nextLine();
-            System.out.println("Tahun terbit \t: ");
+            System.out.print("Tahun terbit \t: ");
             int tahunTerbit = s.nextInt();
-            System.out.println("Pengarang \t: ");
+            System.out.print("Pengarang \t: ");
             String pengarang = s1.nextLine();
-            System.out.println("Stock \t: ");
+            System.out.print("Stock \t: ");
             int stock = s.nextInt();
 
             Buku13 m = new Buku13(kodeBuku, judulBuku, tahunTerbit, pengarang, stock);
@@ -34,6 +34,21 @@ public class BukuMain13 {
 
         System.out.println("================================================");
         System.out.println("Data keseluruhan Mahasiswa : ");
+
+        System.out.println("----------------------------------------------------------------");
+        System.out.println("Data keseluruhan Buku : ");
+        data.tampil();
+
+        System.out.println("________________________________________________________________");
+        System.out.println("________________________________________________________________");
+        System.out.println("Pencarian Data : ");
+        System.out.println("Masukkan Kode Buku yang dicari: ");
+        System.out.print("Kode Buku : ");
+        int cari = s.nextInt();
+        System.out.println("Menggunakan Sequential Search");
+        int posisi = data.FindSeqSearch(cari);
+        data.Tampilposisi(cari, posisi);
         
     }
+
 }
