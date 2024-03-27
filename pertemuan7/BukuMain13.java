@@ -48,6 +48,8 @@ public class BukuMain13 {
         System.out.println("Menggunakan Sequential Search");
         int posisi = data.FindSeqSearch(cari);
         data.Tampilposisi(cari, posisi);
+
+        data.TampilData(cari, posisi);
         
     }
 
