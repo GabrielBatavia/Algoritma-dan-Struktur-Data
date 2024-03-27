@@ -12,7 +12,7 @@ public class PencarianBuku13 {
     }
 
     void tampil() {
-        for (Buku13 m : listBk[]) {
+        for (Buku13 m : listBk) {
             m.tampilDataBuku();
         }
     }
