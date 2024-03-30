@@ -170,3 +170,47 @@ public class BukuMain13 {
 <br>
 
 ### 6.3.1 Program
+
+```java
+
+    public int FindBinarySearch(int cari, int left, int right) {
+        int mid;
+        if (right >= left) {
+            mid = (right) / 2;
+            if (cari == listBk[mid].kodeBuku) {
+                return(mid);
+            } else if (listBk[mid].kodeBuku > cari) {
+                return FindBinarySearch(cari, left, mid);
+            } else {
+                return FindBinarySearch(cari, left, right);
+            }
+        }
+        return -1;
+    }
+
+
+```
+
+<br>
+
+```java
+
+        System.out.println("================================================================");
+        System.out.println("Menggunakan Binary Search");
+        posisi = data.FindBinarySearch(cari, 0, jumBuku -1);
+        data.Tampilposisi(cari, posisi);
+        data.TampilData(cari, posisi);       
+
+```
+
+### 6.3.2 Hasil
+
+<br>
+
+<img src="./img/image_3.png">
+
+<br>
+
+<img src="./img/image_4.png">
+
+<br>

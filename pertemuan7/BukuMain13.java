@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-import javax.sound.sampled.SourceDataLine;
+//import javax.sound.sampled.SourceDataLine;
 
 public class BukuMain13 {
     
@@ -49,6 +49,12 @@ public class BukuMain13 {
         int posisi = data.FindSeqSearch(cari);
         data.Tampilposisi(cari, posisi);
 
+        data.TampilData(cari, posisi);
+
+        System.out.println("================================================================");
+        System.out.println("Menggunakan Binary Search");
+        posisi = data.FindBinarySearch(cari, 0, jumBuku -1);
+        data.Tampilposisi(cari, posisi);
         data.TampilData(cari, posisi);
         
     }
