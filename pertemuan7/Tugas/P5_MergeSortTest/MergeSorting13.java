@@ -3,7 +3,7 @@ package Tugas.P5_MergeSortTest;
 public class MergeSorting13 {
     
     public void mergeSort(int[] data) {
-
+        sort(data, 0, data.length - 1);
     }
 
     public void merge(int data[], int left, int middle, int right) {
@@ -30,6 +30,15 @@ public class MergeSorting13 {
             data[c + i] = temp[a + i];
         }
     }
-    
+
+    public void sort(int data[], int left, int right) {
+        if (left < right) {
+            int middle = (left + right) / 2;
+            sort(data, left, middle);
+            sort(data, middle + 1, right);
+            merge(data, left, middle, right);
+        }
+    }
+
 
 }
