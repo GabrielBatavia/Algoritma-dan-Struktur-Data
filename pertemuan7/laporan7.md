@@ -234,7 +234,7 @@ public class MergeSorting13 {
             temp[i] = data[i];
         }
         int a = left;
-        int b = middle;
+        int b = middle + 1;
         int c = left;
 
         while (a <= middle && b <= right) {
@@ -300,3 +300,8 @@ public class MergeSortMain13 {
 <br>
 
 ### 6.4.2 Hasil
+
+<img src="./img/image_5.png">
+
+<br>
+
