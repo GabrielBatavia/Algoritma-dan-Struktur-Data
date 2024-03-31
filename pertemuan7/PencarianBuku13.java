@@ -64,4 +64,18 @@ public class PencarianBuku13 {
         }
         return -1;
     }
+
+    public Buku13 findBuku(int cari) {
+        int posisi = -1;
+        for (int i = 0; i < listBk.length; i++) {
+            if (listBk[i].kodeBuku == cari) {
+                posisi = i;
+                break;
+            }
+        }
+    
+        return listBk[posisi];
+    }
 }
+
+

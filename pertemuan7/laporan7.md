@@ -196,10 +196,37 @@ Buku dataBuku = data.findBuku(cari);
 dataBuku.tampilDataBuku();
 ```
 
+Jawab : 
 
+```java
 
+    public Buku13 findBuku(int cari) {
+        int posisi = -1;
+        for (int i = 0; i < listBk.length; i++) {
+            if (listBk[i].kodeBuku == cari) {
+                posisi = i;
+                break;
+            }
+        }
+    
+        return listBk[posisi];
+    }
 
+```
 
+```java
+
+        System.out.println(
+            "=========================================================\n" +
+            "Sequential search Ke 2"
+        );
+        Buku13 dataBuku = data.findBuku(cari);
+        dataBuku.tampilDataBuku();
+        
+
+```
+
+<br>
 
 
 ### 6.3.1 Program
@@ -248,6 +275,79 @@ dataBuku.tampilDataBuku();
 
 <br>
 
+### 6.3.3 Pertanyaan
+
+1. Tunjukkan pada kode program yang mana proses divide dijalankan! <br>
+
+Jawab : 
+
+```java
+
+} else if (listBk[mid].kodeBuku > cari) {
+    return findBinarySearch(cari, left, mid);
+} else {
+    return findBinarySearch(cari, mid, right);
+}
+
+```
+
+<br>
+
+2. Tunjukkan pada kode program yang mana proses conquer dijalankan! <br>
+
+Jawab :
+
+```java
+
+if (cari == listBk[mid].kodeBuku)
+
+```
+
+<br>
+
+3. Jika data Kode Buku yang dimasukkan tidak urut. Apakah program masih dapat berjalan? Mengapa 
+demikian! Tunjukkan hasil screenshoot untuk bukti dengan kode Buku yang acak. Jelaskan 
+Mengapa hal tersebut bisa terjadi?  <br>
+
+Jawab :
+
+Tidak, program tidak akan berfungsi dengan benar jika data Kode Buku tidak urut. Alasan utamanya adalah Binary Search memerlukan data yang sudah diurutkan untuk bisa bekerja secara efisien. Jika data tidak terurut, pembagian ruang pencarian menjadi dua bagian yang dilakukan oleh Binary Search tidak akan memberikan informasi yang berguna tentang di mana nilai yang dicari mungkin berada, karena tidak ada jaminan nilai di satu bagian akan selalu lebih kecil atau lebih besar dari bagian lainnya.
+
+<img src="./img/image_6.png">
+
+<br>
+
+Gambar diatas adalah bukti bahwa program tidak akan berjalan jika kode buku tidak urut. Terdapat pesan error Exception in threan "main" java.lang.StackOverflowError. Itu berarti berkaitan dengan penggunaan memori yang dimiliki. Jadi memori sudah penuh dan tidak bisa melakukan proses lagi sehingga memunculkan pesan error. Ini biasanya terjadi ketika ada infinite recursion atau hal lain yang tidak ada hentinya. Kondisi infinite recursion itu bisa terjadi karena pada algoritma binary search tidak bisa mengetahui pola yang nilai yang ada. <br>
+
+<br>
+
+4. Jika Kode Buku yang dimasukkan dari Kode Buku terbesar ke terkecil (missal : 20215, 20214, 
+20212, 20211, 20210) dan elemen yang dicari adalah 20210. Bagaimana hasil dari binary search? 
+Apakah sesuai? Jika tidak sesuai maka ubahlah kode program binary seach agar hasilnya sesuai! <br>
+
+Jawab : Hasilnya akan Error! <br>
+Maka saya akan memodifikasi codenya
+
+```java
+
+    public int findBinarySearch(int cari, int left, int right) {
+    int mid;
+    if (right >= left) {
+        mid = (right + left) / 2;
+        if (cari == listBk[mid].kodeBuku) {
+            return mid;
+        } else if (listBk[mid].kodeBuku < cari) {
+            return findBinarySearch(cari, left, mid - 1);
+        } else {
+            return findBinarySearch(cari, mid + 1, right);
+        }
+    }
+    return -1;
+}
+
+```
+
+<br>
 
 ### 6.4.1 Program
 

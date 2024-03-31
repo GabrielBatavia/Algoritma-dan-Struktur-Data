@@ -56,6 +56,13 @@ public class BukuMain13 {
         posisi = data.FindBinarySearch(cari, 0, jumBuku -1);
         data.Tampilposisi(cari, posisi);
         data.TampilData(cari, posisi);
+
+        System.out.println(
+            "=========================================================\n" +
+            "Sequential search ke 2"
+        );
+        Buku13 dataBuku = data.findBuku(cari);
+        dataBuku.tampilDataBuku();
         
     }
 
