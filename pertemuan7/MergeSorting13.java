@@ -1,4 +1,4 @@
-package Tugas.P5_MergeSortTest;
+
 
 public class MergeSorting13 {
     
@@ -12,7 +12,7 @@ public class MergeSorting13 {
             temp[i] = data[i];
         }
         int a = left;
-        int b = middle;
+        int b = middle + 1;
         int c = left;
 
         while (a <= middle && b <= right) {
