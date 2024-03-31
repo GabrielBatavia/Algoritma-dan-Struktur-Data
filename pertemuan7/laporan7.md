@@ -169,6 +169,39 @@ public class BukuMain13 {
 
 <br>
 
+### 6.2.3 Pertanyaan
+
+1. Jelaskan fungsi break yang ada pada method FindSeqSearch! <br>
+
+Jawab : Fungsi break pada FindSeqSearch ataupun pada gerenal kode adalah untuk menghentikan perulangan, dalam hal ini digunakan untuk menghentikan perulangan pencarian ketika index dari nilai yang kita cari sudah ditemukan.
+
+2. Jika Data Kode Buku yang dimasukkan tidak terurut dari kecil ke besar. Apakah program masih 
+dapat berjalan? Apakah hasil yang dikeluarkan benar? Tunjukkan hasil screenshoot untuk bukti 
+dengan kode Buku yang acak. Jelaskan Mengapa hal tersebut bisa terjadi?  <br>
+
+Jawab : Meski data kita adalah data acak, program tetap bisa mencari data yang diinginkan. Ini adalah buktinya:
+
+<img src="./img/image_1.png">
+
+<img src="./img/image_2.png">
+
+Hal ini terjadi karena proses pencarian menggunakan sequential search yang mana program akan mengecek satu persatu nilai yang ada dari setiap elemen array. Jadi, meski data yang ada acak, tidak akan berpengaruh pada proses pencarian data.
+
+3. Buat method baru dengan nama FindBuku menggunakan konsep sequential search dengan tipe 
+method dari FindBuku adalah BukuNoAbsen.  Sehingga Anda bisa memanggil method 
+tersebut pada class BukuMain seperti gambar berikut : <br>
+
+```java
+Buku dataBuku = data.findBuku(cari);
+dataBuku.tampilDataBuku();
+```
+
+
+
+
+
+
+
 ### 6.3.1 Program
 
 ```java
