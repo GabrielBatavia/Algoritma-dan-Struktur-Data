@@ -447,6 +447,128 @@ public class MergeSortMain13 {
 
 1. Modifikasi percobaan searching diatas dengan ketentuan berikut ini 
 - Ubah tipe data dari kode Buku yang awalnya int menjadi String 
+
+Jawab :
+
+code yang diubah di Buku13 :
+
+```java
+    String kodeBuku;
+    String judulBuku;
+    int tahunTerbit;
+    String pengarang;
+    int stock;
+
+    public Buku13(String kodeBuku, String judulBuku, int tahunTerbit, String pengarang, int stock) {
+        this.kodeBuku = kodeBuku;
+        this.judulBuku = judulBuku;
+        this.tahunTerbit = tahunTerbit;
+        this.pengarang = pengarang;
+        this.stock = stock;
+    }
+```
+
+<br>
+
+code yang diubah di PencarianBuku13 :
+
+```java
+
+    public int FindSeqSearch(String cari) {
+        int posisi = -1;
+        for (int j  = 0; j < listBk.length; j++) {
+            if (listBk[j].kodeBuku.equals(cari)) {
+                posisi = j;
+                break;
+            }
+        }
+        return posisi;
+    }
+
+    public void Tampilposisi(String x, int pos)
+    {
+        if (pos != -1) {
+            System.out.println("data : " + x + " ditemukan pada indeks " + pos);
+        } else {
+            System.out.println("data " + x + " tidak ditemukan");
+        }
+    }
+
+    public void TampilData(String x, int pos)
+    {
+        if (pos != -1) {
+            System.out.println("Kode Buku \t: " + x );
+            System.out.println("Judul \t : " + listBk[pos].judulBuku);
+            System.out.println("Tahun Terbit \t: " + listBk[pos].tahunTerbit);
+            System.out.println("Pengarang \t: " + listBk[pos].pengarang);
+            System.out.println("Stock \t: " + listBk[pos].stock);
+        } else {
+            System.err.println("data " + x + "tidak ditemukan");
+        }
+    }
+
+    public int FindBinarySearch(String cari, int left, int right) {
+        int mid;
+        if (right >= left) {
+            mid = (right + left) / 2;
+            if (cari.equals(listBk[mid].kodeBuku)) {
+                return(mid);
+            } else if (listBk[mid].kodeBuku.compareTo(cari) < 0) {
+                return FindBinarySearch(cari, left, mid);
+            } else {
+                return FindBinarySearch(cari, left, right);
+            }
+        }
+        return -1;
+    }
+
+    public Buku13 findBuku(String cari) {
+        int posisi = -1;
+        for (int i = 0; i < listBk.length; i++) {
+            if (listBk[i].kodeBuku.equals(cari)) {
+                posisi = i;
+                break;
+            }
+        }
+    
+        return listBk[posisi];
+    }
+
+```
+
+<br>
+
+Code yang diubah di BukuMain13 :
+
+```java
+
+        for (int i = 0; i < jumBuku; i++) {
+            System.out.print("Kode Buku \t: ");
+            String kodeBuku = s.nextLine();
+            System.out.print("Judul Buku \t: ");
+            String judulBuku = s1.nextLine();
+            System.out.print("Tahun terbit \t: ");
+            int tahunTerbit = s.nextInt();
+            System.out.print("Pengarang \t: ");
+            String pengarang = s1.nextLine();
+            System.out.print("Stock \t: ");
+            int stock = s.nextInt();
+
+            Buku13 m = new Buku13(kodeBuku, judulBuku, tahunTerbit, pengarang, stock);
+            data.tambah(m);
+        }
+
+        System.out.println("________________________________________________________________");
+        System.out.println("________________________________________________________________");
+        System.out.println("Pencarian Data : ");
+        System.out.println("Masukkan Kode Buku yang dicari: ");
+        System.out.print("Kode Buku : ");
+        String cari = s.nextLine();
+
+```
+
+<br>
+
 - Tambahkan method untuk pencarian kode Buku (bertipe data String) dengan menggunakan 
 sequential search dan binary search.
 
