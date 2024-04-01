@@ -28,7 +28,7 @@ public class PencarianBuku13 {
         return posisi;
     }
 
-    public int findSeqSearchJudul(String cariJudul) {
+    public int FindSeqSearchJudul(String cariJudul) {
         int count = 0;
         for (int i = 0; i < idx; i++) {
             if (listBk[i].judulBuku.equalsIgnoreCase(cariJudul)) {
@@ -64,6 +64,18 @@ public class PencarianBuku13 {
         }
     }
 
+    public void tampilDataJudul(String x, int pos) {
+        if (pos != -1) {
+            System.out.println("Kode Buku \t : " + listBk[pos].kodeBuku);
+            System.out.println("Judul \t \t : " + x);
+            System.out.println("Tahun Terbit \t : " + listBk[pos].tahunTerbit);
+            System.out.println("Pengarang \t : " + listBk[pos].pengarang);
+            System.out.println("Stok \t \t : " + listBk[pos].stock);
+        } else {
+            System.out.println("Data " + x + " tidak ditemukan!");
+        }
+    }
+
     public int FindBinarySearch(String cari, int left, int right) {
         int mid;
         if (right >= left) {
@@ -95,7 +107,7 @@ public class PencarianBuku13 {
         return listBk[posisi];
     }
 
-    public int findBinarySearchJudul(String cariJudul, int left, int right) {
+    public int FindBinarySearchJudul(String cariJudul, int left, int right) {
         bubbleSort();
 
         int mid;
