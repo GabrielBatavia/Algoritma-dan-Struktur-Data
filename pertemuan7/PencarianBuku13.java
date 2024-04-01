@@ -28,7 +28,7 @@ public class PencarianBuku13 {
         return posisi;
     }
 
-    public void Tampilposisi(int x, int pos)
+    public void Tampilposisi(String x, int pos)
     {
         if (pos != -1) {
             System.out.println("data : " + x + " ditemukan pada indeks " + pos);
@@ -37,7 +37,7 @@ public class PencarianBuku13 {
         }
     }
 
-    public void TampilData(int x, int pos)
+    public void TampilData(String x, int pos)
     {
         if (pos != -1) {
             System.out.println("Kode Buku \t: " + x );
@@ -65,7 +65,7 @@ public class PencarianBuku13 {
         return -1;
     }
 
-    public Buku13 findBuku(int cari) {
+    public Buku13 findBuku(String cari) {
         int posisi = -1;
         for (int i = 0; i < listBk.length; i++) {
             if (listBk[i].kodeBuku.equals(cari)) {

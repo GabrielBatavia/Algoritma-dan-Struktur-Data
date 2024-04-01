@@ -44,7 +44,8 @@ public class BukuMain13 {
         System.out.println("Pencarian Data : ");
         System.out.println("Masukkan Kode Buku yang dicari: ");
         System.out.print("Kode Buku : ");
-        int cari = s.nextInt();
+        String cari = s.nextLine();
+
         System.out.println("Menggunakan Sequential Search");
         int posisi = data.FindSeqSearch(cari);
         data.Tampilposisi(cari, posisi);
