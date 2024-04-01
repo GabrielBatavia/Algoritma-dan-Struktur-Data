@@ -64,7 +64,7 @@ public class PencarianBuku13 {
         }
     }
 
-    public void tampilDataJudul(String x, int pos) {
+    public void TampilDataJudul(String x, int pos) {
         if (pos != -1) {
             System.out.println("Kode Buku \t : " + listBk[pos].kodeBuku);
             System.out.println("Judul \t \t : " + x);

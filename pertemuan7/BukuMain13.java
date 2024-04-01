@@ -66,6 +66,9 @@ public class BukuMain13 {
         //Buku13 dataBuku = data.findBuku(cari);
         //dataBuku.tampilDataBuku();
 
+        int left = 0;
+        int right = jumBuku;
+
         System.out.println("_______________________________");
         System.out.println("_______________________________");
         System.out.println("Pencarian Judul Buku: ");
