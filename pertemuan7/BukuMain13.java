@@ -72,7 +72,7 @@ public class BukuMain13 {
         System.out.println("_______________________________");
         System.out.println("_______________________________");
         System.out.println("Pencarian Judul Buku: ");
-        System.out.println("Masukkan kode buku yang dicari");
+        System.out.println("Masukkan Judul buku yang dicari");
         System.out.print("Judul Buku: ");
         String cariJudul = s1.nextLine();
 

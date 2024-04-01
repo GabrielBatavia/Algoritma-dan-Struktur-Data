@@ -797,7 +797,15 @@ Code yang diubah di BukuMain13 :
 
 ```
 
+Contoh Output :
 
+<br>
+
+<img src="./img/image_9.png">
+
+<br>
+
+<img src="./img/image_10.png">
 
 
 
