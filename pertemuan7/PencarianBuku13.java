@@ -50,16 +50,20 @@ public class PencarianBuku13 {
         }
     }
 
-    public int FindBinarySearch(String cari, int left, int right) {
+    public int findBinarySearch(String cari, int left, int right) {
         int mid;
         if (right >= left) {
             mid = (right + left) / 2;
             if (cari.equals(listBk[mid].kodeBuku)) {
-                return(mid);
-            } else if (listBk[mid].kodeBuku.compareTo(cari) < 0) {
-                return FindBinarySearch(cari, left, mid);
+                return mid;
             } else {
-                return FindBinarySearch(cari, left, right);
+                int posisiKiri = findBinarySearch(cari, left, mid - 1);
+                int posisiKanan = findBinarySearch(cari, mid + 1, right);
+                if (posisiKanan != -1) {
+                    return posisiKanan;
+                } else if (posisiKiri != -1) {
+                    return posisiKiri;
+                }
             }
         }
         return -1;
