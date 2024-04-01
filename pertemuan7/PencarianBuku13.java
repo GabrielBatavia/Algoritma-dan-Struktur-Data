@@ -17,10 +17,10 @@ public class PencarianBuku13 {
         }
     }
 
-    public int FindSeqSearch(int cari) {
+    public int FindSeqSearch(String cari) {
         int posisi = -1;
         for (int j  = 0; j < listBk.length; j++) {
-            if (listBk[j].kodeBuku == cari) {
+            if (listBk[j].kodeBuku.equals(cari)) {
                 posisi = j;
                 break;
             }
@@ -50,13 +50,13 @@ public class PencarianBuku13 {
         }
     }
 
-    public int FindBinarySearch(int cari, int left, int right) {
+    public int FindBinarySearch(String cari, int left, int right) {
         int mid;
         if (right >= left) {
-            mid = (right) / 2;
-            if (cari == listBk[mid].kodeBuku) {
+            mid = (right + left) / 2;
+            if (cari.equals(listBk[mid].kodeBuku)) {
                 return(mid);
-            } else if (listBk[mid].kodeBuku > cari) {
+            } else if (listBk[mid].kodeBuku.compareTo(cari) < 0) {
                 return FindBinarySearch(cari, left, mid);
             } else {
                 return FindBinarySearch(cari, left, right);
@@ -68,7 +68,7 @@ public class PencarianBuku13 {
     public Buku13 findBuku(int cari) {
         int posisi = -1;
         for (int i = 0; i < listBk.length; i++) {
-            if (listBk[i].kodeBuku == cari) {
+            if (listBk[i].kodeBuku.equals(cari)) {
                 posisi = i;
                 break;
             }

@@ -438,3 +438,16 @@ public class MergeSortMain13 {
 
 <br>
 
+<br>
+
+
+### 6.5.1 Latihan
+
+<br>
+
+1. Modifikasi percobaan searching diatas dengan ketentuan berikut ini 
+- Ubah tipe data dari kode Buku yang awalnya int menjadi String 
+- Tambahkan method untuk pencarian kode Buku (bertipe data String) dengan menggunakan 
+sequential search dan binary search.
+
+
