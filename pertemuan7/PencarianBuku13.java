@@ -28,6 +28,20 @@ public class PencarianBuku13 {
         return posisi;
     }
 
+    public int findSeqSearchJudul(String cariJudul) {
+        int count = 0;
+        for (int i = 0; i < idx; i++) {
+            if (listBk[i].judulBuku.equalsIgnoreCase(cariJudul)) {
+                count++;
+            }
+        }
+        if (count > 1) {
+            System.out.println("Peringatan: Lebih dari satu hasil ditemukan untuk judul buku '" + cariJudul + "'.");
+        }
+        return count;
+    }
+
+
     public void Tampilposisi(String x, int pos)
     {
         if (pos != -1) {
@@ -79,6 +93,48 @@ public class PencarianBuku13 {
         }
     
         return listBk[posisi];
+    }
+
+    public int findBinarySearchJudul(String cariJudul, int left, int right) {
+        bubbleSort();
+
+        int mid;
+        if (right >= left) {
+            mid = (right + left) / 2;
+            if (cariJudul.equals(listBk[mid].judulBuku)) {
+                int start = mid;
+                int end = mid;
+                while (start > 0 && listBk[start - 1].judulBuku.equalsIgnoreCase(cariJudul)) {
+                    start--;
+                }
+                while (end < idx - 1 && listBk[end + 1].judulBuku.equalsIgnoreCase(cariJudul)) {
+                    end++;
+                }
+                int count = end - start + 1;
+                if (count > 1) {
+                    System.out.println(
+                            "Peringatan: Lebih dari satu hasil ditemukan untuk judul buku '" + cariJudul + "'.");
+                }
+                return start;
+            } else if (listBk[mid].judulBuku.compareToIgnoreCase(cariJudul) > 0) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
+
+    private void bubbleSort() {
+        for (int i = 0; i < idx - 1; i++) {
+            for (int j = 0; j < idx - i - 1; j++) {
+                if (listBk[j].judulBuku.compareToIgnoreCase(listBk[j + 1].judulBuku) > 0) {
+                    Buku13 temp = listBk[j];
+                    listBk[j] = listBk[j + 1];
+                    listBk[j + 1] = temp;
+                }
+            }
+        }
     }
 }
 
