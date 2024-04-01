@@ -447,6 +447,10 @@ public class MergeSortMain13 {
 
 1. Modifikasi percobaan searching diatas dengan ketentuan berikut ini 
 - Ubah tipe data dari kode Buku yang awalnya int menjadi String 
+- Tambahkan method untuk pencarian kode Buku (bertipe data String) dengan menggunakan 
+sequential search dan binary search.
+
+Jawab : 
 
 Jawab :
 
@@ -512,11 +516,15 @@ code yang diubah di PencarianBuku13 :
         if (right >= left) {
             mid = (right + left) / 2;
             if (cari.equals(listBk[mid].kodeBuku)) {
-                return(mid);
-            } else if (listBk[mid].kodeBuku.compareTo(cari) < 0) {
-                return FindBinarySearch(cari, left, mid);
+                return mid;
             } else {
-                return FindBinarySearch(cari, left, right);
+                int posisiKiri = FindBinarySearch(cari, left, mid - 1);
+                int posisiKanan = FindBinarySearch(cari, mid + 1, right);
+                if (posisiKanan != -1) {
+                    return posisiKanan;
+                } else if (posisiKiri != -1) {
+                    return posisiKiri;
+                }
             }
         }
         return -1;
@@ -544,7 +552,7 @@ Code yang diubah di BukuMain13 :
 
         for (int i = 0; i < jumBuku; i++) {
             System.out.print("Kode Buku \t: ");
-            String kodeBuku = s.nextLine();
+            String kodeBuku = s1.nextLine();
             System.out.print("Judul Buku \t: ");
             String judulBuku = s1.nextLine();
             System.out.print("Tahun terbit \t: ");
@@ -563,14 +571,18 @@ Code yang diubah di BukuMain13 :
         System.out.println("Pencarian Data : ");
         System.out.println("Masukkan Kode Buku yang dicari: ");
         System.out.print("Kode Buku : ");
-        String cari = s.nextLine();
+        String cari = s1.nextLine();
 
 ```
 
 <br>
 
-- Tambahkan method untuk pencarian kode Buku (bertipe data String) dengan menggunakan 
-sequential search dan binary search.
+Contoh Output :
 
+<img src="./img/image_7.png">
+<br>
+
+<img src="./img/image_8.png">
+<br>
 
 
