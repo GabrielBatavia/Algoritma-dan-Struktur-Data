@@ -70,6 +70,20 @@ public class Gudang13 {
             System.out.println("Tumpukan barang kosong");
         }
     }
+
+    public String konversiDesimalKeBiner(int kode) {
+        StackKonversi13 stack = new StackKonversi13();
+        while (kode > 0) {
+            int sisa = kode % 2;
+            stack.push(sisa);
+            kode = kode / 2;
+        }
+        String biner = new String();
+        while (!stack.isEmpety()) {
+            biner += stack.pop();
+        }
+        return biner;
+    }
     
 
 }
