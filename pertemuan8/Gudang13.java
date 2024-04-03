@@ -35,12 +35,12 @@ public class Gudang13 {
         }
     }
 
-    public void ambilBarang() {
+    public Barang13 ambilBarang() {
         if (!cekKosong()) {
-            Barang13 delete = tumpukan[top];
+            Barang13 delate = tumpukan[top];
             top--;
-            System.out.println("Barang " + delete.nama + " berhasil diambil dari Gudang");
-            return delete;
+            System.out.println("Barang " + delate.nama + " berhasil diambil dari Gudang");
+            return delate;
         } else {
             System.out.println("Gagal! Tumpukan barang kosong");
             return null;
@@ -63,7 +63,7 @@ public class Gudang13 {
             System.out.println("Rincian tumpukan barang di Gudang");
             //for (int i = top; i >= 0; i--) {
             for (int i = 0; i <= top; i++) {
-                System.out.println("Kode %d: %s (kategori %s)\n", tumpukan[i].kode, tumpukan[i].nama,
+                System.out.printf("Kode %d: %s (kategori %s)\n", tumpukan[i].kode, tumpukan[i].nama,
                 tumpukan[i].kategori);
             }
         } else {
