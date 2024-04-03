@@ -253,3 +253,92 @@ Lalu kita bisa menambahkan Operasi lihat barang teratas di main dengan menambahk
 <br>
 
 ### 2.3.1 Program
+
+```java
+
+    public Barang13 ambilBarang() {
+        if (!cekKosong()) {
+            Barang13 delate = tumpukan[top];
+            top--;
+            System.out.println("Barang " + delate.nama + " berhasil diambil dari Gudang");
+            System.out.println("Kode unik dalam biner: " + konversiDesimalKeBiner(delate.kode));
+            return delate;
+        } else {
+            System.out.println("Gagal! Tumpukan barang kosong");
+            return null;
+        }
+    }
+
+```
+
+```java
+
+    public String konversiDesimalKeBiner(int kode) {
+        StackKonversi13 stack = new StackKonversi13();
+        while (kode > 0) {
+            int sisa = kode % 2;
+            stack.push(sisa);
+            kode = kode / 2;
+        }
+        String biner = new String();
+        while (!stack.isEmpety()) {
+            biner += stack.pop();
+        }
+        return biner;
+    }
+
+```
+
+```java
+
+public class StackKonversi13 {
+    int size;
+    int[] tumpukanBiner;
+    int top;
+
+    public StackKonversi13() {
+        this.size = 32;
+        tumpukanBiner = new int[size];
+        top = -1;
+    }
+
+    public boolean isEmpety() {
+        return top == -1;
+    }
+
+    public boolean isFull() {
+        return top == size - 1;
+    }
+
+    public void push(int data) {
+    
+        if (isFull()) {
+            System.out.println("Stack penuh");
+        } else {
+            top++;
+            tumpukanBiner[top] = data;
+        }
+    }
+
+    public int pop() {
+        if (isEmpety()) {
+            System.out.println("Stack kosong");
+            return -1;
+        } else {
+            int data = tumpukanBiner[top];
+            top--;
+            return data;
+        }
+    }
+}
+
+
+```
+
+### 2.3.2 Hasil
+
+<img src="./img/image_2.png">
+
+<br>
+
+### 2.3.3 Pertanyaan

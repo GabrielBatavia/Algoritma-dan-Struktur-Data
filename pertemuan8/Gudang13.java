@@ -40,6 +40,7 @@ public class Gudang13 {
             Barang13 delate = tumpukan[top];
             top--;
             System.out.println("Barang " + delate.nama + " berhasil diambil dari Gudang");
+            System.out.println("Kode unik dalam biner: " + konversiDesimalKeBiner(delate.kode));
             return delate;
         } else {
             System.out.println("Gagal! Tumpukan barang kosong");
