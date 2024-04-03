@@ -9,7 +9,7 @@ public class Gudang13 {
         top = -1;
     }
 
-    public boolean cekkosong() {
+    public boolean cekKosong() {
         if (top == -1) {
             return true;
         } else {
@@ -22,6 +22,52 @@ public class Gudang13 {
             return true;
         } else {
             return false;
+        }
+    }
+
+    public void tambahBarang(Barang13 brg) {
+        if (!cekPenuh()) {
+            top++;
+            tumpukan[top] = brg;
+            System.out.println("Barang " + brg.nama + " berhasil ditambahkan ke Gudang");
+        } else {
+            System.out.println("Gagal! Tumpukan barang di Gudang sudah penuh");
+        }
+    }
+
+    public void ambilBarang() {
+        if (!cekKosong()) {
+            Barang13 delete = tumpukan[top];
+            top--;
+            System.out.println("Barang " + delete.nama + " berhasil diambil dari Gudang");
+            return delete;
+        } else {
+            System.out.println("Gagal! Tumpukan barang kosong");
+            return null;
+        }
+    }
+
+    public Barang13 lihatBarangTeratas() {
+        if (!cekKosong()) {
+            Barang13 barangTeratas = tumpukan[top];
+            System.out.println("Barang teratas: " + barangTeratas.nama);
+            return barangTeratas;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+    }
+
+    public void tampilkanBarang() {
+        if (!cekKosong()) {
+            System.out.println("Rincian tumpukan barang di Gudang");
+            //for (int i = top; i >= 0; i--) {
+            for (int i = 0; i <= top; i++) {
+                System.out.println("Kode %d: %s (kategori %s)\n", tumpukan[i].kode, tumpukan[i].nama,
+                tumpukan[i].kategori);
+            }
+        } else {
+            System.out.println("Tumpukan barang kosong");
         }
     }
     
