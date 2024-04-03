@@ -16,4 +16,25 @@ public class StackKonversi13 {
     public boolean isFull() {
         return top == size - 1;
     }
+
+    public void push(int data) {
+    
+        if (isFull()) {
+            System.out.println("Stack penuh");
+        } else {
+            top++;
+            tumpukanBiner[top] = data;
+        }
+    }
+
+    public int pop() {
+        if (isEmpety()) {
+            System.out.println("Stack kosong");
+            return -1;
+        } else {
+            int data = tumpukanBiner[top];
+            top--;
+            return data;
+        }
+    }
 }
