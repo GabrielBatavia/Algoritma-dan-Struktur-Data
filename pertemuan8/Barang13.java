@@ -9,5 +9,5 @@ public class Barang13 {
         this.nama = nama;
         this.kategori = kategori;
     }
-        
+    
 }
