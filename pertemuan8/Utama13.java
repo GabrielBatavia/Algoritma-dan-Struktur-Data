@@ -13,7 +13,8 @@ public class Utama13 {
             System.out.println("1. Tambah barang");
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
-            System.out.println("4. Keluar");
+            System.out.println("4. Tampilkan barang teratas");
+            System.out.println("5. Keluar");
             System.out.print("Pilih operasi : ");
             int pilihan = sc13.nextInt();
             sc13.nextLine();
@@ -38,8 +39,12 @@ public class Utama13 {
                 case 3:
                     gudang.tampilkanBarang();
                     break;
+
+                case 4: 
+                    gudang.lihatBarangTeratas();
+                    break;
     
-                case 4:
+                case 5:
                     sc13.close(); 
                     return; // keluar dari program
                 

@@ -170,3 +170,82 @@ public class Utama13 {
 <img src="./img/image_1.png">
 
 <br>
+
+### 2.2.3 Pertanyaan
+
+1. Lakukan perbaikan pada kode program, sehingga keluaran yang dihasilkan sama dengan verifikasi 
+hasil percobaan! Bagian mana saja yang perlu diperbaiki? <br>
+
+Jawab : Mengubah perulangan yang dilakukan di fucntion tampilkanBarang() yaitu :
+
+```java
+
+    public void tampilkanBarang() {
+        if (!cekKosong()) {
+            System.out.println("Rincian tumpukan barang di Gudang");
+            //for (int i = top; i >= 0; i--) {
+            for (int i = top; i >= 0; i--) {
+                System.out.printf("Kode %d: %s (kategori %s)\n", tumpukan[i].kode, tumpukan[i].nama,
+                tumpukan[i].kategori);
+            }
+        } else {
+            System.out.println("Tumpukan barang kosong");
+        }
+    }
+
+```
+
+<br>
+
+2. Berapa banyak data barang yang dapat ditampung di dalam tumpukan? Tunjukkan potongan kode 
+programnya!<br>
+
+Jawab : Kita dapat menumpuk hingga 7 barang didalam tumpukkan
+
+```java
+
+ Gudang13 gudang = new Gudang13(7);
+
+```
+
+<br>
+
+3. Mengapa perlu pengecekan kondisi !cekKosong() pada method tampilkanBarang? Kalau kondisi 
+tersebut dihapus, apa dampaknya? <br>
+
+Jawab : tampilkanBarang() digunakan untuk memastikan bahwa ada barang dalam tumpukan sebelum mencoba menampilkannya. Jika kondisi ini dihapus, metode akan mencoba menjalankan loop for bahkan ketika tumpukan kosong (top == -1). Ini bisa menyebabkan loop for tidak berjalan dengan benar karena kondisi awal i = top akan bernilai -1, dan loop langsung berhenti tanpa masuk ke dalam loop.<br>
+
+<br>
+
+4. Modifikasi kode program pada class Utama sehingga pengguna juga dapat memilih operasi lihat 
+barang teratas, serta dapat secara bebas menentukan kapasitas gudang! <br>
+
+Jawab :
+
+Kita dapat memodifikasi kode untuk menentukan kapasitas gudang berdasarkan input user dengan kode berikut :
+
+```java
+
+        System.out.print("Masukkan kapasitas gudang: ");
+        int kapasitas = sc13.nextInt();
+        Gudang13 gudang = new Gudang13(kapasitas);
+
+```
+
+Lalu kita bisa menambahkan Operasi lihat barang teratas di main dengan menambahkan kode berikut :
+
+```java
+
+            System.out.println("4. Tampilkan barang teratas");
+
+            //kode selanjutnya dan masuk ke while
+
+                case 4: 
+                    gudang.lihatBarangTeratas();
+                    break;
+
+```
+
+
+
+5. Commit dan push kode program ke Github 
