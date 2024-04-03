@@ -163,10 +163,10 @@ public class Utama13 {
 
 ### 2.2.2 Hasil
 
-![alt text](image.png)
+<img src="./img/image.png">
 
 <br>
 
-![alt text](image-1.png)
+<img src="./img/image_1.png">
 
 <br>
