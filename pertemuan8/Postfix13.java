@@ -31,4 +31,64 @@ public class Postfix13 {
             return false;
         }
     }
+
+    public boolean isOperator(char c) {
+        if (c == '^' || c == '%' || c == '/' || c == '*' || 
+            c == '-' || c == '+') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public int derajat(char c) {
+        switch (c) {
+            case '^':
+                return 3;
+            case '%':
+                return 2;
+            case '/':
+                return 2;
+            case '*':
+                return 2;
+            case '-':
+                return 1;
+            case '+':
+                return 1;
+            default:
+                return 0;
+        }
+    }
+
+    public String konversi(String Q) {
+        String P = "";
+        char c;
+
+        for (int i = 0; i < n; i++) {
+            c = Q.charAt(i);
+            if (isOperand(c)) {
+                P += c;
+            }
+
+            if (c == '(') {
+                push(c);
+            }
+
+            if (c == ')') {
+                while (stack[top] != '(') {
+                    P += pop();
+                }
+                pop();
+            }
+
+            if (isOperator(c)) {
+                while (derajat(stack[top]) >= derajat(c)) {
+                    P += pop();
+                }
+                push(c);
+            }
+        }
+        return P;
+    }
+
 }
