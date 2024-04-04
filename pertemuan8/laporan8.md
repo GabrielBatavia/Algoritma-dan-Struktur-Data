@@ -505,3 +505,23 @@ Contoh 2:
 <img src="./img/image_4.png">
 
 <br>
+
+### 2.4.3 Pertanyaan
+
+1. Pada method derajat, mengapa return value beberapa case bernilai sama? Apabila return 
+value diubah dengan nilai berbeda-beda setiap case-nya, apa yang terjadi? <br>
+
+Jawab : Pada method derajat, nilai return beberapa case sama karena operator %, /, *, -, dan + memiliki prioritas operasi yang sama. Jika nilai ini diubah sehingga berbeda untuk setiap operator, urutan operasi dalam konversi ke postfix akan terpengaruh, menyebabkan hasil yang tidak sesuai dengan aturan matematika standar.<br>
+
+2. Jelaskan alur kerja method konversi! <br> 
+
+Jawab : Method konversi mengubah ekspresi infix menjadi postfix. Ini dilakukan dengan iterasi karakter ekspresi, memproses operand langsung ke hasil, mendorong ( ke stack, pop dari stack ke hasil hingga ( ketika menemukan ), dan mendorong operator ke stack setelah pop operator dengan prioritas lebih tinggi atau sama. <br>
+
+3. Pada method konversi, apa fungsi dari potongan kode berikut?
+
+```java
+    c = Q.charAt(i);
+```
+<br>
+
+Jawab : Potongan kode c = Q.charAt(i); berfungsi untuk mengambil karakter ke-i dari string Q dan menyimpannya dalam c, memungkinkan iterasi dan evaluasi setiap karakter dalam ekspresi matematika untuk konversi ke postfix. <br>
