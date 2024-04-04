@@ -342,3 +342,20 @@ public class StackKonversi13 {
 <br>
 
 ### 2.3.3 Pertanyaan
+
+1. Pada method konversiDesimalKeBiner, ubah kondisi perulangan menjadi while (kode != 0), 
+bagaimana hasilnya? Jelaskan alasannya! <br>
+
+Jawab : Mengubah kondisi perulangan dalam method konversiDesimalKeBiner menjadi while (kode != 0) sebenarnya tidak akan mengubah hasilnya karena kondisi kode > 0 dan kode != 0 pada konteks ini menghasilkan alur kerja yang sama. Hal ini karena dalam konversi desimal ke biner, proses akan berlanjut selama masih ada sisa desimal yang belum dikonversi menjadi biner. Kedua kondisi tersebut memastikan perulangan terus berlangsung hingga kode menjadi 0, yang berarti semua sisa telah dikonversi.
+
+<br>
+
+2. Jelaskan alur kerja dari method konversiDesimalKeBiner! <br>
+
+Jawab : Method konversiDesimalKeBiner mengikuti alur kerja berikut untuk mengkonversi bilangan desimal menjadi biner:
+
+Inisialisasi: Sebuah objek StackKonversi13 diinisialisasi untuk menampung sisa pembagian desimal dengan 2. Ini digunakan karena konversi desimal ke biner dilakukan dengan membagi bilangan desimal dengan 2 dan menyimpan sisanya dalam urutan terbalik.
+Perulangan: Selama nilai kode (bilangan desimal yang akan dikonversi) lebih dari 0, kode tersebut dibagi dengan 2, dan sisa pembagiannya (0 atau 1) ditambahkan ke dalam stack. Pembagian ini dilakukan dengan menggunakan operasi modulus (%) untuk mendapatkan sisa, dan hasil bagi yang baru diupdate dengan membagi kode dengan 2.
+Konversi: Setelah semua sisa telah ditambahkan ke stack, metode menginisialisasi sebuah string biner untuk menampung representasi binernya. Kemudian, selama stack tidak kosong, elemen di pop dari stack dan di-append ke string biner. Ini menghasilkan representasi biner dari bilangan desimal karena elemen-elemen diambil dari stack dalam urutan terbalik dari bagaimana mereka ditambahkan.
+Return: String biner, yang sekarang berisi representasi biner dari bilangan desimal, dikembalikan.
+
