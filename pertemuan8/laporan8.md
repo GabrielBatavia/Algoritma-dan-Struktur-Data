@@ -491,3 +491,17 @@ public class PostfixMain13 {
 
 
 ```
+
+### 2.4.2 Hasil
+
+Contoh 1:
+
+<img src="./img/image_3.png">
+
+<br>
+
+Contoh 2:
+
+<img src="./img/image_4.png">
+
+<br>
