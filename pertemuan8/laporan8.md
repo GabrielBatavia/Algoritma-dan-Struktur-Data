@@ -359,3 +359,135 @@ Perulangan: Selama nilai kode (bilangan desimal yang akan dikonversi) lebih dari
 Konversi: Setelah semua sisa telah ditambahkan ke stack, metode menginisialisasi sebuah string biner untuk menampung representasi binernya. Kemudian, selama stack tidak kosong, elemen di pop dari stack dan di-append ke string biner. Ini menghasilkan representasi biner dari bilangan desimal karena elemen-elemen diambil dari stack dalam urutan terbalik dari bagaimana mereka ditambahkan.
 Return: String biner, yang sekarang berisi representasi biner dari bilangan desimal, dikembalikan.
 
+<br>
+
+### 2.4.1 Program
+
+```java
+
+/**
+ * Postfix13
+ */
+public class Postfix13 {
+    int n, top;
+    char[] stack;
+
+    public Postfix13(int total) {
+        n = total;
+        top = -1;
+        stack = new char[n];
+        push('(');
+    }
+    
+    public void push (char c) {
+        top++;
+        stack[top] = c;
+    }
+
+    public char pop() {
+        char item = stack[top];
+        top--;
+        return item;
+    }
+
+    public boolean isOperand(char c) {
+        if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || 
+            (c >= '0' && c <= '9') || c == ' ' || c == '.') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isOperator(char c) {
+        if (c == '^' || c == '%' || c == '/' || c == '*' || 
+            c == '-' || c == '+') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public int derajat(char c) {
+        switch (c) {
+            case '^':
+                return 3;
+            case '%':
+                return 2;
+            case '/':
+                return 2;
+            case '*':
+                return 2;
+            case '-':
+                return 1;
+            case '+':
+                return 1;
+            default:
+                return 0;
+        }
+    }
+
+    public String konversi(String Q) {
+        String P = "";
+        char c;
+
+        for (int i = 0; i < n; i++) {
+            c = Q.charAt(i);
+            if (isOperand(c)) {
+                P += c;
+            }
+
+            if (c == '(') {
+                push(c);
+            }
+
+            if (c == ')') {
+                while (stack[top] != '(') {
+                    P += pop();
+                }
+                pop();
+            }
+
+            if (isOperator(c)) {
+                while (derajat(stack[top]) >= derajat(c)) {
+                    P += pop();
+                }
+                push(c);
+            }
+        }
+        return P;
+    }
+
+}
+
+```
+
+<br>
+
+```java
+
+import java.util.Scanner;
+
+public class PostfixMain13 {
+    
+    public static void main(String[] args) {
+        Scanner sc13 = new Scanner(System.in);
+        
+        String P, Q;
+
+        System.out.print("Masukkan ekspresi matematika (infix) : ");
+        Q = sc13.nextLine();
+        Q = Q.trim();
+        Q = Q + ")";
+
+        int total = Q.length();
+
+        Postfix13 post = new Postfix13(total);
+        P = post.konversi(Q);
+        System.out.println("Postfix: " + P);
+    }
+
+}
+
+
+```
