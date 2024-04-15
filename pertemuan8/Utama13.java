@@ -14,7 +14,9 @@ public class Utama13 {
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
             System.out.println("4. Tampilkan barang teratas");
-            System.out.println("5. Keluar");
+            System.out.println("5. Tampilkan barang terbwah");
+            System.out.println("6. Cari Barang");
+            System.out.println("7. Keluar");
             System.out.print("Pilih operasi : ");
             int pilihan = sc13.nextInt();
             sc13.nextLine();
@@ -43,8 +45,18 @@ public class Utama13 {
                 case 4: 
                     gudang.lihatBarangTeratas();
                     break;
-    
+                
                 case 5:
+                    gudang.lihatBarangTerbawah();
+                    break;
+                
+                case 6:
+                    System.out.println("Masukkan kata kunci:");
+                    String kataKunci = sc13.nextLine(); 
+                    gudang.cariBarang(kataKunci);
+                    break;
+
+                case 7:
                     sc13.close(); 
                     return; // keluar dari program
                 
