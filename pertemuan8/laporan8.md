@@ -525,3 +525,12 @@ Jawab : Method konversi mengubah ekspresi infix menjadi postfix. Ini dilakukan d
 <br>
 
 Jawab : Potongan kode c = Q.charAt(i); berfungsi untuk mengambil karakter ke-i dari string Q dan menyimpannya dalam c, memungkinkan iterasi dan evaluasi setiap karakter dalam ekspresi matematika untuk konversi ke postfix. <br>
+
+
+### 2.5 Latihan Praktikum
+Perhatikan dan gunakan kembali kode program pada Percobaan 1. Tambahkan dua method berikut 
+pada class Gudang: 
+• Method lihatBarangTerbawah digunakan untuk mengecek barang pada tumpukan terbawah 
+• Method cariBarang digunakan untuk mencari ada atau tidaknya barang berdasarkan kode 
+barangnya atau nama barangnya
+

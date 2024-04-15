@@ -72,6 +72,17 @@ public class Gudang13 {
         }
     }
 
+    public Barang13 lihatBarangTerbawah() {
+        if (!cekKosong()) {
+            Barang29 barangTerbawah = tumpukan[0];
+            System.out.println("Barang terbawah: " + barangTerbawah.nama);
+            return barangTerbawah;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+    }
+
     public String konversiDesimalKeBiner(int kode) {
         StackKonversi13 stack = new StackKonversi13();
         while (kode > 0) {
