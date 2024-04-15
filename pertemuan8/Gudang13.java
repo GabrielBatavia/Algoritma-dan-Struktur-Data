@@ -74,12 +74,32 @@ public class Gudang13 {
 
     public Barang13 lihatBarangTerbawah() {
         if (!cekKosong()) {
-            Barang29 barangTerbawah = tumpukan[0];
+            Barang13 barangTerbawah = tumpukan[0];
             System.out.println("Barang terbawah: " + barangTerbawah.nama);
             return barangTerbawah;
         } else {
             System.out.println("Tumpukan barang kosong.");
             return null;
+        }
+    }
+
+    public void cariBarang(String kataKunci) {
+        boolean ditemukan = false;
+        if (!cekKosong()) {
+            for (int i = 0; i <= top; i++) {
+                if (tumpukan[i].nama.equalsIgnoreCase(kataKunci) || tumpukan[i].kode == Integer.parseInt(kataKunci)) {
+                    System.out.println("Barang ditemukan:");
+                    System.out.printf("Kode: %d, Nama: %s, Kategori: %s\n", 
+                                        tumpukan[i].kode, 
+                                        tumpukan[i].nama,
+                                        tumpukan[i].kategori);
+                    ditemukan = true;
+                    break;
+                }
+            }
+        }
+        if (!ditemukan) {
+            System.out.println("Barang tidak ditemukan");
         }
     }
 
