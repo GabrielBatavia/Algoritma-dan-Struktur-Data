@@ -534,3 +534,58 @@ pada class Gudang:
 • Method cariBarang digunakan untuk mencari ada atau tidaknya barang berdasarkan kode 
 barangnya atau nama barangnya
 
+Jawab :
+
+```java
+
+    public Barang13 lihatBarangTerbawah() {
+        if (!cekKosong()) {
+            Barang13 barangTerbawah = tumpukan[0];
+            System.out.println("Barang terbawah: " + barangTerbawah.nama);
+            return barangTerbawah;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+    }
+
+    public void cariBarang(String kataKunci) {
+        boolean ditemukan = false;
+        if (!cekKosong()) {
+            for (int i = 0; i <= top; i++) {
+                if (tumpukan[i].nama.equalsIgnoreCase(kataKunci) || String.valueOf(tumpukan[i].kode).equals(kataKunci)) {
+                    System.out.println("Barang ditemukan:");
+                    System.out.printf("Kode: %d, Nama: %s, Kategori: %s\n", 
+                                        tumpukan[i].kode, 
+                                        tumpukan[i].nama,
+                                        tumpukan[i].kategori);
+                    ditemukan = true;
+                    break;
+                }
+            }
+        }
+        if (!ditemukan) {
+            System.out.println("Barang tidak ditemukan");
+        }
+    }
+
+```
+
+<br>
+
+```java
+
+                case 5:
+                    gudang.lihatBarangTerbawah();
+                    break;
+                
+                case 6:
+                    System.out.println("Masukkan kata kunci:");
+                    String kataKunci = sc13.nextLine(); 
+                    gudang.cariBarang(kataKunci);
+                    break;
+
+```
+
+Hasil :
+

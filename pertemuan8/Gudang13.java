@@ -87,7 +87,7 @@ public class Gudang13 {
         boolean ditemukan = false;
         if (!cekKosong()) {
             for (int i = 0; i <= top; i++) {
-                if (tumpukan[i].nama.equalsIgnoreCase(kataKunci) || tumpukan[i].kode == Integer.parseInt(kataKunci)) {
+                if (tumpukan[i].nama.equalsIgnoreCase(kataKunci) || String.valueOf(tumpukan[i].kode).equals(kataKunci)) {
                     System.out.println("Barang ditemukan:");
                     System.out.printf("Kode: %d, Nama: %s, Kategori: %s\n", 
                                         tumpukan[i].kode, 
