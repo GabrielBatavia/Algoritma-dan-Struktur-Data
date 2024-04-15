@@ -589,3 +589,12 @@ Jawab :
 
 Hasil :
 
+<img src="./img/image_5.png">
+
+<br>
+
+<img src="./img/image_6.png">
+
+<br>
+
+<img src="./img/image_7.png">
