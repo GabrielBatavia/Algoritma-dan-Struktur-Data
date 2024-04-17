@@ -2,7 +2,7 @@ public class Pengurutan_dan_Pencarian_UTS13 {
     UTS13[] data;
 
     public Pengurutan_dan_Pencarian_UTS13(UTS13[] initialData) {
-        this.data = initialData;  // Correctly initializing the data array with the passed array
+        this.data = initialData;  
     }
 
     void selectionSortAsc() {

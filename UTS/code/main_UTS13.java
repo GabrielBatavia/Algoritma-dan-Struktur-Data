@@ -42,6 +42,14 @@ public class main_UTS13 {
         sortingSearching.selectionSortDesc();
         int indexAfterSortDesc = sortingSearching.binarySearch(key, false);
         String resultAfterSortDesc = (indexAfterSortDesc != -1) ? "ditemukan pada index " + indexAfterSortDesc : "tidak ditemukan";
+        
+        System.out.println("\n======== Nilai dalam Array ========");
+        sortingSearching.selectionSortAsc(); 
+        System.out.print("Data Setelah pengurutan Ascending: ");
+        sortingSearching.CetakArray(); 
+        sortingSearching.selectionSortDesc(); 
+        System.out.print("Data Setelah pengurutan Descending: ");
+        sortingSearching.CetakArray(); 
 
         System.out.println("\n========= Hasil Pencarian =========");
         System.out.println("Sebelum pengurutan: " + resultBeforeSort);
