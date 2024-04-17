@@ -25,6 +25,7 @@ public class latihan1_main {
         int jmlKerucut = sc13.nextInt();
 
         latihan1_kerucut[] kerucut13 = new latihan1_kerucut[jmlKerucut];
+        
         for (int i = 0; i < kerucut13.length; i++) {
             System.out.printf("Kerucut ke-%d\n", i + 1);
             System.out.print("Masukkan panjang jari-jari: ");
