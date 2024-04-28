@@ -1,5 +1,3 @@
-package Praktikum2;
-
 public class Nasabah13 {
     String nama, norek, alamat;
     int umur;
