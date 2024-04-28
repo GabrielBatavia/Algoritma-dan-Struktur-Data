@@ -1,3 +1,4 @@
+package Praktikum2;
 import java.util.Scanner;
 
 public class QueueMain13 {
@@ -8,12 +9,12 @@ public class QueueMain13 {
         int jumlah = sc13.nextInt();
         Nasabah13.Queue13 antri = new Nasabah13.Queue13(jumlah);  // Correct instantiation
 
-        int pilihMenu;
+        int pilih;
         do {
             menu();
-            pilihMenu = sc13.nextInt();  // Corrected variable name
+            pilih = sc13.nextInt();  // Corrected variable name
             sc13.nextLine();
-            switch (pilihMenu) {
+            switch (pilih) {
                 case 1:
                     System.out.print("No rekening: ");
                     String norek = sc13.nextLine();
@@ -43,15 +44,11 @@ public class QueueMain13 {
                 case 4:
                     antri.print();
                     break;
-                case 5:
-                    System.out.println("Exiting...");
-                    sc13.close();
-                    return;
                 default:
-                    System.out.println("Invalid option, please choose again.");
+                    System.out.println("Masukkan nomor pilihan yang sudah tersedia di menu!");
                     break;
             }
-        } while (true);
+        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4);
     }
 
     public static void menu() {
@@ -61,9 +58,8 @@ public class QueueMain13 {
             "   2. Antrian keluar\n" +
             "   3. Cek antrian terdepan\n" +
             "   4. Cek semua antrian\n" +
-            "   5. Exit\n" +
             "=====================================\n" +
-            " >>> "
+            "Pilihan : "
         );
     }
 }

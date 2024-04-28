@@ -180,6 +180,12 @@ public class QueueMain13 {
 
 <br>
 
+### Verifikasi Hasil
+
+<img src="./img/image_3.png">
+
+<br>
+
 ### Praktikum 2
 
 ```java

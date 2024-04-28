@@ -1,4 +1,5 @@
 package Praktikum1;
+
 import java.util.Scanner;
 
 public class QueueMain13 {
