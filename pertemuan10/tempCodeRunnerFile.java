@@ -8,12 +8,12 @@ public class QueueMain13 {
         int jumlah = sc13.nextInt();
         Nasabah13.Queue13 antri = new Nasabah13.Queue13(jumlah);  // Correct instantiation
 
-        int pilih;
+        int pilihMenu;
         do {
             menu();
-            pilih = sc13.nextInt();  // Corrected variable name
+            pilihMenu = sc13.nextInt();  // Corrected variable name
             sc13.nextLine();
-            switch (pilih) {
+            switch (pilihMenu) {
                 case 1:
                     System.out.print("No rekening: ");
                     String norek = sc13.nextLine();
@@ -43,11 +43,15 @@ public class QueueMain13 {
                 case 4:
                     antri.print();
                     break;
+                case 5:
+                    System.out.println("Exiting...");
+                    sc13.close();
+                    return;
                 default:
-                    System.out.println("Masukkan nomor pilihan yang sudah tersedia di menu!");
+                    System.out.println("Invalid option, please choose again.");
                     break;
             }
-        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4);
+        } while (true);
     }
 
     public static void menu() {
@@ -57,8 +61,9 @@ public class QueueMain13 {
             "   2. Antrian keluar\n" +
             "   3. Cek antrian terdepan\n" +
             "   4. Cek semua antrian\n" +
+            "   5. Exit\n" +
             "=====================================\n" +
-            "Pilihan : "
+            " >>> "
         );
     }
 }
