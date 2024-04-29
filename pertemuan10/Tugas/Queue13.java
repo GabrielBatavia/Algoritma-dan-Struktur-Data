@@ -1,5 +1,4 @@
-
-
+package Tugas;
 public class Queue13 {
     
     private Pembeli13[] antrian;
@@ -57,7 +56,7 @@ public class Queue13 {
     public void print() {
         for (int i = front; i != rear + 1; i = (i + 1) % max) {
             if (antrian[i] != null) {
-                System.out.println(antrian[i].getNama() + " - " + antrian[i].getNoHP());
+                System.out.println(antrian[i].getNama() + " - " + antrian[i].getNoHP()); 
             }
         }
     }

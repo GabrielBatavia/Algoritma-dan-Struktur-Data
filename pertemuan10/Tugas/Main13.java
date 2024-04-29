@@ -1,3 +1,4 @@
+package Tugas;
 import java.util.Scanner;
 
 public class Main13 {
@@ -35,7 +36,7 @@ public class Main13 {
                         System.out.print("Masukkan nama: ");
                         String nama = scanner13.nextLine();
                         System.out.print("Masukkan nomor HP: ");
-                        int noHP = scanner13.nextInt();
+                        String noHP = scanner13.nextLine();
                         Pembeli13 pembeli = new Pembeli13(nama, noHP);
                         queue.enqueue(pembeli);
                     }

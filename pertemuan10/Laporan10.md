@@ -572,4 +572,263 @@ Hasil :
 
 <img src="./img/image_4.png">
 
-###
+<br>
+<br>
+
+### Tugas
+
+```java
+
+
+public class Pembeli13 {
+    private String nama;
+    private String noHP;
+
+    public Pembeli13(String nama, String noHP) {
+        this.nama = nama;
+        this.noHP = noHP;
+    }
+
+    // Method untuk mendapatkan nama pembeli
+    public String getNama() {
+        return nama;
+    }
+
+    // Method untuk mendapatkan nomor HP pembeli
+    public String getNoHP() {
+        return noHP;
+    }
+
+    // Method untuk mengatur nama pembeli
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    // Method untuk mengatur nomor HP pembeli
+    public void setNoHP(String noHP) {
+        this.noHP = noHP;
+    }
+
+}
+
+```
+
+<br>
+
+```java
+
+
+
+public class Queue13 {
+
+    private Pembeli13[] antrian;
+    private int front;
+    private int rear;
+    private int size;
+    private int max;
+
+    public Queue13(int max) {
+        this.max = max;
+        antrian = new Pembeli13[this.max];
+        front = 0;
+        rear = -1;
+        size = 0;
+    }
+
+    public boolean isEmpty() {
+        if (size == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isFull() {
+        if (size == max) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void enqueue(Pembeli13 item) {
+        if (!isFull()) {
+            rear = (rear + 1) % max;
+            antrian[rear] = item;
+            size++;
+        } else {
+            System.out.println("Antrian penuh!");
+        }
+    }
+
+    public Pembeli13 dequeue() {
+        if (!isEmpty()) {
+            Pembeli13 item = antrian[front];
+            front = (front + 1) % max;
+            size--;
+            return item;
+        } else {
+            System.out.println("Antrian kosong!");
+            return null;
+        }
+    }
+
+    public void print() {
+        for (int i = front; i != rear + 1; i = (i + 1) % max) {
+            if (antrian[i] != null) {
+                System.out.println(antrian[i].getNama() + " - " + antrian[i].getNoHP());
+            }
+        }
+    }
+
+    public void peek() {
+        if (!isEmpty()) {
+            System.out.println(antrian[front].getNama());
+        } else {
+            System.out.println("Antrian kosong!");
+        }
+    }
+
+    public void peekRear() {
+        if (!isEmpty()) {
+            System.out.println(antrian[rear].getNama());
+        } else {
+            System.out.println("Antrian kosong!");
+        }
+    }
+
+    public void peekPosition(String nama) {
+        for (int i = front; i != rear + 1; i = (i + 1) % max) {
+            if (antrian[i] != null && antrian[i].getNama().equalsIgnoreCase(nama)) {
+                System.out.println("Posisi " + nama + " adalah: " + ((i - front + max) % max + 1));
+                return;
+            }
+        }
+        System.out.println(nama + " tidak ada dalam antrian.");
+    }
+
+    public void daftarPembeli() {
+        for (int i = front; i != rear + 1; i = (i + 1) % max) {
+            if (antrian[i] != null) {
+                System.out.println((i - front + max) % max + 1 + ". " + antrian[i].getNama() + " - " + antrian[i].getNoHP());
+            }
+        }
+    }
+}
+
+
+
+
+```
+
+<br>
+
+```java
+
+import java.util.Scanner;
+
+public class Main13 {
+
+    public static void main(String[] args) {
+        Scanner scanner13 = new Scanner(System.in);
+
+        System.out.print("Masukkan kapasitas maksimal antrian: ");
+        int maxCapacity = scanner13.nextInt();
+        Queue13 queue = new Queue13(maxCapacity);  // Kapasitas antrian sesuai input pengguna
+
+        while (true) {
+
+            System.out.println("\n\n==================================================");
+            System.out.println("                       MENU                       ");
+            System.out.println("==================================================");
+
+            System.out.println("\n\n==========================================");
+            System.out.println("   1. Tambahkan antrian");
+            System.out.println("   2. Selesaikan antrian");
+            System.out.println("   3. Tampilkan keseluruhan antrian");
+            System.out.println("   4. Tampilkan antrian terdepan");
+            System.out.println("   5. Tampilkan antrian paling belakang");
+            System.out.println("   6. Cari data dari antrian");
+            System.out.println("   7. KELUAR");
+            System.out.print(" >>> ");
+            int pilihan = scanner13.nextInt();
+            scanner13.nextLine();  // Consume newline left-over
+
+            switch (pilihan) {
+                case 1:
+                    if (queue.isFull()) {
+                        System.out.println("Maaf, antrian sudah penuh!");
+                    } else {
+                        System.out.print("Masukkan nama: ");
+                        String nama = scanner13.nextLine();
+                        System.out.print("Masukkan nomor HP: ");
+                        String noHP = scanner13.nextLine();
+                        Pembeli13 pembeli = new Pembeli13(nama, noHP);
+                        queue.enqueue(pembeli);
+                    }
+                    break;
+                case 2:
+                    Pembeli13 dihapus = queue.dequeue();
+                    if (dihapus != null) {
+                        System.out.println(dihapus.getNama() + " telah selesai dilayani.");
+                    }
+                    break;
+                case 3:
+                    queue.print();
+                    break;
+                case 4:
+                    queue.peek();
+                    break;
+                case 5:
+                    queue.peekRear();
+                    break;
+                case 6:
+                    System.out.print("Masukkan nama yang dicari: ");
+                    String nama = scanner13.nextLine();
+                    queue.peekPosition(nama);
+                    break;
+                case 7:
+                    System.out.println("Terima kasih telah menggunakan aplikasi ini.");
+                    scanner13.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+            }
+        }
+    }
+}
+
+
+```
+
+#### Hasil Tugas
+
+<img src="./img/image_5.png">
+
+<br>
+
+<img src="./img/image_6.png">
+
+<br>
+
+<img src="./img/image_7.png">
+
+<br>
+
+<img src="./img/image_8.png">
+
+<br>
+
+<img src="./img/image_9.png">
+
+<br>
+
+<img src="./img/image_10.png">
+
+<br>
+
+<img src="./img/image_10.png">
+
+<br>
+
+<img src="./img/image_12.png">

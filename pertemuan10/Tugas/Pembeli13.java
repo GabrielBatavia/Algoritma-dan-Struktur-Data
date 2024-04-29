@@ -1,10 +1,11 @@
+package Tugas;
 
 
 public class Pembeli13 {
     private String nama;
-    private int noHP;
+    private String noHP;
 
-    public Pembeli13(String nama, int noHP) {
+    public Pembeli13(String nama, String noHP) {
         this.nama = nama;
         this.noHP = noHP;
     }
@@ -15,7 +16,7 @@ public class Pembeli13 {
     }
 
     // Method untuk mendapatkan nomor HP pembeli
-    public int getNoHP() {
+    public String getNoHP() {
         return noHP;
     }
 
@@ -25,7 +26,7 @@ public class Pembeli13 {
     }
 
     // Method untuk mengatur nomor HP pembeli
-    public void setNoHP(int noHP) {
+    public void setNoHP(String noHP) {
         this.noHP = noHP;
     }
 
