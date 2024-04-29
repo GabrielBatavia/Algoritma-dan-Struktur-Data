@@ -1,4 +1,4 @@
-package Praktikum2;
+
 import java.util.Scanner;
 
 public class QueueMain13 {
@@ -44,6 +44,9 @@ public class QueueMain13 {
                 case 4:
                     antri.print();
                     break;
+                case 5:
+                    antri.peekRear();
+                    break;
                 default:
                     System.out.println("Masukkan nomor pilihan yang sudah tersedia di menu!");
                     break;
@@ -58,6 +61,7 @@ public class QueueMain13 {
             "   2. Antrian keluar\n" +
             "   3. Cek antrian terdepan\n" +
             "   4. Cek semua antrian\n" +
+            "5. Peek Rear (Cek antrian paling belakang\n" +
             "=====================================\n" +
             "Pilihan : "
         );

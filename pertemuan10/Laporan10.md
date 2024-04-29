@@ -487,7 +487,7 @@ public class QueueMain13 {
 
 <br>
 
-### Verifikasi Hasil
+#### Verifikasi Hasil
 
 <img src="./img/image.png">
 
@@ -496,3 +496,80 @@ public class QueueMain13 {
 <img src="./img/image_2.png">
 
 <br>
+
+##### Pertanyaan
+
+1. Pada class QueueMain, jelaskan fungsi IF pada potongan kode program berikut!
+
+```java
+
+
+
+```
+
+Jawab :
+
+fungsi if adalah untuk memeriksa apakah data nasabah yang akan dikeluarkan dari antrian (queue) memiliki informasi yang valid. Ini dilakukan dengan mengecek apakah nomor rekening (norek), nama, dan alamat tidak kosong (dengan kata lain, tidak sama dengan string kosong ""), serta memastikan bahwa umur (umur) dan saldo (saldo) bukan nol. Hanya jika semua kondisi ini terpenuhi, informasi nasabah akan dicetak ke konsol dengan menggunakan System.out.println, dan pernyataan break akan menghentikan loop.
+
+2. Lakukan modifikasi program dengan menambahkan method baru bernama peekRear pada class
+   Queue yang digunakan untuk mengecek antrian yang berada di posisi belakang! Tambahkan pula
+   daftar menu 5. Cek Antrian paling belakang pada class QueueMain sehingga method peekRear
+   dapat dipanggil!
+
+jawab :
+
+Tambahkan Method peekRear ke Class Queue:
+
+```java
+public void peekRear() {
+    if (!isEmpty()) {
+        System.out.println("Elemen paling belakang: " + data[rear].norek + " " + data[rear].nama + " "
+                + data[rear].alamat + " " + data[rear].umur + " " + data[rear].saldo);
+    } else {
+        System.out.println("Queue masih kosong");
+    }
+}
+
+```
+
+Method ini akan menampilkan informasi nasabah yang berada di posisi paling belakang dalam queue.
+
+Tambahkan Opsi Menu Baru di Class QueueMain, dan memperbarui metode menu() untuk memasukkan pilihan baru:
+
+```java
+
+    public static void menu() {
+        System.out.print(
+            "\n\nPilihan menu: \n" +
+            "   1. Antrian baru\n" +
+            "   2. Antrian keluar\n" +
+            "   3. Cek antrian terdepan\n" +
+            "   4. Cek semua antrian\n" +
+            "5. Peek Rear (Cek antrian paling belakang\n" +
+            "=====================================\n" +
+            "Pilihan : "
+        );
+    }
+
+
+
+```
+
+Tambahkan case baru untuk pilihan 5 di dalam switch statement pada method main:
+
+```java
+
+switch (pilih) {
+
+    case 5:
+        antri.peekRear();
+        break;
+}
+
+```
+
+Hasil :
+
+<img src="./img/image_4.png">
+
+###
