@@ -180,10 +180,104 @@ public class QueueMain13 {
 
 <br>
 
-### Verifikasi Hasil
+#### Verifikasi Hasil
 
 <img src="./img/image_3.png">
 
+<br>
+
+#### Pertanyaan
+
+1. Pada konstruktor, mengapa nilai awal atribut front dan rear bernilai -1, sementara atribut size
+   bernilai 0?
+2. Pada method Enqueue, jelaskan maksud dan kegunaan dari potongan kode berikut!
+3. Pada method Dequeue, jelaskan maksud dan kegunaan dari potongan kode berikut!
+4. Pada method print, mengapa pada proses perulangan variabel i tidak dimulai dari 0 (int i=0),
+   melainkan int i=front?
+5. Perhatikan kembali method print, jelaskan maksud dari potongan kode berikut!
+6. Tunjukkan potongan kode program yang merupakan queue overflow!
+7. Pada saat terjadi queue overflow dan queue underflow, program tersebut tetap dapat berjalan
+   dan hanya menampilkan teks informasi. Lakukan modifikasi program sehingga pada saat terjadi
+   queue overflow dan queue underflow, program dihentikan!
+
+#### Jawaban Pertanyaan
+
+1. front dan rear bernilai -1 menandakan bahwa queue sedang kosong. Index -1 adalah nilai non-valid untuk index array, jadi ini digunakan untuk menunjukkan bahwa belum ada elemen yang masuk atau keluar dari queue.
+   sedangkan size ber nilai 0 karena belum ada elemen dalam queue. size digunakan untuk melacak jumlah elemen yang saat ini ada di queue.
+
+<br>
+
+2. Potongan kode ini mengatur indeks rear untuk menyimpan elemen baru. Jika rear sudah mencapai akhir array (indeks terakhir), maka rear di-set ke 0, mengimplementasikan queue sebagai struktur data circular.
+
+```java
+if (rear == max - 1) {
+    rear = 0;
+}
+```
+
+<br>
+
+3. Potongan kode ini mengatur indeks front ketika elemen dikeluarkan dari queue. Jika front sudah mencapai akhir array, maka front di-set ke 0, mempertahankan sifat circular dari queue.
+
+```java
+
+if (front == max - 1) {
+    front = 0;
+}
+
+```
+
+<br>
+
+4. Alasan i diinisialisasi dengan front bukan 0 adalah karena elemen pertama dalam queue mungkin tidak berada di awal array fisik jika queue diperlakukan sebagai circular. Maka, iterasi harus dimulai dari elemen terdepan aktual, yaitu front.
+
+<br>
+
+5. Ini adalah operasi untuk melanjutkan iterasi elemen queue. % max memastikan bahwa jika i mencapai akhir array, akan kembali ke awal array, mengikuti sifat circular dari queue.
+
+```java
+
+i = (i + 1) % max;
+
+```
+
+<br>
+
+6. Potongan kode yang menunjukkan kondisi overflow :
+
+```java
+
+if (size == max) {
+    return true;
+}
+
+```
+
+<br>
+
+7. Untuk menghentikan program ketika overflow atau underflow terjadi, tambahkan System.exit(1); setelah pesan error ditampilkan. Contohnya, dalam method Enqueue:
+
+```java
+
+if (IsFull()) {
+    System.out.println("Queue sudah penuh");
+    System.exit(1);
+}
+
+```
+
+Dan dalam Dequeue:
+
+```java
+
+if (IsEmpty()) {
+    System.out.println("Queue masih kosong");
+    System.exit(1);
+}
+
+```
+
+<br>
 <br>
 
 ### Praktikum 2
