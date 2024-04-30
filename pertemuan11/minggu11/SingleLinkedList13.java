@@ -1,4 +1,4 @@
-public class SingleLingkedList13 {
+public class SingleLinkedList13 {
     Node13 head, tail;
 
     public boolean isEmpty() {
