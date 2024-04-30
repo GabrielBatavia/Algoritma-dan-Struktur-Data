@@ -1,4 +1,4 @@
-<p align="center">LAPORAN PRAKTIKUM 10</p>
+<p align="center">LAPORAN PRAKTIKUM 11</p>
 <p align="center">Algoritma dan Struktur Data</p>
 
 <p align="center"> <img src="./img/polinema.png"> </p>
