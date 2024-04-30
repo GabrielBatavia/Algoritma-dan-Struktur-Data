@@ -1,3 +1,5 @@
+package Tugas2;
+
 public class LinkedListMain13 {
     public static void main(String[] args) {
         LinkedList13 linkedList = new LinkedList13();

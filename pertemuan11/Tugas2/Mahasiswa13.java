@@ -1,4 +1,4 @@
-
+package Tugas2;
 
 public class Mahasiswa13 {
     int nim;

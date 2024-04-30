@@ -521,3 +521,143 @@ public class LinkedListMain13 {
 <img src="./img/image_3.png">
 
 <br>
+
+### 3.2 Tugas 2
+
+```java
+
+
+public class Mahasiswa13 {
+    int nim;
+    String nama;
+
+    public Mahasiswa13(int nim, String nama) {
+        this.nim = nim;
+        this.nama = nama;
+    }
+}
+
+
+
+```
+
+```java
+
+public class Node13 {
+    Mahasiswa13 data;
+    Node13 next;
+
+    public Node13(Mahasiswa13 data, Node13 next) {
+        this.data = data;
+        this.next = next;
+    }
+}
+
+
+```
+
+```java
+
+
+
+public class LinkedList13 {
+    Node13 head, tail;
+
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    void print() {
+        if (!isEmpty()) {
+            Node13 tmp = head;
+            System.out.println("Isi Linked List:");
+            while (tmp != null) {
+                System.out.println("NIM: " + tmp.data.nim + " Nama: " + tmp.data.nama);
+                tmp = tmp.next;
+            }
+        } else {
+            System.out.println("Linked List Kosong");
+        }
+    }
+
+    void enqueue(Mahasiswa13 data) {
+        Node13 ndInput = new Node13(data, null);
+        if (isEmpty()) {
+            head = ndInput;
+            tail = ndInput;
+        } else {
+            tail.next = ndInput;
+            tail = ndInput;
+        }
+    }
+
+    Mahasiswa13 dequeue() {
+        if (isEmpty()) {
+            System.out.println("Queue kosong, tidak bisa dequeue");
+            return null;
+        }
+        Mahasiswa13 data = head.data;
+        head = head.next;
+        if (head == null) {
+            tail = null;
+        }
+        return data;
+    }
+}
+
+
+
+```
+
+```java
+
+public class LinkedListMain13 {
+    public static void main(String[] args) {
+        LinkedList13 linkedList = new LinkedList13();
+
+        System.out.println("=============================================");
+        System.out.println(" Selamat Datang di Aplikasi Unit Kesehatan!");
+        System.out.println("=============================================");
+        System.out.println("\nMengisi Antrian Awal:");
+
+        linkedList.enqueue(new Mahasiswa13(111, "Anton"));
+        linkedList.enqueue(new Mahasiswa13(112, "Prita"));
+        linkedList.enqueue(new Mahasiswa13(113, "Yusuf"));
+        linkedList.enqueue(new Mahasiswa13(114, "Doni"));
+
+        System.out.println("\nAntrian saat ini:");
+        linkedList.print();
+
+        System.out.println("=============================================");
+        System.out.println("Melakukan Operasi Dequeue (Mengurangi Antrian)");
+        System.out.println("=============================================");
+        linkedList.dequeue();
+        System.out.println("\nAntrian setelah satu mahasiswa dilayani:");
+        linkedList.print();
+
+        System.out.println("=============================================");
+        linkedList.dequeue();
+        System.out.println("\nAntrian setelah satu mahasiswa lagi dilayani:");
+        linkedList.print();
+
+        System.out.println("=============================================");
+        System.out.println("\nMenambahkan Mahasiswa Baru ke Antrian:");
+        linkedList.enqueue(new Mahasiswa13(115, "Sari"));
+        System.out.println("\nAntrian saat ini:");
+        linkedList.print();
+
+        System.out.println("=============================================");
+        System.out.println(" Terima Kasih telah menggunakan Aplikasi kami!");
+        System.out.println("=============================================");
+    }
+}
+
+
+
+```
+
+<br>
+
+### Verifikasi Hasil Tugas 2
+
+<img src="./img/image_4.png">
