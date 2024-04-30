@@ -1,4 +1,16 @@
+<p align="center">LAPORAN PRAKTIKUM 10</p>
+<p align="center">Algoritma dan Struktur Data</p>
+
+<p align="center"> <img src="./img/polinema.png"> </p>
+
+<p align="center"> Nama : Gabriel Batavia Xaverius </p>
+<p align="center"> NIM : 2341720184  </p>
+<p align="center">Kelas : TI-1B  </p>
+<p align="center">Absen : 13  </p>
+
 ### 2.1.1 Pembuatan Single Linked List
+
+Membuat File Node13 :
 
 ```java
 
@@ -16,6 +28,8 @@ public class Node13 {
 ```
 
 <br>
+
+Membuat File SingleLinkedList13 :
 
 ```java
 
@@ -118,6 +132,8 @@ public class SingleLinkedList13 {
 
 <br>
 
+Membuat file SLLmain :
+
 ```java
 
 public class SLLmain {
@@ -177,7 +193,9 @@ Jawab : memeriksa apakah node yang baru ditambahkan (melalui operasi seperti ins
 <br>
 <br>
 
-### 2.2.1
+### 2.2.1 Modifikasi Pembuatan Single Linked List
+
+Memodifikasi File SingleLinkedList13 :
 
 ```java
 
@@ -275,6 +293,10 @@ Jawab : memeriksa apakah node yang baru ditambahkan (melalui operasi seperti ins
 
 ```
 
+<br>
+
+Memodifikasi File SLLmain :
+
 ```java
 
 public class SLLmain {
@@ -349,8 +371,11 @@ Jawab : digunakan untuk menghapus node yang mengandung data yang sama dengan key
 
 <br>
 <br>
+<br>
 
 ### 3.1 Tugas 1
+
+Berikut beberapa file yang dibuat untuk mengimplementasikan ilustrasi tugas 1 :
 
 ```java
 
@@ -368,6 +393,8 @@ public class Mahasiswa13 {
 
 ```
 
+<br>
+
 ```java
 
 package Tugas1;
@@ -383,6 +410,8 @@ public class Node13 {
 }
 
 ```
+
+<br>
 
 ```java
 
@@ -482,6 +511,8 @@ public class LinkedList13 {
 
 ```
 
+<br>
+
 ```java
 
 
@@ -521,8 +552,11 @@ public class LinkedListMain13 {
 <img src="./img/image_3.png">
 
 <br>
+<br>
 
 ### 3.2 Tugas 2
+
+Berikut adalah file kode untuk membuat program antrian layanan unit kemahasiswaan :
 
 ```java
 
