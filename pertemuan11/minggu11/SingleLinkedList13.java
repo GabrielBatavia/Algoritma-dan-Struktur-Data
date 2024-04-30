@@ -2,16 +2,17 @@ public class SingleLinkedList13 {
     Node13 head, tail;
 
     public boolean isEmpty() {
-        return head != null;
+        return head == null;
     }
 
+    /** 
     void print(){
 
         if(isEmpty()) {
 
             Node13 tmp = head;
             System.out.println("Isi Linked List");
-            while(tmp == null) {
+            while(tmp != null) {
                 System.out.println(tmp.data + "\t");
                 tmp = tmp.next;
             }
@@ -22,10 +23,26 @@ public class SingleLinkedList13 {
         }
 
     }
+    **/
 
+    void print() {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong");
+        } else {
+            Node13 tmp = head;
+            System.out.println("Isi Linked List : \t");
+            while (tmp != null) {
+                System.out.print(tmp.data + " ");
+                tmp = tmp.next;
+            }
+            System.out.println("");
+        }
+    }
+    
+    /** 
     void addFirst(int input) {
 
-        Node13 ndInput = new Node13(input, null);
+        Node13 ndInput = new Node13(input, head);
         
         if(isEmpty()) {
 
@@ -43,7 +60,21 @@ public class SingleLinkedList13 {
 
         }
     }
+    **/
 
+    void addFirst(int input) {
+        Node13 ndInput = new Node13(input, null);
+    
+        if (isEmpty()) {
+            head = ndInput;
+            tail = ndInput;
+        } else {
+            ndInput.next = head;
+            head = ndInput;
+        }
+    }
+
+    /** 
     void addLast(int input) {
         Node13 ndInput = new Node13(input, null);
         if (isEmpty()) {
@@ -55,7 +86,21 @@ public class SingleLinkedList13 {
             tail = ndInput;
         }
     }
+    **/
 
+    void addLast(int input) {
+        Node13 ndInput = new Node13(input, null);
+    
+        if (isEmpty()) {
+            head = ndInput;
+            tail = ndInput;
+        } else {
+            tail.next = ndInput;
+            tail = ndInput;
+        }
+    }
+
+    /** 
     public void insertAfter(int key, int input) {
         Node13 ndInput = new Node13();
         Node13 temp = head;
@@ -74,7 +119,24 @@ public class SingleLinkedList13 {
             temp = temp.next;
         } while(temp == null);
     }
+    **/
 
+    public void insertAfter(int key, int input) {
+        Node13 temp = head;
+        while(temp != null) {
+            if(temp.data == key) {
+                Node13 ndInput = new Node13(input, temp.next);
+                temp.next = ndInput;
+                if(temp == tail) {
+                    tail = ndInput;
+                }
+                break;
+            }
+            temp = temp.next;
+        }
+    }
+
+    /** 
     public void insertAt(int index, int input) {
         
         Node13 ndInput = new Node13();
@@ -92,6 +154,29 @@ public class SingleLinkedList13 {
             temp.next = new Node13(input, temp.next);
             if(temp.next.next == null){
                 tail=temp.next;
+            }
+        }
+    }
+    **/
+
+    public void insertAt(int index, int input) {
+        if(index < 0) {
+            System.out.println("Index tidak valid!");
+        } else if (index == 0) {
+            addFirst(input);
+        } else {
+            Node13 temp = head;
+            for(int i = 0; i < index - 1; i++) {
+                if(temp.next == null) {
+                    System.out.println("Indeks di luar batas!");
+                    return;
+                }
+                temp = temp.next;
+            }
+            Node13 ndInput = new Node13(input, temp.next);
+            temp.next = ndInput;
+            if(ndInput.next == null) {
+                tail = ndInput;
             }
         }
     }
