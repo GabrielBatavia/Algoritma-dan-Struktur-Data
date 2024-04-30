@@ -346,3 +346,16 @@ Jawab : untuk menghentikan iterasi setelah operasi penghapusan dilakukan.
 <br>
 
 Jawab : digunakan untuk menghapus node yang mengandung data yang sama dengan key setelah node yang sedang dicek.
+
+<br>
+<br>
+
+### 3.1 Tugas 1
+
+<br>
+
+### Verifikasi Hasil Tugas 1
+
+<img src="./img/image_3.png">
+
+<br>
