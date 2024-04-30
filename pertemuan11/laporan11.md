@@ -352,6 +352,168 @@ Jawab : digunakan untuk menghapus node yang mengandung data yang sama dengan key
 
 ### 3.1 Tugas 1
 
+```java
+
+package Tugas1;
+public class Mahasiswa13 {
+    int nim;
+    String nama;
+
+    public Mahasiswa13(int nim, String nama) {
+        this.nim = nim;
+        this.nama = nama;
+    }
+}
+
+
+```
+
+```java
+
+package Tugas1;
+
+public class Node13 {
+    Mahasiswa13 data;
+    Node13 next;
+
+    public Node13(Mahasiswa13 data, Node13 next) {
+        this.data = data;
+        this.next = next;
+    }
+}
+
+```
+
+```java
+
+package Tugas1;
+public class LinkedList13 {
+    Node13 head, tail;
+
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    void print() {
+        if (!isEmpty()) {
+            Node13 tmp = head;
+            System.out.println("Isi Linked List:");
+            while (tmp != null) {
+                System.out.println("NIM: " + tmp.data.nim + " Nama: " + tmp.data.nama);
+                tmp = tmp.next;
+            }
+        } else {
+            System.out.println("Linked List Kosong");
+        }
+    }
+
+    void addFirst(Mahasiswa13 data) {
+        Node13 ndInput = new Node13(data, null);
+        if (isEmpty()) {
+            head = ndInput;
+            tail = ndInput;
+        } else {
+            ndInput.next = head;
+            head = ndInput;
+        }
+    }
+
+    void addLast(Mahasiswa13 data) {
+        Node13 ndInput = new Node13(data, null);
+        if (isEmpty()) {
+            head = ndInput;
+            tail = ndInput;
+        } else {
+            tail.next = ndInput;
+            tail = ndInput;
+        }
+    }
+
+    void insertAfter(int NIMKey, Mahasiswa13 data) {
+        Node13 ndInput = new Node13(data, null);
+        Node13 temp = head;
+        boolean keyFound = false;
+
+        while (temp != null) {
+            if (temp.data.nim == NIMKey) {
+                keyFound = true;
+                ndInput.next = temp.next;
+                temp.next = ndInput;
+                if (ndInput.next == null) {
+                    tail = ndInput;
+                }
+                break;
+            }
+            temp = temp.next;
+        }
+
+        if (!keyFound) {
+            System.out.println("NIM tidak ditemukan");
+        }
+    }
+
+    void insertAt(int index, Mahasiswa13 data) {
+        Node13 ndInput = new Node13(data, null);
+        if (index < 0) {
+            System.out.println("Index Tidak Valid");
+            return;
+        } else if (index == 0) {
+            addFirst(data);
+            return;
+        }
+
+        Node13 temp = head;
+        for (int i = 0; i < index - 1; i++) {
+            if (temp.next == null) {
+                System.out.println("Index di luar batas");
+                return;
+            }
+            temp = temp.next;
+        }
+        ndInput.next = temp.next;
+        temp.next = ndInput;
+        if (temp.next.next == null) {
+            tail = temp.next;
+        }
+    }
+}
+
+
+
+```
+
+```java
+
+
+package Tugas1;
+
+public class LinkedListMain13 {
+    public static void main(String[] args) {
+        LinkedList13 list13 = new LinkedList13();
+
+
+        list13.print();
+        list13.addFirst(new Mahasiswa13(111, "Anton"));
+        list13.print();
+
+        list13.addLast(new Mahasiswa13(112, "Prita"));
+        list13.print();
+
+        list13.insertAfter(112, new Mahasiswa13(113, "Yusuf"));
+        list13.print();
+
+        list13.insertAfter(113, new Mahasiswa13(114, "Doni"));
+        list13.print();
+
+        list13.insertAt(4, new Mahasiswa13(115, "Sari"));
+        list13.print();
+    }
+}
+
+
+
+```
+
 <br>
 
 ### Verifikasi Hasil Tugas 1
