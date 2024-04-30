@@ -1,5 +1,3 @@
-import org.w3c.dom.Node;
-
 public class SingleLinkedList13 {
     Node13 head, tail;
 
@@ -76,23 +74,9 @@ public class SingleLinkedList13 {
         }
     }
 
-    /** 
-    void addLast(int input) {
-        Node13 ndInput = new Node13(input, null);
-        if (isEmpty()) {
-            
-            tail.next = ndInput;
-            tail = ndInput;
-        } else {
-            head = ndInput;
-            tail = ndInput;
-        }
-    }
-    **/
 
     void addLast(int input) {
         Node13 ndInput = new Node13(input, null);
-    
         if (isEmpty()) {
             head = ndInput;
             tail = ndInput;
@@ -101,6 +85,7 @@ public class SingleLinkedList13 {
             tail = ndInput;
         }
     }
+
 
     /** 
     public void insertAfter(int key, int input) {
@@ -183,12 +168,16 @@ public class SingleLinkedList13 {
         }
     }
 
-    int getData(int index){
-        Node13 tap = head;
-        for(int i = 0; i < index + 1; i++) {
+    int getData(int index) {
+        Node13 tmp = head;
+        for (int i = 0; i < index && tmp != null; i++) {
             tmp = tmp.next;
         }
-        return tmp.next.data;
+        if (tmp == null) {
+            System.out.println("Index out of bounds.");
+            return -1; 
+        }
+        return tmp.data;
     }
 
     int indexOf(int key){
@@ -218,28 +207,27 @@ public class SingleLinkedList13 {
         }
     }
 
-    void removeLast(){
-        if(isEmpty()){
+    void removeLast() {
+        if (isEmpty()) {
             System.out.println("Linked list masih kosong, tidak dapat dihapus");
+        } else if (head == tail) {
+            head = tail = null;
         } else {
-            if(head == tail){
-                head = tail = null;
-            } else {
-                Node temp = head;
-                while(temp.next != tail){
-                    temp = temp.next;
-                }
-                temp.next = null;
-                tail = temp;
+            Node13 temp = head;
+            while (temp.next != tail) {
+                temp = temp.next;
             }
+            temp.next = null;
+            tail = temp;
         }
     }
+
 
     void remove(int key){
         if(isEmpty()){
             System.out.println("Linked list masih kosong, tidak dapat dihapus");
         } else {
-            Node temp = head;
+            Node13 temp = head;
             while(temp != null){
                 if(temp.data == key && temp == head){
                     removeFirst();
@@ -260,7 +248,7 @@ public class SingleLinkedList13 {
         if(index == 0){
             removeFirst();
         } else {
-            Node temp = head;
+            Node13 temp = head;
             for(int i = 0; i < index - 1; i++){
                 temp = temp.next;
             }

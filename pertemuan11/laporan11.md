@@ -173,3 +173,14 @@ if(temp.next.next==null) tail=temp.next;
 ```
 
 Jawab : memeriksa apakah node yang baru ditambahkan (melalui operasi seperti insertAfter atau insertAt) berada di posisi terakhir dalam Linked List. Jika kondisi ini benar, maka tail harus diperbarui untuk menunjuk ke node baru tersebut, menandakan bahwa node tersebut adalah elemen terakhir dalam list. Ini penting untuk memastikan bahwa pointer tail selalu menunjuk ke elemen terakhir sehingga operasi yang bergantung pada tail (seperti addLast) akan berfungsi dengan benar.
+
+<br>
+<br>
+
+### 2.2.1
+
+<br>
+
+### 2.2.2 Output
+
+<img src="./img/image_2.png">
