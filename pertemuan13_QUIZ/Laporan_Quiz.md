@@ -1,3 +1,13 @@
+<p align="center">LAPORAN QUIZ PERTEMUAN 13</p>
+<p align="center">Algoritma dan Struktur Data</p>
+
+<p align="center"> <img src="./img/polinema.png"> </p>
+
+<p align="center"> Nama : Gabriel Batavia Xaverius </p>
+<p align="center"> NIM : 2341720184  </p>
+<p align="center">Kelas : TI-1B  </p>
+<p align="center">Absen : 13  </p>
+
 ### QuickOverView
 
 Program ini mengambil latar belakang Kejuaraan Dunia FIM MotoGP 2023 dimana kejuaraan ini diikuti oleh 11 Tim dan 22 Pemain. Program ini melakukan simulasi musim MotoGP dengan 20 balapan utama dan juga sprint. Program akan memilih secara acak menggunakan modul Random dan akan menempatkan setiap pembalap diposisi nya masing masing dalam balapan. poin yang diperoleh pembalap dalam setiap balapan utama dan juga balapan sprint akan diakumulasi diakhir klasemen dan menentukan juara podium nya.
