@@ -1,5 +1,3 @@
-import Tugas1.Node13;
-
 public class SingleLinkedList13 {
     Node13 head, tail;
 

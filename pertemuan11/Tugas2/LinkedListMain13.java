@@ -1,4 +1,3 @@
-package Tugas2;
 
 public class LinkedListMain13 {
     public static void main(String[] args) {

@@ -1,5 +1,3 @@
-package Tugas2;
-
 public class LinkedList13 {
     Node13 head, tail;
 

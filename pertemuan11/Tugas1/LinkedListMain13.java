@@ -4,7 +4,6 @@ public class LinkedListMain13 {
     public static void main(String[] args) {
         LinkedList13 list13 = new LinkedList13();
         
-
         list13.print();
         list13.addFirst(new Mahasiswa13(111, "Anton"));
         list13.print();
