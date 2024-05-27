@@ -2,6 +2,13 @@ package doublelinkedlists;
 public class DoubleLinkedListsMain {
     public static void main(String[] args){
         DoubleLinkedLists dll = new DoubleLinkedLists();
+        
+        // Print empty list
+        System.out.println("================================");
+        dll.print();
+        System.out.println("Size: " + dll.size());
+        
+        // Tambah elemen
         dll.addFirst(3);
         dll.addLast(4);
         try {
@@ -9,9 +16,31 @@ public class DoubleLinkedListsMain {
         } catch (Exception e) {
             System.out.println("Pesan Error: " + e.getMessage());
         }
-        dll.print(); // Output: 3 7 4
-        System.out.println("Size: " + dll.size()); // Output: Size: 3
+        
+        // Print list setelah menambah elemen
+        System.out.println("================================");
+        dll.print(); 
+        System.out.println("Size: " + dll.size()); 
+        
+        try {
+            dll.add(40, 1);
+        } catch (Exception e) {
+            System.out.println("Pesan Error: " + e.getMessage());
+        }
+        
+
+        System.out.println("================================");
+        dll.print(); 
+        System.out.println("Size: " + dll.size()); 
+        
+        // Clear
         dll.clear();
-        dll.print(); // Output: Linked list is empty
+        
+        System.out.println("================================");
+        dll.print(); 
+        System.out.println("Size: " + dll.size()); 
+        System.out.println("================================");
+        System.out.println("BUILD SUCCESS");
+        System.out.println("================================");
     }
 }
