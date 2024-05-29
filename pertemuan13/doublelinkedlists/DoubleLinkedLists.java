@@ -1,4 +1,5 @@
 package doublelinkedlists;
+
 public class DoubleLinkedLists {
     Node head;
     int size;
@@ -150,5 +151,37 @@ public class DoubleLinkedLists {
             }
             size--;
         }
+    }
+
+    // Mengambil elemen pertama dalam list
+    public int getFirst() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Linked List kosong");
+        }
+        return head.data;
+    }
+
+    // Mengambil elemen terakhir dalam list
+    public int getLast() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Linked List kosong");
+        }
+        Node tmp = head;
+        while (tmp.next != null) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
+
+    // Mengambil elemen pada indeks tertentu dalam list
+    public int get(int index) throws Exception {
+        if (isEmpty() || index >= size) {
+            throw new Exception("Nilai indeks di luar batas");
+        }
+        Node tmp = head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
     }
 }
