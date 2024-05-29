@@ -178,6 +178,89 @@ public class DoubleLinkedListsMain {
 <img src="./img/image.png">
 
 <br>
+
+### Pertanyaan
+
+1. Jelaskan perbedaan antara single linked list dengan double linked list!
+
+Jawaban:
+Single linked list hanya memiliki referensi ke node berikutnya (next) pada setiap node, sedangkan double linked list memiliki referensi ke node berikutnya (next) dan node sebelumnya (prev) pada setiap node. Double linked list memungkinkan traversal dua arah, baik maju maupun mundur, sedangkan single linked list hanya memungkinkan traversal satu arah (maju).
+
+2. Perhatikan class Node, di dalamnya terdapat atribut next dan prev. Untuk apakah atribut tersebut?
+
+Jawaban:
+Atribut next digunakan untuk menunjuk ke node berikutnya dalam linked list, sementara atribut prev digunakan untuk menunjuk ke node sebelumnya dalam linked list. Ini memungkinkan navigasi dua arah dalam double linked list.
+
+3. Perhatikan konstruktor pada class DoubleLinkedLists. Apa kegunaan inisialisasi atribut head dan size seperti pada gambar berikut ini?
+
+```java
+public DoubleLinkedLists() {
+    head = null;
+    size = 0;
+}
+```
+
+<br>
+
+Jawaban:
+Inisialisasi atribut head dengan null menunjukkan bahwa linked list awalnya kosong, karena tidak ada node yang mengarah ke data apapun. Inisialisasi atribut size dengan 0 menunjukkan bahwa jumlah elemen dalam linked list awalnya adalah nol.
+
+4. Pada method addFirst(), kenapa dalam pembuatan object dari konstruktor class Node prev diassign sama dengan null?
+
+```java
+Node newNode = new Node(null, item, head);
+```
+
+<br>
+
+Jawaban:
+Dalam metode addFirst(), prev diassign null karena node yang ditambahkan di awal list tidak memiliki node sebelumnya, sehingga referensi prev harus menunjuk ke null.
+
+5. Perhatikan pada method addFirst(). Apakah arti statement head.prev = newNode?
+
+Jawaban:
+Statement head.prev = newNode digunakan untuk menghubungkan node yang saat ini menjadi head dengan node baru yang ditambahkan di depan, dengan cara mengatur referensi prev dari node lama ke node baru.
+
+6. Perhatikan isi method addLast(). Apa arti dari pembuatan object Node dengan mengisikan parameter prev dengan current, dan next dengan null?
+
+```java
+Node newNode = new Node(current, item, null);
+```
+
+<br>
+
+Jawaban:
+Dalam metode addLast(), pembuatan object Node dengan prev diisi dengan current dan next diisi dengan null berarti node baru ditambahkan di akhir list. prev menunjuk ke node terakhir saat ini (current), dan next menunjuk ke null karena node baru ini akan menjadi node terakhir dalam list.
+
+7. Pada method add(), terdapat potongan kode program sebagai berikut:
+
+```java
+if (current.prev == null) {
+    Node newNode = new Node(null, item, current);
+    current.prev = newNode;
+    head = newNode;
+} else {
+    Node newNode = new Node(current.prev, item, current);
+    current.prev.next = newNode;
+    current.prev = newNode;
+}
+```
+
+<br>
+
+Jelaskan maksud dari bagian yang ditandai dengan kotak kuning.
+
+Jawaban:
+
+Maksud dari bagian kode ini adalah untuk menambahkan node baru pada posisi tertentu dalam double linked list:
+
+Jika current.prev == null:
+Ini berarti current adalah node pertama dalam list. Node baru (newNode) akan menjadi node pertama (head) yang baru. prev dari newNode diatur menjadi null, next diatur ke current, current.prev diatur ke newNode, dan head diatur ke newNode.
+
+Jika current.prev != null:
+Ini berarti current bukan node pertama dalam list. Node baru (newNode) akan disisipkan di antara current.prev dan current. prev dari newNode diatur ke current.prev, next diatur ke current, current.prev.next diatur ke newNode, dan current.prev diatur ke newNode.
+
+<br>
 <br>
 
 ## Praktikun 2
@@ -292,3 +375,55 @@ public class DoubleLinkedListsMain {
 ### Hasil
 
 <img src="./img/image2.png">
+
+### Pertanyaan
+
+1. Apakah maksud statement berikut pada method removeFirst()?
+
+```java
+head = head.next;
+head.prev = null;
+```
+
+<br>
+
+Jawaban:
+Maksud dari statement tersebut adalah untuk menghapus node pertama dalam linked list. head = head.next mengarahkan head ke node kedua dalam list, menjadikannya node pertama yang baru. head.prev = null menghapus referensi ke node sebelumnya dari node yang baru menjadi head, memastikan bahwa node pertama tidak memiliki node sebelumnya.
+
+2. Bagaimana cara mendeteksi posisi data ada pada bagian akhir pada method removeLast()?
+
+Jawaban:
+Cara mendeteksi posisi data ada pada bagian akhir pada method removeLast() adalah dengan memeriksa node yang memiliki next bernilai null. Jika head.next adalah null, ini berarti hanya ada satu node dalam list. Jika tidak, kita dapat menggunakan loop untuk melintasi list sampai menemukan node di mana next dari node tersebut adalah null, yang menandakan bahwa node tersebut adalah node terakhir.
+
+3. Jelaskan alasan potongan kode program di bawah ini tidak cocok untuk perintah remove!
+
+```java
+Node tmp = head.next;
+head.next=tmp.next;
+tmp.next.prev=head;
+```
+
+<br>
+
+Jawaban:
+Potongan kode program di atas tidak cocok untuk perintah remove karena tidak mempertimbangkan semua kemungkinan posisi node yang akan dihapus. Kode tersebut hanya bekerja untuk menghapus node kedua dalam list, bukan untuk node dengan indeks tertentu. Untuk menghapus node dengan indeks tertentu, perlu traversal ke posisi yang tepat dan mengatur ulang referensi prev dan next dari node tetangga, bukan hanya node pertama dan kedua.
+
+4. Jelaskan fungsi kode program berikut ini pada fungsi remove!
+
+```java
+current.prev.next = current.next;
+current.next.prev = current.prev;
+```
+
+<br>
+
+Jawaban:
+Fungsi kode program tersebut adalah untuk menghapus node yang terletak di posisi current dari linked list.
+
+current.prev.next = current.next menghubungkan node sebelumnya (prev) dari current ke node berikutnya (next) dari current, melewati node current.
+current.next.prev = current.prev menghubungkan node berikutnya (next) dari current ke node sebelumnya (prev) dari current, juga melewati node current.
+
+<br>
+<br>
+
+##
