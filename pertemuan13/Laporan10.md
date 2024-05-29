@@ -1,3 +1,5 @@
+# Praktikum
+
 ## Praktikun 1
 
 ```java
@@ -574,3 +576,179 @@ Perbedaan Logika:
 
 Kode (a) bergantung pada nilai atribut size untuk menentukan apakah list kosong atau tidak.
 Kode (b) bergantung pada apakah head menunjuk ke node atau tidak untuk menentukan apakah list kosong atau tidak.
+
+<br>
+<br>
+<br>
+
+# Tugas
+
+## Tugas 1
+
+```java
+
+package Tugas.Tugas1;
+public class Node13 {
+    Node13 prev;
+    int data;
+    String name;
+    Node13 next;
+
+    public Node13(Node13 prev, int data, String name, Node13 next) {
+        this.prev = prev;
+        this.data = data;
+        this.name = name;
+        this.next = next;
+    }
+}
+
+
+```
+
+<br>
+
+```java
+
+package Tugas.Tugas1;
+public class DoubleLinkedLists13 {
+    Node13 head;
+    int size;
+
+    public DoubleLinkedLists13() {
+        head = null;
+        size = 0;
+    }
+
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    public void addLast(int data, String name) {
+        if (isEmpty()) {
+            head = new Node13(null, data, name, null);
+        } else {
+            Node13 current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            Node13 newNode = new Node13(current, data, name, null);
+            current.next = newNode;
+        }
+        size++;
+    }
+
+    public void removeFirst() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Linked List masih kosong, tidak dapat dihapus!");
+        } else if (size == 1) {
+            System.out.println(head.name + " telah selesai divaksinasi.");
+            head = null;
+            size--;
+        } else {
+            System.out.println(head.name + " telah selesai divaksinasi.");
+            head = head.next;
+            head.prev = null;
+            size--;
+        }
+    }
+
+    public void print() {
+        if (!isEmpty()) {
+            Node13 tmp = head;
+            System.out.println("+----------------------+");
+            System.out.println("Daftar Pengganti Vaksin");
+            System.out.println("+----------------------+");
+            System.out.println("|No.\t|Nama");
+            System.out.println("+----------------------+");
+            while (tmp != null) {
+                System.out.println("|" + tmp.data + "\t|" + tmp.name);
+                tmp = tmp.next;
+            }
+            System.out.println("+----------------------+");
+            System.out.println("Sisa Antrian: " + size);
+        } else {
+            System.out.println("Linked Lists Kosong");
+        }
+    }
+}
+
+
+```
+
+<br>
+
+```java
+
+package Tugas.Tugas1;
+import java.util.Scanner;
+
+public class AntrianVaksin13 {
+    public static void main(String[] args) {
+        Scanner sc13 = new Scanner(System.in);
+        DoubleLinkedLists13 dll = new DoubleLinkedLists13();
+
+        while (true) {
+            System.out.println("+++++++++++++++++++++++++++++++");
+            System.out.println("PENGANTRI VAKSIN EXTRAVAGANZA");
+            System.out.println("+++++++++++++++++++++++++++++++");
+            System.out.println("1. Tambah Data Penerima Vaksin");
+            System.out.println("2. Hapus Data Pengganti Vaksin");
+            System.out.println("3. Daftar Penerima Vaksin");
+            System.out.println("4. Keluar");
+            System.out.println("+++++++++++++++++++++++++++++++");
+            System.out.print("Pilih: ");
+            int choice = sc13.nextInt();
+            sc13.nextLine();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Masukkan Data Penerima Vaksin\n");
+                    System.out.print("Nomor Antrian: ");
+                    int number = sc13.nextInt();
+                    sc13.nextLine();
+                    System.out.print("Nama Penerima: ");
+                    String name = sc13.nextLine();
+                    dll.addLast(number, name);
+                    break;
+
+                case 2:
+                    try {
+                        dll.removeFirst();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+
+                case 3:
+                    dll.print();
+                    break;
+
+                case 4:
+                    System.out.println("Terima kasih telah menggunakan layanan ini.");
+                    System.exit(0);
+
+                default:
+                    System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+            }
+        }
+    }
+}
+
+
+```
+
+<br>
+
+### Hasil
+
+<img src="./img/image4.png">
+
+<img src="./img/image5.png">
+
+<img src="./img/image6.png">
+
+<img src="./img/image7.png">
+
+<img src="./img/image8.png">
+
+<br>
