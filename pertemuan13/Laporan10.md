@@ -510,3 +510,67 @@ public class DoubleLinkedListsMain {
 ### Hasil
 
 <img src="./img/image3.png">
+
+### Pertanyaan
+
+1. Jelaskan method size() pada class DoubleLinkedLists!
+
+Jawaban:
+Method size() pada class DoubleLinkedLists digunakan untuk mengembalikan jumlah elemen (node) yang ada dalam linked list. Method ini mengakses atribut size yang diperbarui setiap kali node ditambahkan atau dihapus dari linked list.
+
+2. Jelaskan cara mengatur indeks pada double linked lists supaya dapat dimulai dari indeks ke-1!
+
+Jawaban:
+Untuk mengatur indeks pada double linked lists supaya dapat dimulai dari indeks ke-1, kita dapat menyesuaikan indeks yang digunakan dalam operasi penambahan, penghapusan, dan pengambilan elemen. Biasanya, indeks dalam linked list dimulai dari 0, tetapi kita bisa membuat penyesuaian internal pada method untuk mengabaikan atau mengubah indeks yang diberikan pengguna menjadi dimulai dari 1. Misalnya, jika pengguna memberikan indeks 1, kita bisa menguranginya dengan 1 untuk disesuaikan dengan indeks internal yang dimulai dari 0.
+
+3. Jelaskan perbedaan karakteristik fungsi Add pada Double Linked Lists dan Single Linked Lists!
+
+Jawaban:
+
+Double Linked Lists:
+Pada double linked lists, setiap node memiliki referensi ke node berikutnya (next) dan node sebelumnya (prev). Fungsi add harus memperbarui kedua referensi ini.
+Ketika menambahkan node di awal atau di akhir list, referensi prev dan next dari node yang baru dan node yang ada perlu diperbarui untuk mempertahankan integritas list.
+Single Linked Lists:
+Pada single linked lists, setiap node hanya memiliki referensi ke node berikutnya (next). Fungsi add hanya perlu memperbarui referensi next.
+Menambahkan node di awal atau di akhir list hanya memerlukan pembaruan referensi next dari node yang baru dan node yang ada.
+
+4. Jelaskan perbedaan logika dari kedua kode program di bawah ini!
+
+Kode Program:
+
+(a)
+
+```java
+public boolean isEmpty() {
+if (size == 0) {
+return true;
+} else {
+return false;
+}
+}
+```
+
+<br>
+
+(b)
+
+```java
+public boolean isEmpty() {
+return head == null;
+}
+```
+
+<br>
+
+Jawaban:
+
+Kode Program (a):
+Kode ini menentukan apakah linked list kosong dengan memeriksa nilai atribut size. Jika size bernilai 0, maka list dianggap kosong dan method mengembalikan true. Jika size bukan 0, maka list dianggap tidak kosong dan method mengembalikan false.
+
+Kode Program (b):
+Kode ini menentukan apakah linked list kosong dengan memeriksa apakah head adalah null. Jika head bernilai null, maka list dianggap kosong dan method mengembalikan true. Jika head tidak null, maka list dianggap tidak kosong dan method mengembalikan false.
+
+Perbedaan Logika:
+
+Kode (a) bergantung pada nilai atribut size untuk menentukan apakah list kosong atau tidak.
+Kode (b) bergantung pada apakah head menunjuk ke node atau tidak untuk menentukan apakah list kosong atau tidak.
