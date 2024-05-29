@@ -1,6 +1,8 @@
 # Praktikum
 
-## Praktikun 1
+## Praktikum 1
+
+### Kode Program File Node
 
 ```java
 
@@ -24,7 +26,10 @@ public class Node {
 
 <br>
 
+### Kode Program File DoubleLinkedLists
+
 ```java
+package doublelinkedlists;
 
 public class DoubleLinkedLists {
     Node head;
@@ -128,7 +133,10 @@ public class DoubleLinkedLists {
 
 <br>
 
+### Kode Program File Main
+
 ```java
+package doublelinkedlists;
 
 public class DoubleLinkedListsMain {
     public static void main(String[] args){
@@ -267,6 +275,8 @@ Ini berarti current bukan node pertama dalam list. Node baru (newNode) akan disi
 
 ## Praktikun 2
 
+### Kode Program Penambahan pada File DoubleLinkedLists
+
 ```java
 
     // Menghapus elemen pertama dalam list
@@ -330,7 +340,10 @@ Ini berarti current bukan node pertama dalam list. Node baru (newNode) akan disi
 
 <br>
 
+### Kode Program Penambahan pada File Main
+
 ```java
+package doublelinkedlists;
 
 public class DoubleLinkedListsMain {
     public static void main(String[] args){
@@ -430,6 +443,8 @@ current.next.prev = current.prev menghubungkan node berikutnya (next) dari curre
 
 ## Praktikum 3
 
+### Kode Program Penambahan pada File DoubleLinkedLists
+
 ```java
 
     // Mengambil elemen pertama dalam list
@@ -468,9 +483,10 @@ current.next.prev = current.prev menghubungkan node berikutnya (next) dari curre
 
 <br>
 
+### Kode Program Penambahan pada File Main
+
 ```java
-
-
+package doublelinkedlists;
 
 public class DoubleLinkedListsMain {
     public static void main(String[] args){
@@ -585,6 +601,8 @@ Kode (b) bergantung pada apakah head menunjuk ke node atau tidak untuk menentuka
 
 ## Tugas 1
 
+### Kode Program File Node13
+
 ```java
 
 package Tugas.Tugas1;
@@ -606,6 +624,8 @@ public class Node13 {
 ```
 
 <br>
+
+### Kode Program File DoubleLinkedLists13
 
 ```java
 
@@ -676,6 +696,8 @@ public class DoubleLinkedLists13 {
 ```
 
 <br>
+
+### Kode Program File Main
 
 ```java
 
@@ -752,3 +774,363 @@ public class AntrianVaksin13 {
 <img src="./img/image8.png">
 
 <br>
+<br>
+
+## Tugas 2
+
+```java
+
+package Tugas.Tugas2;
+public class Node13 {
+    int id;
+    String title;
+    double rating;
+    Node13 prev;
+    Node13 next;
+
+    public Node13(int id, String title, double rating, Node13 prev, Node13 next) {
+        this.id = id;
+        this.title = title;
+        this.rating = rating;
+        this.prev = prev;
+        this.next = next;
+    }
+}
+
+
+
+```
+
+<br>
+
+```java
+
+package Tugas.Tugas2;
+public class DoubleLinkedList13 {
+    Node13 head;
+    int size;
+
+    public DoubleLinkedList13() {
+        head = null;
+        size = 0;
+    }
+
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    public void addFirst(int id, String title, double rating) {
+        if (isEmpty()) {
+            head = new Node13(id, title, rating, null, null);
+        } else {
+            Node13 newNode = new Node13(id, title, rating, null, head);
+            head.prev = newNode;
+            head = newNode;
+        }
+        size++;
+    }
+
+    public void addLast(int id, String title, double rating) {
+        if (isEmpty()) {
+            addFirst(id, title, rating);
+        } else {
+            Node13 current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            Node13 newNode = new Node13(id, title, rating, current, null);
+            current.next = newNode;
+            size++;
+        }
+    }
+
+    public void add(int id, String title, double rating, int index) {
+        if (index < 0 || index > size) {
+            System.out.println("Nilai indeks di luar batas");
+            return;
+        } else if (isEmpty() || index == 0) {
+            addFirst(id, title, rating);
+        } else {
+            Node13 current = head;
+            int i = 0;
+            while (i < index && current.next != null) {
+                current = current.next;
+                i++;
+            }
+            if (i == index) {
+                Node13 newNode = new Node13(id, title, rating, current.prev, current);
+                if (current.prev != null) {
+                    current.prev.next = newNode;
+                }
+                current.prev = newNode;
+                if (index == 0) {
+                    head = newNode;
+                }
+                size++;
+            } else {
+                addLast(id, title, rating);
+            }
+        }
+    }
+
+    public void removeFirst() {
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong, tidak dapat dihapus!");
+        } else if (size == 1) {
+            head = null;
+            size--;
+        } else {
+            head = head.next;
+            head.prev = null;
+            size--;
+        }
+    }
+
+    public void removeLast() {
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong, tidak dapat dihapus!");
+        } else if (head.next == null) {
+            head = null;
+            size--;
+        } else {
+            Node13 current = head;
+            while (current.next.next != null) {
+                current = current.next;
+            }
+            current.next = null;
+            size--;
+        }
+    }
+
+    public void remove(int index) {
+        if (isEmpty() || index >= size) {
+            System.out.println("Nilai indeks di luar batas");
+        } else if (index == 0) {
+            removeFirst();
+        } else {
+            Node13 current = head;
+            int i = 0;
+            while (i < index) {
+                current = current.next;
+                i++;
+            }
+            if (current.next == null) {
+                current.prev.next = null;
+            } else if (current.prev == null) {
+                current.next.prev = null;
+                head = current.next;
+            } else {
+                current.prev.next = current.next;
+                current.next.prev = current.prev;
+            }
+            size--;
+        }
+    }
+
+    public Node13 searchById(int id) {
+        Node13 current = head;
+        while (current != null) {
+            if (current.id == id) {
+                return current;
+            }
+            current = current.next;
+        }
+        return null;
+    }
+
+    public void sortDescendingByRating() {
+        if (size > 1) {
+            boolean wasChanged;
+            do {
+                Node13 current = head;
+                Node13 previous = null;
+                Node13 next = head.next;
+                wasChanged = false;
+                while (next != null) {
+                    if (current.rating < next.rating) {
+                        wasChanged = true;
+                        if (previous != null) {
+                            Node13 sig = next.next;
+                            previous.next = next;
+                            next.next = current;
+                            current.next = sig;
+                        } else {
+                            Node13 sig = next.next;
+                            head = next;
+                            next.next = current;
+                            current.next = sig;
+                        }
+                        Node13 temp = current;
+                        current = next;
+                        next = temp;
+                    }
+                    previous = current;
+                    current = next;
+                    next = next.next;
+                }
+            } while (wasChanged);
+        }
+    }
+
+    public void print() {
+        if (!isEmpty()) {
+            Node13 tmp = head;
+            System.out.println("+-------------------------------------+");
+            System.out.println("Daftar Film Layar Lebar");
+            System.out.println("+-------------------------------------+");
+            System.out.println("|ID\t|Judul\t|Rating");
+            System.out.println("+-------------------------------------+");
+            while (tmp != null) {
+                System.out.println("|" + tmp.id + "\t|" + tmp.title + "\t|" + tmp.rating);
+                tmp = tmp.next;
+            }
+            System.out.println("+-------------------------------------+");
+        } else {
+            System.out.println("Linked List Kosong");
+        }
+    }
+}
+
+
+```
+
+<br>
+
+```java
+
+package Tugas.Tugas2;
+import java.util.Scanner;
+
+public class DaftarFilm13 {
+    public static void main(String[] args) {
+        Scanner sc13 = new Scanner(System.in);
+        DoubleLinkedList13 dll = new DoubleLinkedList13();
+
+        while (true) {
+            System.out.println("====================================");
+            System.out.println("DATA FILM LAYAR LEBAR");
+            System.out.println("====================================");
+            System.out.println("1. Tambah Data Awal");
+            System.out.println("2. Tambah Data Akhir");
+            System.out.println("3. Tambah Data Indeks Tertentu");
+            System.out.println("4. Hapus Data Pertama");
+            System.out.println("5. Hapus Data Terakhir");
+            System.out.println("6. Hapus Data Tertentu");
+            System.out.println("7. Cetak");
+            System.out.println("8. Cari ID Film");
+            System.out.println("9. Urut Data Rating Film-DESC");
+            System.out.println("10. Keluar");
+            System.out.println("====================================");
+            System.out.print("Pilih: ");
+            int choice = sc13.nextInt();
+            sc13.nextLine();  // Consume newline
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Masukkan Data Film Posisi Awal\n");
+                    System.out.print("ID Film: ");
+                    int id1 = sc13.nextInt();
+                    sc13.nextLine();  // Consume newline
+                    System.out.print("Judul Film: ");
+                    String title1 = sc13.nextLine();
+                    System.out.print("Rating Film: ");
+                    double rating1 = sc13.nextDouble();
+                    dll.addFirst(id1, title1, rating1);
+                    break;
+
+                case 2:
+                    System.out.print("Masukkan Data Film Posisi Akhir\n");
+                    System.out.print("ID Film: ");
+                    int id2 = sc13.nextInt();
+                    sc13.nextLine();  // Consume newline
+                    System.out.print("Judul Film: ");
+                    String title2 = sc13.nextLine();
+                    System.out.print("Rating Film: ");
+                    double rating2 = sc13.nextDouble();
+                    dll.addLast(id2, title2, rating2);
+                    break;
+
+                case 3:
+                    System.out.print("Masukkan Data Film\n");
+                    System.out.print("Urutan ke: ");
+                    int index = sc13.nextInt();
+                    sc13.nextLine();
+                    System.out.print("ID Film: ");
+                    int id3 = sc13.nextInt();
+                    sc13.nextLine();
+                    System.out.print("Judul Film: ");
+                    String title3 = sc13.nextLine();
+                    System.out.print("Rating Film: ");
+                    double rating3 = sc13.nextDouble();
+                    dll.add(id3, title3, rating3, index - 1);
+                    break;
+
+                case 4:
+                    dll.removeFirst();
+                    break;
+
+                case 5:
+                    dll.removeLast();
+                    break;
+
+                case 6:
+                    System.out.print("Masukkan indeks data yang ingin dihapus: ");
+                    int removeIndex = sc13.nextInt();
+                    dll.remove(removeIndex - 1);
+                    break;
+
+                case 7:
+                    dll.print();
+                    break;
+
+                case 8:
+                    System.out.print("Masukkan ID Film yang dicari: ");
+                    int searchId = sc13.nextInt();
+                    Node13 found = dll.searchById(searchId);
+                    if (found != null) {
+                        System.out.println("ID Film: " + found.id);
+                        System.out.println("Judul Film: " + found.title);
+                        System.out.println("Rating Film: " + found.rating);
+                    } else {
+                        System.out.println("Film tidak ditemukan.");
+                    }
+                    break;
+
+                case 9:
+                    dll.sortDescendingByRating();
+                    dll.print();
+                    break;
+
+                case 10:
+                    System.out.println("Terima kasih telah menggunakan layanan ini.");
+                    System.exit(0);
+
+                default:
+                    System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+            }
+        }
+    }
+}
+
+
+```
+
+### Hasil
+
+<img src="./img/image9.png">
+
+<img src="./img/image10.png">
+
+<img src="./img/image11.png">
+
+<img src="./img/image12.png">
+
+<img src="./img/image13.png">
+
+<img src="./img/image14.png">
+
+<img src="./img/image15.png">
+
+<img src="./img/image16.png">
+
+<img src="./img/image17.png">
