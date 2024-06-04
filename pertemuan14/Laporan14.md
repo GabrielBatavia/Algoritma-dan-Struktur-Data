@@ -366,3 +366,40 @@ public class BinaryTreeArrayMain13 {
 ### Hasil
 
 <img src="./img/image2.png">
+
+<br>
+
+### Pertanyaan
+
+1. Apakah kegunaan dari atribut data dan idxLast yang ada di class BinaryTreeArray?
+
+Jawab :
+
+- data: Menyimpan elemen-elemen binary tree dalam array.
+- idxLast: Menyimpan indeks terakhir dari elemen valid dalam array.
+
+2. Apakah kegunaan dari method populateData()?
+
+Jawab :
+
+Mengisi array data dengan elemen-elemen tree dan menetapkan idxLast untuk menentukan batas akhir elemen valid.
+
+3. Apakah kegunaan dari method traverseInOrder()?
+
+Jawab :
+
+Melakukan traversal in-order (left-root-right) pada binary tree yang disimpan dalam array dan mem-print elemen-elemen tree.
+
+4. Jika suatu node binary tree disimpan dalam array indeks 2, maka di indeks berapakah posisi
+   left child dan rigth child masin-masing?
+
+Jawab :
+
+- Left child: Indeks 5 (2 \* 2 + 1).
+- Right child: Indeks 6 (2 \* 2 + 2).
+
+5. Apa kegunaan statement int idxLast = 6 pada praktikum 2 percobaan nomor 4?
+
+Jawab :
+
+Menetapkan indeks terakhir elemen valid dalam array data untuk memastikan traversal hanya mengunjungi elemen-elemen yang valid.
