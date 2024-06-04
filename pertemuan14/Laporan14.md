@@ -306,3 +306,27 @@ if(current.left != null): Mengecek apakah anak kiri dari node saat ini (current)
 else: Jika anak kiri dari node saat ini (current) adalah null, ini berarti tempat yang tepat untuk node baru telah ditemukan.
 current.left = new Node13(data): Membuat node baru dengan data yang diberikan dan menetapkannya sebagai anak kiri dari node saat ini (current).
 break: Menghentikan loop karena node baru telah berhasil ditambahkan ke tree.
+
+<br>
+<br>
+
+## Praktikum 2
+
+### Kode
+
+```java
+
+
+```
+
+<br>
+
+```java
+
+
+
+```
+
+### Hasil
+
+<img src="./img/image2.png">
