@@ -316,6 +316,29 @@ break: Menghentikan loop karena node baru telah berhasil ditambahkan ke tree.
 
 ```java
 
+package Praktikum.Praktikum2;
+public class BinaryTreeArray13 {
+    int[] data;
+    int idxLast;
+
+    public BinaryTreeArray13() {
+        data = new int[10];
+    }
+
+    void populateData(int[] data, int idxLast) {
+        this.data = data;
+        this.idxLast = idxLast;
+    }
+
+    void traverseInOrder(int idxStart) {
+        if (idxStart <= idxLast && data[idxStart] != 0) {
+            traverseInOrder(2 * idxStart + 1);
+            System.out.print(data[idxStart] + " ");
+            traverseInOrder(2 * idxStart + 2);
+        }
+    }
+}
+
 
 ```
 
@@ -323,6 +346,19 @@ break: Menghentikan loop karena node baru telah berhasil ditambahkan ke tree.
 
 ```java
 
+package Praktikum.Praktikum2;
+public class BinaryTreeArrayMain13 {
+    public static void main(String[] args) {
+        BinaryTreeArray13 bta = new BinaryTreeArray13();
+        int[] data = {6, 4, 8, 3, 5, 7, 9, 0, 0, 0};
+        int idxLast = 6;
+
+        bta.populateData(data, idxLast);
+        System.out.print("\nInOrder Traversal: ");
+        bta.traverseInOrder(0);
+        System.out.println("\n");
+    }
+}
 
 
 ```
