@@ -403,3 +403,191 @@ Jawab :
 Jawab :
 
 Menetapkan indeks terakhir elemen valid dalam array data untuk memastikan traversal hanya mengunjungi elemen-elemen yang valid.
+
+<br>
+<br>
+
+## Tugas
+
+1. Buat method di dalam class BinaryTree yang akan menambahkan node dengan cara
+   rekursif.
+
+Jawab :
+
+```java
+
+public void addRecursive(int data) {
+    root = addRecursive(root, data);
+}
+
+private Node13 addRecursive(Node13 current, int data) {
+    if (current == null) {
+        return new Node13(data);
+    }
+
+    if (data < current.data) {
+        current.left = addRecursive(current.left, data);
+    } else if (data > current.data) {
+        current.right = addRecursive(current.right, data);
+    } else {
+        // Data sudah ada
+        return current;
+    }
+
+    return current;
+}
+
+
+```
+
+<br>
+
+2. Buat method di dalam class BinaryTree untuk menampilkan nilai paling kecil dan yang
+   paling besar yang ada di dalam tree.
+
+Jawab :
+
+```java
+
+// Method untuk menampilkan nilai paling kecil
+public int findMinValue() {
+    return findMinValue(root);
+}
+
+private int findMinValue(Node13 current) {
+    return current.left == null ? current.data : findMinValue(current.left);
+}
+
+// Method untuk menampilkan nilai paling besar
+public int findMaxValue() {
+    return findMaxValue(root);
+}
+
+private int findMaxValue(Node13 current) {
+    return current.right == null ? current.data : findMaxValue(current.right);
+}
+
+```
+
+<br>
+
+Contoh hasil program :
+
+<img src="./img/image3.png">
+
+<br>
+
+3. Buat method di dalam class BinaryTree untuk menampilkan data yang ada di leaf.
+
+Jawab :
+
+```java
+
+public void displayLeafNodes() {
+    displayLeafNodes(root);
+}
+
+private void displayLeafNodes(Node13 node) {
+    if (node == null) {
+        return;
+    }
+    if (node.left == null && node.right == null) {
+        System.out.print(" " + node.data);
+    }
+    displayLeafNodes(node.left);
+    displayLeafNodes(node.right);
+}
+
+```
+
+<br>
+
+Contoh Hasil :
+
+<img src="./img/image4.png">
+
+<br>
+
+4. Buat method di dalam class BinaryTree untuk menampilkan berapa jumlah leaf yang ada
+   di dalam tree.
+
+jawab :
+
+```java
+
+public int countLeafNodes() {
+    return countLeafNodes(root);
+}
+
+private int countLeafNodes(Node13 node) {
+    if (node == null) {
+        return 0;
+    }
+    if (node.left == null && node.right == null) {
+        return 1;
+    } else {
+        return countLeafNodes(node.left) + countLeafNodes(node.right);
+    }
+}
+
+```
+
+<br>
+
+Contoh Hasil :
+
+<img src="./img/image5.png">
+
+<br>
+
+5. Modifikasi class BinaryTreeArray, dan tambahkan :  
+   • method add(int data) untuk memasukan data ke dalam tree
+
+   Jawab :
+
+   ```java
+
+    // Method to add data to the tree
+    void add(int data) {
+        if (idxLast < this.data.length - 1) {
+            this.data[++idxLast] = data;
+        } else {
+            System.out.println("Tree is full!");
+        }
+    }
+
+   ```
+
+   <br>
+
+   • method traversePreOrder() dan traversePostOrder()
+
+   Jawab :
+
+   ```java
+
+    // Pre-order traversal
+    void traversePreOrder(int idxStart) {
+        if (idxStart <= idxLast && data[idxStart] != 0) {
+            System.out.print(data[idxStart] + " ");
+            traversePreOrder(2 * idxStart + 1);
+            traversePreOrder(2 * idxStart + 2);
+        }
+    }
+
+   ```
+
+   <br>
+
+   ```java
+
+    // Post-order traversal
+    void traversePostOrder(int idxStart) {
+        if (idxStart <= idxLast && data[idxStart] != 0) {
+            traversePostOrder(2 * idxStart + 1);
+            traversePostOrder(2 * idxStart + 2);
+            System.out.print(data[idxStart] + " ");
+        }
+    }
+
+   ```

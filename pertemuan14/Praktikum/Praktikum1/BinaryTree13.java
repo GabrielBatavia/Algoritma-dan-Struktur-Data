@@ -1,5 +1,3 @@
-package Praktikum;
-
 public class BinaryTree13 {
     Node13 root;
 
@@ -11,31 +9,75 @@ public class BinaryTree13 {
         return root == null;
     }
 
-    public void add(int data) {
-        if (isEmpty()) {
-            root = new Node13(data);
+    // Method to add a node recursively
+    public void addRecursive(int data) {
+        root = addRecursive(root, data);
+    }
+
+    private Node13 addRecursive(Node13 current, int data) {
+        if (current == null) {
+            return new Node13(data);
+        }
+
+        if (data < current.data) {
+            current.left = addRecursive(current.left, data);
+        } else if (data > current.data) {
+            current.right = addRecursive(current.right, data);
         } else {
-            Node13 current = root;
-            while (true) {
-                if (data < current.data) {
-                    if (current.left == null) {
-                        current.left = new Node13(data);
-                        break;
-                    } else {
-                        current = current.left;
-                    }
-                } else if (data > current.data) {
-                    if (current.right == null) {
-                        current.right = new Node13(data);
-                        break;
-                    } else {
-                        current = current.right;
-                    }
-                } else {
-                    // Data already exists
-                    break;
-                }
-            }
+            // Data already exists
+            return current;
+        }
+
+        return current;
+    }
+
+    // Method to find the smallest value
+    public int findMinValue() {
+        return findMinValue(root);
+    }
+
+    private int findMinValue(Node13 current) {
+        return current.left == null ? current.data : findMinValue(current.left);
+    }
+
+    // Method to find the largest value
+    public int findMaxValue() {
+        return findMaxValue(root);
+    }
+
+    private int findMaxValue(Node13 current) {
+        return current.right == null ? current.data : findMaxValue(current.right);
+    }
+
+    // Method to display leaf nodes
+    public void displayLeafNodes() {
+        displayLeafNodes(root);
+    }
+
+    private void displayLeafNodes(Node13 node) {
+        if (node == null) {
+            return;
+        }
+        if (node.left == null && node.right == null) {
+            System.out.print(" " + node.data);
+        }
+        displayLeafNodes(node.left);
+        displayLeafNodes(node.right);
+    }
+
+    // Method to count the number of leaf nodes
+    public int countLeafNodes() {
+        return countLeafNodes(root);
+    }
+
+    private int countLeafNodes(Node13 node) {
+        if (node == null) {
+            return 0;
+        }
+        if (node.left == null && node.right == null) {
+            return 1;
+        } else {
+            return countLeafNodes(node.left) + countLeafNodes(node.right);
         }
     }
 
@@ -131,6 +173,7 @@ public class BinaryTree13 {
                 parent.right = null;
             }
         }
+        
         // Case 2: Node to be deleted has one child (right)
         else if (current.left == null) {
             if (current == root) {

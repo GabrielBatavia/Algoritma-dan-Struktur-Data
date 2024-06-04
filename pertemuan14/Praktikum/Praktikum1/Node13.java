@@ -1,4 +1,4 @@
-package Praktikum;
+
 
 public class Node13 {
     int data;
