@@ -284,3 +284,9 @@ public class GraphMain13 {
 <img src="./img/imag2.png">
 
 <img src="./img/imag3.png">
+
+## Praktikum 2
+
+### Hasil
+
+<img src="./img/imag4.png">
