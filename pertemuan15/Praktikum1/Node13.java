@@ -1,6 +1,7 @@
 package Praktikum1;
 
 
+
 public class Node13 {
     int data;
     Node13 prev, next;

@@ -1,5 +1,6 @@
-package Praktikum1;
+
 import java.util.Scanner;
+
 
 public class GraphMain13 {
     public static void main(String[] args) throws Exception {
@@ -18,15 +19,18 @@ public class GraphMain13 {
         gedung.removeEdge(1, 3);
         gedung.printGraph();
 
-        System.out.println("Masukkan gedung asal: ");
+        System.out.println("Masukkan gedung asal untuk update jarak: ");
         int asal = scanner.nextInt();
-        System.out.println("Masukkan gedung tujuan: ");
+        System.out.println("Masukkan gedung tujuan untuk update jarak: ");
         int tujuan = scanner.nextInt();
-        if (gedung.isConnected(asal, tujuan)) {
-            System.out.println("Gedung " + (char)('A' + asal) + " dan " + (char)('A' + tujuan) + " bertetangga");
-        } else {
-            System.out.println("Gedung " + (char)('A' + asal) + " dan " + (char)('A' + tujuan) + " tidak bertetangga");
-        }
+        System.out.println("Masukkan jarak baru: ");
+        int jarakBaru = scanner.nextInt();
+        gedung.updateJarak(asal, tujuan, jarakBaru);
+        gedung.printGraph();
+        
+        int totalEdges = gedung.hitungEdge();
+        System.out.println("Total edges dalam graf: " + totalEdges);
+
         scanner.close();
     }
 }

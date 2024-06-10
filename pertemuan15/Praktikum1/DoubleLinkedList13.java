@@ -1,4 +1,4 @@
-package Praktikum1;
+
 public class DoubleLinkedList13 {
     Node13 head;
     int size;
